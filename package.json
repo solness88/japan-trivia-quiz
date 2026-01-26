@@ -1,0 +1,15 @@
+{
+  "name": "japan-trivia-quiz",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "content-cms",
+    "mobile-app"
+  ],
+  "scripts": {
+    "dev:cms": "cd content-cms && npm run dev",
+    "dev:mobile": "cd mobile-app && npm start",
+    "build:cms": "cd content-cms && npm run build"
+  }
+}
