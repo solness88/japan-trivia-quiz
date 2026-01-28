@@ -1,11 +1,27 @@
-// shared パッケージから型をインポート
-export type {
-  Quiz,
-  QuizCategory,
-  QuizDifficulty,
-} from '@japan-trivia/shared';
+// 型定義を直接定義（shared パッケージの問題を回避）
+export type QuizCategory = 
+  | 'culture'
+  | 'food'
+  | 'history'
+  | 'geography'
+  | 'language'
+  | 'tradition'
+  | 'pop-culture'
+  | 'etiquette';
 
-// モバイルアプリ専用の型
+export type QuizDifficulty = 'easy' | 'medium' | 'hard';
+
+export interface Quiz {
+  id: string;
+  question: string;
+  options: [string, string, string, string];
+  correctAnswer: 0 | 1 | 2 | 3;
+  explanation?: string;
+  difficulty: QuizDifficulty;
+  category: QuizCategory;
+  tags: string[];
+}
+
 export interface QuizResult {
   quizId: string;
   isCorrect: boolean;

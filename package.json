@@ -4,8 +4,7 @@
   "private": true,
   "workspaces": [
     "shared",
-    "content-cms",
-    "mobile-app"
+    "content-cms"
   ],
   "scripts": {
     "dev:cms": "cd content-cms && npm run dev",
