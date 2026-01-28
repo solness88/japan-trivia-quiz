@@ -1,0 +1,91 @@
+[
+  {
+    "id": "598d4370-7570-4371-a393-cdf8fb168b21",
+    "question": "Where is the capital of Japan?",
+    "options": [
+      "Tokyo",
+      "Osaka",
+      "Kyoto",
+      "Hiroshima"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tokyo is the capital of Tokyo since 1850?? Kyoto is famous for its historic temples and shrines and was the capital for a long time, but currently is is not. Osaka is maybe more popular than Tokyo, but is not the capital. Hiroshima is famous for its tragic history as well. If you are interested in the atomic bomb history, you should go there.",
+    "difficulty": "easy",
+    "category": "geography",
+    "tags": []
+  },
+  {
+    "id": "96a66dd1-80e7-4227-be28-c75a5dfa4bf4",
+    "question": "What is the traditional Japanese art of flower arrangement known for its minimalist and elegant style?",
+    "options": [
+      "Sumo",
+      "Kabuki",
+      "Ikebana",
+      "Origami"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Ikebana is the Japanese art of floral arrangement, emphasizing form, line, and color in a harmonious and balanced way.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "arts",
+      "traditional"
+    ]
+  },
+  {
+    "id": "b01dd093-d7f1-4d5f-bcf2-5ed287fc2dc5",
+    "question": "What is the significance of the 'onsen' in Japanese culture?",
+    "options": [
+      "A type of traditional martial art.",
+      "A hot spring bath used for relaxation and communal bathing.",
+      "A formal tea ceremony.",
+      "A type of regional festival."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Onsen are natural hot springs that have been a part of Japanese culture for centuries, offering therapeutic benefits and a chance for social relaxation.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "relaxation",
+      "tradition",
+      "health"
+    ]
+  },
+  {
+    "id": "48244cf1-c67f-4c53-adae-572b502b729f",
+    "question": "The Japanese tea ceremony, or 'Chanoyu', is more than just drinking tea. What is a key element emphasized during this ritual?",
+    "options": [
+      "Fast-paced conversation and laughter.",
+      "The appreciation of art and nature, and the host's hospitality.",
+      "Competitive drinking of multiple bowls of tea.",
+      "Discussing business deals."
+    ],
+    "correctAnswer": 1,
+    "explanation": "The tea ceremony is a highly ritualized practice focusing on mindfulness, harmony, respect, purity, and tranquility, with an emphasis on the host's meticulous preparation and the guests' appreciation.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "tradition",
+      "mindfulness",
+      "hospitality"
+    ]
+  },
+  {
+    "id": "9b705a16-2931-4a16-9a5e-a4ee6d9fcd36",
+    "question": "What does the term 'kawaii' (かわいい) refer to in Japanese culture?",
+    "options": [
+      "A serious and formal demeanor.",
+      "Something that is 'cute', 'adorable', or 'lovable'.",
+      "A delicious savory dish.",
+      "A traditional form of calligraphy."
+    ],
+    "correctAnswer": 1,
+    "explanation": "'Kawaii' is a prominent aspect of Japanese popular culture, describing anything that evokes feelings of cuteness, charm, and endearment, from characters to fashion.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "pop culture",
+      "aesthetics"
+    ]
+  }
+]
