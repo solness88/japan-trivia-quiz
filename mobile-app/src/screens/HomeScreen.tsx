@@ -26,15 +26,12 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.primaryButton}
-          onPress={() => {
-            // TODO: カテゴリ選択画面へ
-            alert('Category selection coming soon!');
-          }}
-        >
-          <Text style={styles.primaryButtonText}>Start Quiz</Text>
-        </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.primaryButton}
+        onPress={() => navigation.navigate('Category')}
+      >
+        <Text style={styles.primaryButtonText}>Start Quiz</Text>
+      </TouchableOpacity>
 
         <TouchableOpacity
           style={styles.secondaryButton}
