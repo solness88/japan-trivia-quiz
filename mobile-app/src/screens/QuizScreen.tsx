@@ -49,9 +49,14 @@ export default function QuizScreen({ navigation, route }: QuizScreenProps) {
 
   const handleNextQuestion = () => {
     if (isLastQuestion) {
-      alert(`Quiz Complete! Score: ${score + (selectedAnswer === currentQuiz.correctAnswer ? 1 : 0)}/${quizzes.length}`);
-      navigation.navigate('Home');
+      // 結果画面へ遷移
+      const finalScore = score + (selectedAnswer === currentQuiz.correctAnswer ? 1 : 0);
+      navigation.navigate('Result', { 
+        score: score, 
+        total: quizzes.length 
+      });
     } else {
+      // 次の問題へ
       setCurrentIndex(currentIndex + 1);
       setSelectedAnswer(null);
       setIsAnswered(false);

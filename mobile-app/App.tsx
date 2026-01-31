@@ -4,6 +4,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import CategoryScreen from './src/screens/CategoryScreen';
 import QuizScreen from './src/screens/QuizScreen';
 import { QuizCategory } from './src/types/quiz';
+import ResultScreen from './src/screens/ResultScreen';
 
 // 型定義を更新
 export type RootStackParamList = {
@@ -44,6 +45,14 @@ export default function App() {
           name="Quiz"
           component={QuizScreen}
           options={{ title: 'Quiz' }}
+        />
+        <Stack.Screen
+          name="Result"
+          component={ResultScreen}
+          options={{ 
+            title: 'Quiz Results',
+            headerLeft: () => null, // 戻るボタンを非表示
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
