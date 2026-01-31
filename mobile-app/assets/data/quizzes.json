@@ -87,5 +87,213 @@
       "pop culture",
       "aesthetics"
     ]
+  },
+  {
+    "id": "cec84c5c-b408-46fd-bd2e-5b10352a0843",
+    "question": "When receiving a gift in Japan, what is the typical practice regarding opening it?",
+    "options": [
+      "Open it immediately in front of the giver to show appreciation.",
+      "Wait until you are alone to open it discreetly.",
+      "Express thanks and set it aside to open later.",
+      "Ask the giver if you can open it now."
+    ],
+    "correctAnswer": 2,
+    "explanation": "It is polite to express gratitude for the gift and then set it aside to open later, showing respect for the giver and the act of giving.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "etiquette",
+      "gift-giving"
+    ]
+  },
+  {
+    "id": "5a023721-7a07-43c9-806a-c524ba092868",
+    "question": "The 'salaryman' is a well-known stereotype in Japan. What does this term generally describe?",
+    "options": [
+      "A highly paid executive at a multinational corporation.",
+      "A male office worker who is dedicated to his company, often working long hours.",
+      "A freelance artist or musician.",
+      "A retired individual who volunteers in the community."
+    ],
+    "correctAnswer": 1,
+    "explanation": "The term 'salaryman' refers to a male office worker, typically in a corporate environment, whose life is often characterized by strong company loyalty and a demanding work schedule.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "social",
+      "work culture"
+    ]
+  },
+  {
+    "id": "31155269-ad03-40ba-85ac-6e8b427bf999",
+    "question": "What is the primary purpose of the 'omotenashi' concept in Japanese service culture?",
+    "options": [
+      "To provide the cheapest possible service to customers.",
+      "To offer prompt and efficient service, regardless of customer needs.",
+      "To anticipate and fulfill guests' needs with selfless hospitality and attention to detail.",
+      "To upsell as many additional services as possible."
+    ],
+    "correctAnswer": 2,
+    "explanation": "'Omotenashi' is a deep-rooted Japanese concept of wholehearted hospitality, emphasizing selfless service, anticipating needs, and providing an exceptional experience without expectation of reward.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "service",
+      "hospitality"
+    ]
+  },
+  {
+    "id": "49b6b26c-dca3-4abd-8ce2-d73a20bfb1d9",
+    "question": "What is the most famous Japanese dish, often featuring raw fish or vegetables served over vinegared rice?",
+    "options": [
+      "Ramen",
+      "Tempura",
+      "Sushi",
+      "Udon"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Sushi is a traditional Japanese dish of prepared vinegared rice, usually with some sugar and salt, accompanied by a variety of ingredients, such as seafood, vegetables, and occasionally tropical fruits.",
+    "difficulty": "easy",
+    "category": "food",
+    "tags": [
+      "sushi",
+      "staple",
+      "raw fish"
+    ]
+  },
+  {
+    "id": "5df2f39d-c302-4d37-aa01-40c8d3d02f0e",
+    "question": "Which savory Japanese noodle soup is known for its rich broth and often topped with ingredients like chashu pork, nori, and green onions?",
+    "options": [
+      "Soba",
+      "Udon",
+      "Ramen",
+      "Yakitori"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Ramen is a very popular noodle soup dish in Japan, with countless regional variations.",
+    "difficulty": "easy",
+    "category": "food",
+    "tags": [
+      "ramen",
+      "noodles",
+      "soup"
+    ]
+  },
+  {
+    "id": "e0cfb1b3-b31b-44e6-a17c-601c0981ac7e",
+    "question": "What is a common Japanese savory pancake dish that can include various ingredients like meat, seafood, and vegetables?",
+    "options": [
+      "Udon",
+      "Soba",
+      "Okonomiyaki",
+      "Donburi"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Okonomiyaki is a Japanese savory pancake dish traditionally made with flour and egg, and containing a variety of ingredients. The name is derived from the word 'okonomi', meaning 'how you like' or 'what you like', and 'yaki', meaning 'grilled' or 'cooked'.",
+    "difficulty": "easy",
+    "category": "food",
+    "tags": [
+      "okonomiyaki",
+      "pancake",
+      "savory"
+    ]
+  },
+  {
+    "id": "38fe7ddd-c7c3-4f8f-a94e-7dc4ba6d2371",
+    "question": "What are skewers of grilled meat, often chicken, called in Japan?",
+    "options": [
+      "Sushi",
+      "Sashimi",
+      "Tempura",
+      "Yakitori"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Yakitori literally means 'grilled chicken' and refers to a type of Japanese skewered chicken.",
+    "difficulty": "easy",
+    "category": "food",
+    "tags": [
+      "yakitori",
+      "grilled",
+      "chicken",
+      "skewers"
+    ]
+  },
+  {
+    "id": "558b713a-5a60-4cb0-8e5a-929b397f047b",
+    "question": "What is the term for a Japanese rice bowl dish, typically topped with various ingredients like meat, fish, or vegetables simmered in a sauce?",
+    "options": [
+      "Ramen",
+      "Udon",
+      "Donburi",
+      "Soba"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Donburi is a Japanese 'rice bowl dish'. It consists of a bowl of steamed white rice with various toppings simmered together and served over the rice.",
+    "difficulty": "easy",
+    "category": "food",
+    "tags": [
+      "donburi",
+      "rice bowl",
+      "staple"
+    ]
+  },
+  {
+    "id": "e2304b8a-56e9-45ad-855b-1545e65de26a",
+    "question": "What is the name for thinly sliced raw fish, often served as an appetizer or with rice?",
+    "options": [
+      "Sushi",
+      "Sashimi",
+      "Tempura",
+      "Yakitori"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Sashimi is a Japanese delicacy consisting of fresh raw fish or meat that is thinly sliced and often eaten with soy sauce.",
+    "difficulty": "easy",
+    "category": "food",
+    "tags": [
+      "sashimi",
+      "raw fish",
+      "appetizer"
+    ]
+  },
+  {
+    "id": "6a25e9c1-d86d-4140-a7a3-69a2593733d6",
+    "question": "Which type of Japanese noodle is made from buckwheat flour and is often served cold with a dipping sauce or hot in a soup?",
+    "options": [
+      "Udon",
+      "Ramen",
+      "Soba",
+      "Shirataki"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Soba noodles are made from buckwheat flour and are a staple in Japanese cuisine, enjoyed in various hot and cold dishes.",
+    "difficulty": "easy",
+    "category": "food",
+    "tags": [
+      "soba",
+      "noodles",
+      "buckwheat"
+    ]
+  },
+  {
+    "id": "02a426cf-aeb1-4b00-ba53-a4826a1fd2f5",
+    "question": "What is a popular Japanese snack made of sticky rice, often wrapped in seaweed and filled with various ingredients like tuna or pickled plum?",
+    "options": [
+      "Takoyaki",
+      "Okonomiyaki",
+      "Onigiri",
+      "Dorayaki"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Onigiri (also known as omusubi) are Japanese rice balls, often shaped into triangles or ovals, and wrapped in nori (seaweed). They are a convenient and popular snack.",
+    "difficulty": "easy",
+    "category": "food",
+    "tags": [
+      "onigiri",
+      "rice ball",
+      "snack",
+      "seaweed"
+    ]
   }
 ]
