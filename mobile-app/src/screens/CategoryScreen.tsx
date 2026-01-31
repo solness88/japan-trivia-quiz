@@ -64,8 +64,8 @@ export default function CategoryScreen({ navigation }: CategoryScreenProps) {
       return;
     }
     
-    // TODO: クイズ画面へ遷移
-    alert(`Starting ${categoryInfo[category].label} quiz with ${quizCount} questions!`);
+    // クイズ画面へ遷移
+    navigation.navigate('Quiz', { category });
   };
 
   return (

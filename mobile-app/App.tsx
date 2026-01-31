@@ -2,12 +2,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import CategoryScreen from './src/screens/CategoryScreen';
+import QuizScreen from './src/screens/QuizScreen';
+import { QuizCategory } from './src/types/quiz';
 
-// ナビゲーションの型定義を拡張
+// 型定義を更新
 export type RootStackParamList = {
   Home: undefined;
   Category: undefined;
-  Quiz: { category: string };
+  Quiz: { category: QuizCategory };
   Result: { score: number; total: number };
 };
 
@@ -37,6 +39,11 @@ export default function App() {
           name="Category"
           component={CategoryScreen}
           options={{ title: 'Select Category' }}
+        />
+        <Stack.Screen
+          name="Quiz"
+          component={QuizScreen}
+          options={{ title: 'Quiz' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
