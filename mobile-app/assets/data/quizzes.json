@@ -295,5 +295,620 @@
       "snack",
       "seaweed"
     ]
+  },
+  {
+    "id": "bf86c73f-bff1-4b8e-aab5-841df6c201ee",
+    "question": "What is the most common way to greet someone in Japan, similar to saying 'Hello'?",
+    "options": [
+      "Arigato",
+      "Sumimasen",
+      "Konnichiwa",
+      "Sayonara"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Konnichiwa is the standard daytime greeting in Japan.",
+    "difficulty": "easy",
+    "category": "language",
+    "tags": [
+      "greetings",
+      "basic phrases"
+    ]
+  },
+  {
+    "id": "f098d338-5b53-489d-8c31-e26fc2ec1134",
+    "question": "If you want to say 'Thank you' in Japanese, which phrase would you use?",
+    "options": [
+      "Gomen nasai",
+      "Arigato",
+      "Onegaishimasu",
+      "Moshi moshi"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Arigato is the common way to express gratitude in Japanese.",
+    "difficulty": "easy",
+    "category": "language",
+    "tags": [
+      "gratitude",
+      "basic phrases"
+    ]
+  },
+  {
+    "id": "d8fb4fa4-4db8-4e5d-a187-6db531adb66c",
+    "question": "What does 'Sumimasen' often mean in Japan? (It has a few uses!)",
+    "options": [
+      "Excuse me / Sorry",
+      "Goodbye",
+      "Yes, please",
+      "No, thank you"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Sumimasen is a versatile phrase used to get attention, apologize, or express thanks.",
+    "difficulty": "easy",
+    "category": "language",
+    "tags": [
+      "apology",
+      "politeness",
+      "basic phrases"
+    ]
+  },
+  {
+    "id": "2640985e-3fc8-474d-ab12-2c3c15564a76",
+    "question": "When you want to say 'Goodbye' in Japanese, which word is most commonly used?",
+    "options": [
+      "Ohayo gozaimasu",
+      "Konnichiwa",
+      "Sayonara",
+      "Arigato"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Sayonara is the typical way to say goodbye in Japanese.",
+    "difficulty": "easy",
+    "category": "language",
+    "tags": [
+      "farewells",
+      "basic phrases"
+    ]
+  },
+  {
+    "id": "7ff55683-95e9-418f-b38e-57b4983381b1",
+    "question": "What is the Japanese word for 'Yes'?",
+    "options": [
+      "Hai",
+      "Iie",
+      "Moshi moshi",
+      "Onegaishimasu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Hai means 'Yes' in Japanese.",
+    "difficulty": "easy",
+    "category": "language",
+    "tags": [
+      "yes/no",
+      "basic phrases"
+    ]
+  },
+  {
+    "id": "284b34c7-8536-4751-9269-7c51f3928def",
+    "question": "What is the Japanese word for 'No'?",
+    "options": [
+      "Hai",
+      "Arigato",
+      "Iie",
+      "Sumimasen"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Iie means 'No' in Japanese.",
+    "difficulty": "easy",
+    "category": "language",
+    "tags": [
+      "yes/no",
+      "basic phrases"
+    ]
+  },
+  {
+    "id": "c850299f-84cd-41f2-826f-e1968d56f8c8",
+    "question": "When ordering food or asking for something, what polite phrase can you use, similar to 'Please'?",
+    "options": [
+      "Moshi moshi",
+      "Sumimasen",
+      "Onegaishimasu",
+      "Gomen nasai"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Onegaishimasu is a polite way to ask for something or make a request.",
+    "difficulty": "easy",
+    "category": "language",
+    "tags": [
+      "politeness",
+      "ordering",
+      "basic phrases"
+    ]
+  },
+  {
+    "id": "d9ce61f4-f5c6-4ced-afbe-c036e0272122",
+    "question": "What is the Japanese word for 'Excuse me' when you need to get someone's attention?",
+    "options": [
+      "Sayonara",
+      "Arigato",
+      "Konnichiwa",
+      "Sumimasen"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Sumimasen is used to politely get attention, like saying 'Excuse me'.",
+    "difficulty": "easy",
+    "category": "language",
+    "tags": [
+      "politeness",
+      "getting attention",
+      "basic phrases"
+    ]
+  },
+  {
+    "id": "832d4061-b30a-4e2a-9022-2a66643e479e",
+    "question": "What is a polite way to say 'Good morning' in Japanese?",
+    "options": [
+      "Konnichiwa",
+      "Sayonara",
+      "Ohayo gozaimasu",
+      "Arigato gozaimasu"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Ohayo gozaimasu is the standard greeting for 'Good morning'.",
+    "difficulty": "easy",
+    "category": "language",
+    "tags": [
+      "greetings",
+      "morning",
+      "basic phrases"
+    ]
+  },
+  {
+    "id": "badd84dc-706b-4a8a-904b-15f8fade035c",
+    "question": "If someone speaks to you on the phone in Japan, what is a common way to answer?",
+    "options": [
+      "Arigato",
+      "Sumimasen",
+      "Sayonara",
+      "Moshi moshi"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Moshi moshi is the traditional way to answer the phone in Japanese.",
+    "difficulty": "easy",
+    "category": "language",
+    "tags": [
+      "phone",
+      "basic phrases"
+    ]
+  },
+  {
+    "id": "71971d1e-9d1c-486e-8f51-8f82e0afefe9",
+    "question": "What is the traditional Japanese garment often worn for special occasions like weddings and tea ceremonies?",
+    "options": [
+      "Yukata",
+      "Kimono",
+      "Samurai armor",
+      "Happi coat"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Kimono is a formal traditional garment in Japan, rich in history and symbolism.",
+    "difficulty": "easy",
+    "category": "tradition",
+    "tags": [
+      "clothing",
+      "formal wear"
+    ]
+  },
+  {
+    "id": "0845aec0-9e5c-42f9-80cd-e780d157c8a5",
+    "question": "In Japanese tea ceremony, what is the powdered green tea called?",
+    "options": [
+      "Sencha",
+      "Gyokuro",
+      "Matcha",
+      "Hojicha"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Matcha is the finely ground powder of specially grown and processed green tea leaves, central to the tea ceremony.",
+    "difficulty": "easy",
+    "category": "tradition",
+    "tags": [
+      "tea",
+      "ceremony",
+      "food"
+    ]
+  },
+  {
+    "id": "8766da97-b21a-41e6-a036-b9eaf66e6424",
+    "question": "What is the Japanese art of paper folding called?",
+    "options": [
+      "Ikebana",
+      "Origami",
+      "Calligraphy",
+      "Bonsai"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Origami is the traditional art of folding paper to create various decorative shapes and figures.",
+    "difficulty": "easy",
+    "category": "tradition",
+    "tags": [
+      "art",
+      "crafts"
+    ]
+  },
+  {
+    "id": "601320ad-d1e9-4e63-9e0a-5d908a4fc73c",
+    "question": "What is the traditional Japanese greeting that involves bowing?",
+    "options": [
+      "Hai",
+      "Konnichiwa",
+      "Ozyugai",
+      "Ojigi"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Ojigi is the act of bowing, a fundamental part of Japanese etiquette and showing respect.",
+    "difficulty": "easy",
+    "category": "tradition",
+    "tags": [
+      "etiquette",
+      "greeting"
+    ]
+  },
+  {
+    "id": "9d05859b-3f86-4bc5-876b-24548d444a04",
+    "question": "What are the traditional Japanese inns called, often featuring tatami mats and futons?",
+    "options": [
+      "Capsule hotel",
+      "Ryokan",
+      "Business hotel",
+      "Hostel"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A Ryokan offers a traditional Japanese lodging experience, providing a glimpse into local hospitality and customs.",
+    "difficulty": "easy",
+    "category": "tradition",
+    "tags": [
+      "accommodation",
+      "lodging"
+    ]
+  },
+  {
+    "id": "1a5fc8d1-fefb-466f-a4ad-fb3e5fd840db",
+    "question": "What is the name for the traditional Japanese wooden sandals worn with kimonos?",
+    "options": [
+      "Zori",
+      "Geta",
+      "Tabi",
+      "Surippa"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Geta are traditional wooden clogs, often worn with informal kimonos or yukatas.",
+    "difficulty": "easy",
+    "category": "tradition",
+    "tags": [
+      "clothing",
+      "footwear"
+    ]
+  },
+  {
+    "id": "32ea4285-8da1-48a8-a426-815970b1104f",
+    "question": "What is the name of the traditional Japanese theater known for its elaborate costumes and makeup?",
+    "options": [
+      "Noh",
+      "Bunraku",
+      "Kabuki",
+      "Kyogen"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Kabuki is a highly stylized traditional Japanese drama known for its dramatic performances, elaborate costumes, and makeup.",
+    "difficulty": "easy",
+    "category": "tradition",
+    "tags": [
+      "theater",
+      "performance"
+    ]
+  },
+  {
+    "id": "7b860808-2947-4d0f-aaf2-1a6a506996eb",
+    "question": "What is the traditional Japanese bathing experience, often in natural hot springs, called?",
+    "options": [
+      "Onsen",
+      "Sento",
+      "Ofuro",
+      "Yudofu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Onsen are hot springs found throughout Japan, offering a relaxing and traditional bathing experience.",
+    "difficulty": "easy",
+    "category": "tradition",
+    "tags": [
+      "leisure",
+      "wellness",
+      "nature"
+    ]
+  },
+  {
+    "id": "d054a732-44e7-49d6-9e12-d4996684f6e2",
+    "question": "Which iconic character, known for their red bow and friendship with Monkey D. Luffy, is a key figure in the global phenomenon 'One Piece'?",
+    "options": [
+      "Naruto Uzumaki",
+      "Son Goku",
+      "Roronoa Zoro",
+      "Portgas D. Ace"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Portgas D. Ace is a central character in 'One Piece' and is known for his distinctive red bow and his close relationship with Luffy.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "anime",
+      "manga",
+      "One Piece"
+    ]
+  },
+  {
+    "id": "e6ffa4e1-fdf1-4b0d-b948-5b9126968647",
+    "question": "What is the name of the world's best-selling manga series, featuring a pirate crew searching for the ultimate treasure?",
+    "options": [
+      "Dragon Ball",
+      "Naruto",
+      "One Piece",
+      "Attack on Titan"
+    ],
+    "correctAnswer": 2,
+    "explanation": "'One Piece' is the best-selling manga series of all time, created by Eiichiro Oda.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "anime",
+      "manga",
+      "best-selling"
+    ]
+  },
+  {
+    "id": "d66e53fd-eaab-4be8-8e6d-1999708edd8a",
+    "question": "Which Japanese video game company is famous for creating the 'Super Mario' and 'The Legend of Zelda' franchises?",
+    "options": [
+      "Sony",
+      "Microsoft",
+      "Nintendo",
+      "Sega"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Nintendo is the Japanese company responsible for beloved franchises like 'Super Mario' and 'The Legend of Zelda'.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "video games",
+      "Nintendo",
+      "franchises"
+    ]
+  },
+  {
+    "id": "aac3f982-b4e9-4bf5-b025-a779ed32b664",
+    "question": "The colorful, often sweet-smelling, and elaborately decorated pastries known as 'kawaii' desserts are a popular trend in Japan. What does 'kawaii' mean in English?",
+    "options": [
+      "Delicious",
+      "Modern",
+      "Cute",
+      "Spicy"
+    ],
+    "correctAnswer": 2,
+    "explanation": "'Kawaii' is a Japanese word that translates to 'cute' and is a significant aspect of Japanese pop culture, often seen in fashion, characters, and food.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "kawaii",
+      "food",
+      "culture"
+    ]
+  },
+  {
+    "id": "b5bdabef-9efc-4e9e-86de-dbc1c7b71c40",
+    "question": "What genre of Japanese animation, often featuring vibrant visuals and diverse storytelling, has gained immense global popularity?",
+    "options": [
+      "J-Drama",
+      "J-Pop",
+      "Anime",
+      "Kabuki"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Anime is the term for Japanese animation, known for its distinct artistic style and wide range of genres, which has a massive international following.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "anime",
+      "animation",
+      "global"
+    ]
+  },
+  {
+    "id": "8f5c5cf5-48be-4b10-b828-e2846258c528",
+    "question": "What is the primary purpose of a 'maid cafe' in Japan, a popular theme cafe experience?",
+    "options": [
+      "To serve traditional Japanese tea",
+      "To offer a unique dining experience with waitresses dressed as maids",
+      "To sell anime merchandise",
+      "To provide live music performances"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Maid cafes are known for their themed service where waitresses dressed as maids interact with customers in a charming and playful manner.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "themed cafes",
+      "culture",
+      "Tokyo"
+    ]
+  },
+  {
+    "id": "8203eed8-f65d-407c-85c0-5641a1b598e7",
+    "question": "What is the name of the iconic, yellow, electric-type Pokémon that is often considered the mascot of the franchise?",
+    "options": [
+      "Pikachu",
+      "Charmander",
+      "Squirtle",
+      "Bulbasaur"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Pikachu is the most recognizable Pokémon and serves as the unofficial mascot for the entire Pokémon franchise.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "Pokémon",
+      "mascot",
+      "video games"
+    ]
+  },
+  {
+    "id": "22a97e33-ef37-41ec-80dc-ccb7b3cacadf",
+    "question": "Which city is famous for its vibrant youth culture, fashion districts like Harajuku and Shibuya, and a plethora of themed cafes?",
+    "options": [
+      "Osaka",
+      "Kyoto",
+      "Sapporo",
+      "Tokyo"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Tokyo, particularly areas like Harajuku and Shibuya, is renowned for its cutting-edge fashion, youth culture, and unique themed cafes.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "Tokyo",
+      "fashion",
+      "culture"
+    ]
+  },
+  {
+    "id": "68b1bb66-783b-477d-9d1d-c0250e35b4a3",
+    "question": "What is the popular Japanese musical genre characterized by upbeat tempos, catchy melodies, and often featuring young artists known as 'idols'?",
+    "options": [
+      "Enka",
+      "J-Rock",
+      "J-Pop",
+      "Noise music"
+    ],
+    "correctAnswer": 2,
+    "explanation": "J-Pop (Japanese Pop) is a broad category that includes idol music, characterized by its accessible and energetic sound.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "J-Pop",
+      "music",
+      "idols"
+    ]
+  },
+  {
+    "id": "960a2dd2-11fb-47ae-b97c-f53453888adf",
+    "question": "The 'Ghibli Museum' is a popular destination for fans of Studio Ghibli. In which city is it located?",
+    "options": [
+      "Osaka",
+      "Kyoto",
+      "Tokyo",
+      "Hiroshima"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Ghibli Museum, dedicated to the works of Studio Ghibli, is located in Mitaka, a city within the greater Tokyo metropolitan area.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "Studio Ghibli",
+      "museum",
+      "Tokyo"
+    ]
+  },
+  {
+    "id": "a81bdb3d-4759-46ff-8184-c220fe3fe184",
+    "question": "What are 'Gachapon' machines commonly found in Japan, offering small toys and trinkets?",
+    "options": [
+      "Vending machines dispensing capsule toys",
+      "Automated ramen dispensers",
+      "Digital advertising screens",
+      "Interactive art installations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Gachapon are coin-operated vending machines that dispense toys and collectibles inside plastic capsules.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "capsule toys",
+      "vending machines",
+      "culture"
+    ]
+  },
+  {
+    "id": "505961a7-52a7-42ec-bc6c-f7b87bcb6126",
+    "question": "Which popular video game franchise, known for its survival horror gameplay, features iconic characters like Leon S. Kennedy and Jill Valentine?",
+    "options": [
+      "Final Fantasy",
+      "Street Fighter",
+      "Resident Evil",
+      "Metal Gear Solid"
+    ],
+    "correctAnswer": 2,
+    "explanation": "'Resident Evil' (known as 'Biohazard' in Japan) is a long-running survival horror video game series developed by Capcom.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "video games",
+      "survival horror",
+      "Capcom"
+    ]
+  },
+  {
+    "id": "2874ada3-3488-4d0b-9774-36a4a9282552",
+    "question": "Which anime series, set in a world where humans fight giant humanoid creatures called Titans, is known for its intense action and dramatic storyline?",
+    "options": [
+      "Sword Art Online",
+      "Attack on Titan",
+      "Demon Slayer: Kimetsu no Yaiba",
+      "Tokyo Ghoul"
+    ],
+    "correctAnswer": 1,
+    "explanation": "'Attack on Titan' features a gripping narrative where humanity battles monstrous Titans, known for its thrilling combat and complex plot.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "anime",
+      "manga",
+      "action"
+    ]
+  },
+  {
+    "id": "53725cb3-622d-4c3e-9dca-9783a4c06733",
+    "question": "The popular Japanese music duo 'YOASOBI' achieved global recognition with their song 'Idol', which is the opening theme for which popular anime series?",
+    "options": [
+      "Jujutsu Kaisen",
+      "Spy x Family",
+      "Oshi no Ko",
+      "Chainsaw Man"
+    ],
+    "correctAnswer": 2,
+    "explanation": "'Idol' by YOASOBI is the highly successful opening theme song for the anime series 'Oshi no Ko'.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "YOASOBI",
+      "anime",
+      "music"
+    ]
+  },
+  {
+    "id": "23adf1c1-a763-43c1-8a30-34be90285677",
+    "question": "Which genre of Japanese fashion, popular in districts like Harajuku, emphasizes bright colors, playful accessories, and a generally cute aesthetic?",
+    "options": [
+      "Lolita Fashion",
+      "Decora Fashion",
+      "Visual Kei",
+      "Gyaru Fashion"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Decora fashion is known for its maximalist style, layering numerous colorful accessories, stickers, and bright clothing, embodying a 'cute' aesthetic.",
+    "difficulty": "medium",
+    "category": "pop-culture",
+    "tags": [
+      "fashion",
+      "Harajuku",
+      "kawaii"
+    ]
   }
 ]

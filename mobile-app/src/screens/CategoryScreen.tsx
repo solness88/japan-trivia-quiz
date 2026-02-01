@@ -1,182 +1,127 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../App';
-import { getAllCategories, getQuizzesByCategory } from '../data/quizData';
-import { QuizCategory } from '../types/quiz';
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { Colors } from '../constants/colors';
+import { Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants/styles';
 
-type CategoryScreenProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'Category'>;
-};
+const categories = [
+  { id: 'culture', name: '文化', emoji: '🎎', color: Colors.category.culture },
+  { id: 'food', name: '食べ物', emoji: '🍣', color: Colors.category.food },
+  { id: 'history', name: '歴史', emoji: '🏯', color: Colors.category.history },
+  { id: 'geography', name: '地理', emoji: '🗾', color: Colors.category.geography },
+  { id: 'language', name: '言語', emoji: '🈷️', color: Colors.category.language },
+  { id: 'tradition', name: '伝統', emoji: '⛩️', color: Colors.category.tradition },
+];
 
-// カテゴリの表示情報
-const categoryInfo: Record<QuizCategory, { emoji: string; label: string; description: string }> = {
-  culture: {
-    emoji: '🎎',
-    label: 'Culture',
-    description: 'Traditions, festivals, and customs'
-  },
-  food: {
-    emoji: '🍣',
-    label: 'Food',
-    description: 'Cuisine, ingredients, and dining'
-  },
-  history: {
-    emoji: '🏯',
-    label: 'History',
-    description: 'Historical events and periods'
-  },
-  geography: {
-    emoji: '🗾',
-    label: 'Geography',
-    description: 'Places, landmarks, and regions'
-  },
-  language: {
-    emoji: '🈴',
-    label: 'Language',
-    description: 'Japanese language and writing'
-  },
-  tradition: {
-    emoji: '⛩️',
-    label: 'Tradition',
-    description: 'Traditional arts and practices'
-  },
-  'pop-culture': {
-    emoji: '🎌',
-    label: 'Pop Culture',
-    description: 'Anime, manga, and modern culture'
-  },
-  etiquette: {
-    emoji: '🙏',
-    label: 'Etiquette',
-    description: 'Manners and social customs'
-  },
-};
-
-export default function CategoryScreen({ navigation }: CategoryScreenProps) {
-  const categories = getAllCategories();
-
-  const handleCategoryPress = (category: QuizCategory) => {
-    const quizCount = getQuizzesByCategory(category).length;
-    
-    if (quizCount === 0) {
-      alert('No quizzes available in this category yet!');
-      return;
-    }
-    
-    // クイズ画面へ遷移
-    navigation.navigate('Quiz', { category });
-  };
-
+export default function CategorySelectionScreen({ navigation }: any) {
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.headerText}>Choose a category to start your quiz</Text>
-        
-        <View style={styles.categoryGrid}>
-          {categories.map((category) => {
-            const info = categoryInfo[category];
-            const quizCount = getQuizzesByCategory(category).length;
-            
-            return (
-              <TouchableOpacity
-                key={category}
-                style={styles.categoryCard}
-                onPress={() => handleCategoryPress(category)}
-                activeOpacity={0.7}
-              >
-                <Text style={styles.categoryEmoji}>{info.emoji}</Text>
-                <Text style={styles.categoryLabel}>{info.label}</Text>
-                <Text style={styles.categoryDescription}>{info.description}</Text>
-                <View style={styles.quizCount}>
-                  <Text style={styles.quizCountText}>{quizCount} questions</Text>
-                </View>
-              </TouchableOpacity>
-            );
-          })}
-        </View>
-        
-        {categories.length === 0 && (
-          <View style={styles.emptyState}>
-            <Text style={styles.emptyText}>No categories available</Text>
-            <Text style={styles.emptySubtext}>
-              Please add some quizzes from the CMS
-            </Text>
-          </View>
-        )}
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>カテゴリを選択</Text>
+        <Text style={styles.subtitle}>興味のある分野を選んでください</Text>
       </View>
-    </ScrollView>
+
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
+        <View style={styles.grid}>
+          {categories.map((category) => (
+            <TouchableOpacity
+              key={category.id}
+              style={[styles.categoryCard, { borderLeftColor: category.color, borderLeftWidth: 4 }]}
+              onPress={() => navigation.navigate('QuizCount', { category: category.id })}
+            >
+              <Text style={styles.emoji}>{category.emoji}</Text>
+              <Text style={styles.categoryName}>{category.name}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        {/* ランダムオプション */}
+        <TouchableOpacity
+          style={styles.randomButton}
+          onPress={() => navigation.navigate('QuizCount', { category: 'random' })}
+        >
+          <Text style={styles.randomEmoji}>🎲</Text>
+          <Text style={styles.randomButtonText}>ランダム</Text>
+          <Text style={styles.randomButtonSubtext}>すべてのカテゴリから出題</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f3f4f6',
+    backgroundColor: Colors.background.main,
   },
-  content: {
-    padding: 20,
+  header: {
+    paddingHorizontal: Spacing.lg,
+    paddingVertical: Spacing.lg,
+    backgroundColor: Colors.background.card,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.border,
   },
-  headerText: {
-    fontSize: 18,
-    color: '#4b5563',
-    marginBottom: 20,
-    textAlign: 'center',
+  title: {
+    fontSize: FontSize.xxl,
+    fontWeight: FontWeight.bold,
+    color: Colors.text.primary,
+    marginBottom: Spacing.xs,
   },
-  categoryGrid: {
-    gap: 16,
+  subtitle: {
+    fontSize: FontSize.sm,
+    color: Colors.text.secondary,
+    fontWeight: FontWeight.medium,
+  },
+  scrollView: {
+    flex: 1,
+  },
+  scrollContent: {
+    padding: Spacing.lg,
+  },
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: Spacing.md,
+    marginBottom: Spacing.lg,
   },
   categoryCard: {
-    backgroundColor: '#fff',
-    padding: 20,
-    borderRadius: 12,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
-    borderLeftWidth: 4,
-    borderLeftColor: '#2563eb',
-  },
-  categoryEmoji: {
-    fontSize: 40,
-    marginBottom: 8,
-  },
-  categoryLabel: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#1f2937',
-    marginBottom: 4,
-  },
-  categoryDescription: {
-    fontSize: 14,
-    color: '#6b7280',
-    marginBottom: 12,
-  },
-  quizCount: {
-    backgroundColor: '#dbeafe',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 12,
-    alignSelf: 'flex-start',
-  },
-  quizCountText: {
-    fontSize: 12,
-    color: '#2563eb',
-    fontWeight: '600',
-  },
-  emptyState: {
+    backgroundColor: Colors.background.card,
+    width: '47%',
+    aspectRatio: 1.2,
+    borderRadius: BorderRadius.md,
+    padding: Spacing.md,
     alignItems: 'center',
-    paddingVertical: 60,
+    justifyContent: 'center',
+    ...Shadow.sm,
   },
-  emptyText: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#9ca3af',
-    marginBottom: 8,
+  emoji: {
+    fontSize: 48,
+    marginBottom: Spacing.sm,
   },
-  emptySubtext: {
-    fontSize: 14,
-    color: '#9ca3af',
+  categoryName: {
+    fontSize: FontSize.md,
+    fontWeight: FontWeight.semibold,
+    color: Colors.text.primary,
+  },
+  randomButton: {
+    backgroundColor: Colors.accent.main,
+    borderRadius: BorderRadius.lg,
+    padding: Spacing.lg,
+    alignItems: 'center',
+    ...Shadow.md,
+  },
+  randomEmoji: {
+    fontSize: 40,
+    marginBottom: Spacing.sm,
+  },
+  randomButtonText: {
+    fontSize: FontSize.xl,
+    fontWeight: FontWeight.bold,
+    color: Colors.accent.contrast,
+    marginBottom: Spacing.xs,
+  },
+  randomButtonSubtext: {
+    fontSize: FontSize.sm,
+    color: Colors.accent.contrast,
+    opacity: 0.9,
   },
 });

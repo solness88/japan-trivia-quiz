@@ -1,146 +1,106 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../App';
-import { quizzes } from '../data/quizData';
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
+import { Colors } from '../constants/colors';
+import { Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants/styles';
 
-type HomeScreenProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'Home'>;
-};
-
-export default function HomeScreen({ navigation }: HomeScreenProps) {
+export default function HomeScreen({ navigation }: any) {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>🇯🇵 Japan Trivia Quiz</Text>
-        <Text style={styles.subtitle}>
-          Test your knowledge about Japan!
-        </Text>
-      </View>
-
-      <View style={styles.statsContainer}>
-        <View style={styles.statBox}>
-          <Text style={styles.statNumber}>{quizzes.length}</Text>
-          <Text style={styles.statLabel}>Total Questions</Text>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.content}>
+        {/* ヘッダー */}
+        <View style={styles.header}>
+          <Text style={styles.title}>日本トリビアクイズ</Text>
+          <Text style={styles.subtitle}>Japan Trivia Quiz</Text>
         </View>
-      </View>
 
-      <View style={styles.buttonContainer}>
-      <TouchableOpacity
-        style={styles.primaryButton}
-        onPress={() => navigation.navigate('Category')}
-      >
-        <Text style={styles.primaryButtonText}>Start Quiz</Text>
-      </TouchableOpacity>
+        {/* メインボタン */}
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.primaryButton}
+            onPress={() => navigation.navigate('Category')}
+          >
+            <Text style={styles.primaryButtonText}>クイズを始める</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.secondaryButton}
-          onPress={() => {
-            // TODO: ランダムクイズ機能
-            alert('Random quiz coming soon!');
-          }}
-        >
-          <Text style={styles.secondaryButtonText}>Random Quiz</Text>
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity
+            style={styles.secondaryButton}
+            onPress={() => navigation.navigate('About')}
+          >
+            <Text style={styles.secondaryButtonText}>このアプリについて</Text>
+          </TouchableOpacity>
+        </View>
 
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>
-          Perfect for learning about Japan during your flight! ✈️
-        </Text>
+        {/* フッター */}
+        <Text style={styles.footer}>日本の文化を楽しく学ぼう</Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f3f4f6',
-    padding: 20,
+    backgroundColor: Colors.background.main,
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: Spacing.lg,
   },
   header: {
     alignItems: 'center',
-    marginTop: 40,
-    marginBottom: 40,
+    marginBottom: Spacing.xxl,
   },
   title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#1f2937',
-    marginBottom: 8,
+    fontSize: FontSize.xxxl,
+    fontWeight: FontWeight.bold,
+    color: Colors.primary.main,
+    marginBottom: Spacing.sm,
+    textAlign: 'center',
   },
   subtitle: {
-    fontSize: 16,
-    color: '#6b7280',
-  },
-  statsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginBottom: 40,
-  },
-  statBox: {
-    backgroundColor: '#fff',
-    padding: 20,
-    borderRadius: 12,
-    alignItems: 'center',
-    minWidth: 120,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
-  },
-  statNumber: {
-    fontSize: 36,
-    fontWeight: 'bold',
-    color: '#2563eb',
-  },
-  statLabel: {
-    fontSize: 14,
-    color: '#6b7280',
-    marginTop: 4,
+    fontSize: FontSize.md,
+    fontWeight: FontWeight.medium,
+    color: Colors.text.secondary,
+    letterSpacing: 1,
   },
   buttonContainer: {
-    gap: 16,
+    width: '100%',
+    gap: Spacing.md,
   },
   primaryButton: {
-    backgroundColor: '#2563eb',
-    padding: 18,
-    borderRadius: 12,
+    backgroundColor: Colors.primary.main,
+    paddingVertical: Spacing.lg,
+    paddingHorizontal: Spacing.xl,
+    borderRadius: BorderRadius.lg,
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    ...Shadow.md,
   },
   primaryButtonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+    color: Colors.primary.contrast,
+    fontSize: FontSize.lg,
+    fontWeight: FontWeight.bold,
   },
   secondaryButton: {
-    backgroundColor: '#fff',
-    padding: 18,
-    borderRadius: 12,
+    backgroundColor: Colors.background.card,
+    paddingVertical: Spacing.lg,
+    paddingHorizontal: Spacing.xl,
+    borderRadius: BorderRadius.lg,
     alignItems: 'center',
     borderWidth: 2,
-    borderColor: '#2563eb',
+    borderColor: Colors.primary.main,
+    ...Shadow.sm,
   },
   secondaryButtonText: {
-    color: '#2563eb',
-    fontSize: 18,
-    fontWeight: 'bold',
+    color: Colors.primary.main,
+    fontSize: FontSize.lg,
+    fontWeight: FontWeight.semibold,
   },
   footer: {
-    marginTop: 'auto',
-    alignItems: 'center',
-    paddingVertical: 20,
-  },
-  footerText: {
-    fontSize: 14,
-    color: '#6b7280',
-    textAlign: 'center',
+    marginTop: Spacing.xxl,
+    fontSize: FontSize.sm,
+    color: Colors.text.secondary,
+    fontWeight: FontWeight.medium,
   },
 });

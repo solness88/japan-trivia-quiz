@@ -1,334 +1,321 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RouteProp } from '@react-navigation/native';
-import { RootStackParamList } from '../../App';
-import { getQuizzesByCategory } from '../data/quizData';
-import { Quiz } from '../types/quiz';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, ScrollView, ViewStyle, TextStyle } from 'react-native';
+import { Colors, Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants';
 
-type QuizScreenProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'Quiz'>;
-  route: RouteProp<RootStackParamList, 'Quiz'>;
-};
-
-export default function QuizScreen({ navigation, route }: QuizScreenProps) {
-  const { category } = route.params;
-  const [quizzes, setQuizzes] = useState<Quiz[]>([]);
+export default function QuizScreen({ route, navigation }: any) {
+  const { quizzes } = route.params || {};
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
 
-  useEffect(() => {
-    const categoryQuizzes = getQuizzesByCategory(category);
-    const shuffled = [...categoryQuizzes].sort(() => Math.random() - 0.5);
-    setQuizzes(shuffled.slice(0, Math.min(10, shuffled.length)));
-  }, [category]);
-
-  if (quizzes.length === 0) {
+  if (!quizzes || quizzes.length === 0) {
     return (
-      <View style={styles.container}>
-        <Text style={styles.loadingText}>Loading quiz...</Text>
-      </View>
+      <SafeAreaView style={styles.container}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: Spacing.lg }}>
+          <Text style={{ fontSize: FontSize.xl, color: Colors.text.primary, marginBottom: Spacing.md }}>
+            No quiz data found
+          </Text>
+          <TouchableOpacity 
+            onPress={() => navigation.navigate('Home')}
+            style={{ padding: Spacing.lg, backgroundColor: Colors.primary.main, borderRadius: BorderRadius.md }}
+          >
+            <Text style={{ color: Colors.primary.contrast, fontSize: FontSize.md }}>Back to Home</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
     );
   }
 
   const currentQuiz = quizzes[currentIndex];
-  const isLastQuestion = currentIndex === quizzes.length - 1;
+  const progress = ((currentIndex + 1) / quizzes.length) * 100;
 
-  const handleAnswerPress = (answerIndex: number) => {
+  const handleAnswer = (index: number) => {
     if (isAnswered) return;
 
-    setSelectedAnswer(answerIndex);
+    setSelectedAnswer(index);
     setIsAnswered(true);
 
-    if (answerIndex === currentQuiz.correctAnswer) {
+    if (index === currentQuiz.correctAnswer) {
       setScore(score + 1);
     }
   };
 
-  const handleNextQuestion = () => {
-    if (isLastQuestion) {
-      // 結果画面へ遷移
-      const finalScore = score + (selectedAnswer === currentQuiz.correctAnswer ? 1 : 0);
-      navigation.navigate('Result', { 
-        score: score, 
-        total: quizzes.length 
-      });
-    } else {
-      // 次の問題へ
+  const handleNext = () => {
+    if (currentIndex + 1 < quizzes.length) {
       setCurrentIndex(currentIndex + 1);
       setSelectedAnswer(null);
       setIsAnswered(false);
+    } else {
+      navigation.replace('Result', { score, total: quizzes.length });
     }
   };
 
-  const getAnswerStyle = (index: number) => {
-    if (!isAnswered) {
-      return styles.answerButton;
-    }
-  
-    // 選択した選択肢のみスタイルを変更
-    if (index === selectedAnswer) {
-      // 正解の場合
-      if (index === currentQuiz.correctAnswer) {
-        return [styles.answerButton, styles.correctAnswer];
-      }
-      // 不正解の場合
-      return [styles.answerButton, styles.wrongAnswer];
-    }
-  
-    // その他の選択肢は通常スタイル（グレーアウトしない）
-    return styles.answerButton;
-  };
-
-  const getAnswerIcon = (index: number) => {
-    if (!isAnswered) return null;
-  
-    // 選択した選択肢にのみアイコンを表示
-    if (index === selectedAnswer) {
-      if (index === currentQuiz.correctAnswer) {
-        return '✅'; // 正解
-      } else {
-        return '❌'; // 不正解
-      }
-    }
-  
-    return null;
-  };
+  const isCorrectAnswer = selectedAnswer === currentQuiz.correctAnswer;
 
   return (
-    <View style={styles.container}>
-      {/* プログレスバー */}
+    <SafeAreaView style={styles.container}>
+      {/* Progress Bar */}
       <View style={styles.progressContainer}>
-        <View style={styles.progressBar}>
-          <View
-            style={[
-              styles.progressFill,
-              { width: `${((currentIndex + 1) / quizzes.length) * 100}%` },
-            ]}
-          />
+        <View style={styles.progressBackground}>
+          <View style={[styles.progressBar, { width: `${progress}%` }]} />
         </View>
         <Text style={styles.progressText}>
           Question {currentIndex + 1} of {quizzes.length}
         </Text>
       </View>
 
-      <ScrollView style={styles.content} contentContainerStyle={styles.scrollContent}>
-        {/* 質問 */}
-        <View style={styles.questionContainer}>
+      <ScrollView 
+        style={styles.content} 
+        contentContainerStyle={styles.contentContainer}
+      >
+        {/* Question Card */}
+        <View style={styles.questionCard}>
+          <Text style={styles.questionNumber}>Question {currentIndex + 1}</Text>
           <Text style={styles.questionText}>{currentQuiz.question}</Text>
         </View>
 
-        {/* 選択肢 */}
-        <View style={styles.answersContainer}>
-          {currentQuiz.options.map((option, index) => (
-            <TouchableOpacity
-              key={index}
-              style={getAnswerStyle(index)}
-              onPress={() => handleAnswerPress(index)}
-              disabled={isAnswered}
-              activeOpacity={0.7}
-            >
-              {getAnswerIcon(index) && (
-                <Text style={styles.answerIcon}>{getAnswerIcon(index)}</Text>
-              )}
-              <Text style={styles.answerLabel}>{String.fromCharCode(65 + index)}</Text>
-              <Text style={styles.answerText}>{option}</Text>
-            </TouchableOpacity>
-          ))}
+        {/* Options */}
+        <View style={styles.optionsContainer}>
+          {currentQuiz.options.map((option: string, index: number) => {
+            const isCorrect = index === currentQuiz.correctAnswer;
+            const isSelected = index === selectedAnswer;
+
+            let buttonStyle: ViewStyle = styles.optionButton;
+            let textStyle: TextStyle = styles.optionText;
+
+            if (isAnswered && isSelected && isCorrect) {
+              buttonStyle = styles.optionButtonCorrect;
+            }
+            else if (isAnswered && isSelected && !isCorrect) {
+              buttonStyle = styles.optionButtonWrong;
+            }
+
+            return (
+              <TouchableOpacity
+                key={index}
+                style={buttonStyle}
+                onPress={() => handleAnswer(index)}
+                disabled={isAnswered}
+              >
+                {isAnswered && isSelected && isCorrect && (
+                  <Text style={styles.icon}>✓</Text>
+                )}
+                {isAnswered && isSelected && !isCorrect && (
+                  <Text style={styles.iconWrong}>✕</Text>
+                )}
+                
+                <Text style={textStyle}>
+                  {String.fromCharCode(65 + index)}. {option}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
         </View>
 
-
-        {/* フィードバックメッセージ */}
+        {/* Feedback Message */}
         {isAnswered && (
-          <View style={selectedAnswer === currentQuiz.correctAnswer ? styles.correctFeedback : styles.wrongFeedback}>
-            <Text style={styles.feedbackText}>
-              {selectedAnswer === currentQuiz.correctAnswer 
-                ? '🎉 Correct! Well done!' 
-                : `❌ Incorrect. The correct answer is ${String.fromCharCode(65 + currentQuiz.correctAnswer)}.`}
+          <View style={styles.feedbackContainer}>
+            <Text style={[styles.feedbackText, isCorrectAnswer ? styles.feedbackCorrect : styles.feedbackWrong]}>
+              {isCorrectAnswer 
+                ? '✓ Correct!' 
+                : `✕ Incorrect. The correct answer is ${String.fromCharCode(65 + currentQuiz.correctAnswer)}. ${currentQuiz.options[currentQuiz.correctAnswer]}`
+              }
             </Text>
           </View>
         )}
 
-        {/* 解説（回答後に表示） */}
+        {/* Explanation */}
         {isAnswered && currentQuiz.explanation && (
-          <View style={styles.explanationContainer}>
+          <View style={styles.explanationCard}>
             <Text style={styles.explanationTitle}>💡 Explanation</Text>
             <Text style={styles.explanationText}>{currentQuiz.explanation}</Text>
           </View>
         )}
 
-        {/* Next Question ボタン（解説の下に配置） */}
-        {isAnswered && (
-          <TouchableOpacity 
-            style={styles.nextButton} 
-            onPress={handleNextQuestion}
-            activeOpacity={0.8}
-          >
+        {/* 下部ボタンのスペース確保 */}
+        <View style={{ height: 80 }} />
+      </ScrollView>
+
+      {/* Fixed Next Button at Bottom */}
+        <View style={styles.fixedButtonContainer}>
+          <TouchableOpacity style={[styles.nextButton, !isAnswered && { opacity: 0.5 }]} onPress={handleNext}
+  disabled={!isAnswered}>
             <Text style={styles.nextButtonText}>
-              {isLastQuestion ? 'Finish Quiz' : 'Next Question →'}
+              {currentIndex + 1 < quizzes.length ? 'Next Question →' : 'See Results 🎯'}
             </Text>
           </TouchableOpacity>
-        )}
-      </ScrollView>
-    </View>
+        </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f3f4f6',
-  },
-  loadingText: {
-    flex: 1,
-    textAlign: 'center',
-    marginTop: 100,
-    fontSize: 18,
-    color: '#6b7280',
+    backgroundColor: Colors.background.main,
   },
   progressContainer: {
-    backgroundColor: '#fff',
-    padding: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    backgroundColor: Colors.background.card,
+    paddingHorizontal: Spacing.lg,
+    paddingVertical: Spacing.md,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.border,
+  },
+  progressBackground: {
+    height: 8,
+    backgroundColor: Colors.background.dark,
+    borderRadius: BorderRadius.round,
+    overflow: 'hidden',
+    marginBottom: Spacing.sm,
   },
   progressBar: {
-    height: 8,
-    backgroundColor: '#e5e7eb',
-    borderRadius: 4,
-    overflow: 'hidden',
-    marginBottom: 8,
-  },
-  progressFill: {
     height: '100%',
-    backgroundColor: '#2563eb',
+    backgroundColor: Colors.primary.main,
+    borderRadius: BorderRadius.round,
   },
   progressText: {
-    fontSize: 14,
-    color: '#6b7280',
+    fontSize: FontSize.sm,
+    fontWeight: FontWeight.semibold,
+    color: Colors.text.secondary,
     textAlign: 'center',
   },
   content: {
     flex: 1,
   },
-  scrollContent: {
-    padding: 20,
-    paddingBottom: 40, // 下に余白を追加
+  contentContainer: {
+    padding: Spacing.lg,
   },
-  questionContainer: {
-    backgroundColor: '#fff',
-    padding: 24,
-    borderRadius: 12,
-    marginBottom: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+  questionCard: {
+    backgroundColor: Colors.background.card,
+    borderRadius: BorderRadius.lg,
+    padding: Spacing.lg,
+    marginBottom: Spacing.lg,
+    borderLeftWidth: 4,
+    borderLeftColor: Colors.primary.main,
+    ...Shadow.md,
+    opacity: 1,
+  },
+  questionNumber: {
+    fontSize: FontSize.sm,
+    fontWeight: FontWeight.semibold,
+    color: Colors.primary.main,
+    marginBottom: Spacing.sm,
   },
   questionText: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: '#1f2937',
-    lineHeight: 28,
+    fontSize: FontSize.lg,
+    fontWeight: FontWeight.semibold,
+    color: Colors.text.primary,
+    lineHeight: FontSize.lg * 1.5,
   },
-correctFeedback: {
-  backgroundColor: 'transparent', // 背景なし
-  padding: 16,
-  marginBottom: 16,
-  alignItems: 'center',
-},
-wrongFeedback: {
-  backgroundColor: 'transparent', // 背景なし
-  padding: 16,
-  marginBottom: 16,
-  alignItems: 'center',
-},
-feedbackText: {
-  fontSize: 16,
-  fontWeight: 'bold',
-  color: '#1f2937',
-  textAlign: 'center',
-},
-  answersContainer: {
-    gap: 12,
-    marginBottom: 20,
+  optionsContainer: {
+    gap: Spacing.md,
+    marginBottom: Spacing.lg,
   },
-  answerButton: {
-    backgroundColor: '#fff',
-    padding: 16,
-    borderRadius: 12,
+  optionButton: {
+    backgroundColor: Colors.background.card,
+    borderRadius: BorderRadius.md,
+    padding: Spacing.lg,
+    borderWidth: 2,
+    borderColor: Colors.border,
+    ...Shadow.sm,
     flexDirection: 'row',
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 2,
-    borderWidth: 2,
-    borderColor: 'transparent',
   },
-  correctAnswer: {
-    backgroundColor: '#d1fae5',
-    borderColor: '#10b981',
+  optionButtonCorrect: {
+    backgroundColor: Colors.background.card,
+    borderColor: Colors.success,
     borderWidth: 3,
+    borderRadius: BorderRadius.md,
+    padding: Spacing.lg,
+    ...Shadow.sm,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  wrongAnswer: {
-    backgroundColor: '#fee2e2',
-    borderColor: '#ef4444',
+  optionButtonWrong: {
+    backgroundColor: Colors.background.card,
+    borderColor: Colors.error,
     borderWidth: 3,
+    borderRadius: BorderRadius.md,
+    padding: Spacing.lg,
+    ...Shadow.sm,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  disabledAnswer: {
-    opacity: 0.5,
-  },
-  answerIcon: {
+  icon: {
     fontSize: 24,
-    marginRight: 8,
+    color: Colors.success,
+    fontWeight: FontWeight.bold,
+    marginRight: Spacing.sm,
   },
-  answerLabel: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#2563eb',
-    marginRight: 12,
-    minWidth: 24,
+  iconWrong: {
+    fontSize: 24,
+    color: Colors.error,
+    fontWeight: FontWeight.bold,
+    marginRight: Spacing.sm,
   },
-  answerText: {
-    fontSize: 16,
-    color: '#1f2937',
+  optionText: {
+    fontSize: FontSize.md,
+    fontWeight: FontWeight.medium,
+    color: Colors.text.primary,
     flex: 1,
   },
-  explanationContainer: {
-    backgroundColor: '#dbeafe',
-    padding: 20,
-    borderRadius: 12,
-    marginBottom: 20,
+  feedbackContainer: {
+    marginBottom: Spacing.lg,
+  },
+  feedbackText: {
+    fontSize: FontSize.lg,
+    fontWeight: FontWeight.bold,
+    textAlign: 'center',
+  },
+  feedbackCorrect: {
+    color: Colors.success,
+  },
+  feedbackWrong: {
+    color: Colors.error,
+  },
+  explanationCard: {
+    backgroundColor: Colors.background.card,
+    borderRadius: BorderRadius.md,
+    padding: Spacing.lg,
+    borderLeftWidth: 4,
+    borderLeftColor: Colors.info,
+    ...Shadow.sm,
+    marginBottom: Spacing.lg,
   },
   explanationTitle: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#1e40af',
-    marginBottom: 8,
+    fontSize: FontSize.md,
+    fontWeight: FontWeight.bold,
+    color: Colors.info,
+    marginBottom: Spacing.sm,
   },
   explanationText: {
-    fontSize: 14,
-    color: '#1e3a8a',
-    lineHeight: 20,
+    fontSize: FontSize.sm,
+    color: Colors.text.primary,
+    lineHeight: FontSize.sm * 1.6,
+  },
+  fixedButtonContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: Colors.background.main,
+    paddingHorizontal: Spacing.lg,
+    paddingVertical: Spacing.md,
+    borderTopWidth: 1,
+    borderTopColor: Colors.border,
+    ...Shadow.lg,
   },
   nextButton: {
-    backgroundColor: '#2563eb',
-    padding: 18,
-    borderRadius: 12,
+    backgroundColor: Colors.primary.main,
+    borderRadius: BorderRadius.lg,
+    padding: Spacing.lg,
     alignItems: 'center',
-    marginBottom: 20,
+    ...Shadow.md,
   },
   nextButtonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: FontSize.lg,
+    fontWeight: FontWeight.bold,
+    color: Colors.primary.contrast,
   },
 });
