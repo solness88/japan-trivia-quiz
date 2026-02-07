@@ -6,7 +6,6 @@ import { RootStackParamList } from '../../App';
 import { saveQuizResult, calculateStatistics, getRecentGames, QuizStatistics, QuizHistory } from '../utils/statistics';
 import { Colors } from '../constants/colors';
 import { Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants/styles';
-import { clearStatistics } from '../utils/statistics';
 
 type ResultScreenProps = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Result'>;
@@ -23,7 +22,6 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
   const [hasStats, setHasStats] = useState(false);
 
   useEffect(() => {
-    clearStatistics();
     saveAndLoadStatistics();
   }, []);
 

@@ -6,6 +6,7 @@ import { RootStackParamList } from '../../App';
 import { Colors } from '../constants/colors';
 import { Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants/styles';
 import { getDefaultQuestionCount, setDefaultQuestionCount, QuestionCountOption } from '../utils/settings';
+import { clearStatistics } from '../utils/statistics';
 
 type SettingsScreenProps = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Settings'>;
@@ -59,6 +60,24 @@ export default function SettingsScreen({ navigation }: SettingsScreenProps) {
     }
   };
 
+  const handleResetStatistics = () => {
+    Alert.alert(
+      'Reset Statistics?',
+      'This will permanently delete all your quiz history and statistics. This action cannot be undone.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { 
+          text: 'Reset', 
+          style: 'destructive', 
+          onPress: async () => {
+            await clearStatistics();
+            Alert.alert('Success', 'Statistics have been reset.');
+          }
+        }
+      ]
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.content}>
@@ -107,6 +126,23 @@ export default function SettingsScreen({ navigation }: SettingsScreenProps) {
           </View>
         </View>
 
+{/* Statistics Section */}
+<View style={styles.section}>
+  <Text style={styles.sectionTitle}>Statistics</Text>
+  <View style={styles.card}>
+    <Text style={styles.cardTitle}>Reset All Statistics</Text>
+    <Text style={styles.cardDescription}>
+      Delete all quiz history and statistics data
+    </Text>
+
+    <TouchableOpacity
+      style={styles.dangerButton}
+      onPress={handleResetStatistics}
+    >
+      <Text style={styles.dangerButtonText}>Reset Statistics</Text>
+    </TouchableOpacity>
+  </View>
+</View>
         {/* Info Section */}
         <View style={styles.infoSection}>
           <Text style={styles.infoText}>
@@ -281,5 +317,19 @@ const styles = StyleSheet.create({
     fontSize: FontSize.md,
     fontWeight: FontWeight.bold,
     color: Colors.primary.contrast,
+  },
+  dangerButton: {
+    backgroundColor: Colors.error,
+    paddingVertical: Spacing.md,
+    paddingHorizontal: Spacing.lg,
+    borderRadius: BorderRadius.md,
+    alignItems: 'center',
+    marginTop: Spacing.md,
+    ...Shadow.sm,
+  },
+  dangerButtonText: {
+    color: '#fff',
+    fontSize: FontSize.md,
+    fontWeight: FontWeight.bold,
   },
 });
