@@ -1,5 +1,6 @@
 // 型定義を直接定義（shared パッケージの問題を回避）
 export type QuizCategory = 
+  | 'random'
   | 'culture'
   | 'food'
   | 'history'

@@ -8,6 +8,7 @@ export default function QuizScreen({ route, navigation }: any) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
+  const [skipped, setSkipped] = useState(0);
 
   if (!quizzes || quizzes.length === 0) {
     return (
@@ -42,12 +43,18 @@ export default function QuizScreen({ route, navigation }: any) {
   };
 
   const handleNext = () => {
+
+    // Count as skipped if unanswered
+    if (!isAnswered) {
+      setSkipped(skipped + 1);
+    }
+
     if (currentIndex + 1 < quizzes.length) {
       setCurrentIndex(currentIndex + 1);
       setSelectedAnswer(null);
       setIsAnswered(false);
     } else {
-      navigation.replace('Result', { score, total: quizzes.length });
+      navigation.replace('Result', { score, total: quizzes.length, skipped });
     }
   };
 
@@ -139,8 +146,7 @@ export default function QuizScreen({ route, navigation }: any) {
 
       {/* Fixed Next Button at Bottom */}
         <View style={styles.fixedButtonContainer}>
-          <TouchableOpacity style={[styles.nextButton, !isAnswered && { opacity: 0.5 }]} onPress={handleNext}
-  disabled={!isAnswered}>
+          <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
             <Text style={styles.nextButtonText}>
               {currentIndex + 1 < quizzes.length ? 'Next Question →' : 'See Results 🎯'}
             </Text>

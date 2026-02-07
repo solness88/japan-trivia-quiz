@@ -10,7 +10,8 @@ type ResultScreenProps = {
 };
 
 export default function ResultScreen({ navigation, route }: ResultScreenProps) {
-  const { score, total } = route.params;
+  const { score, total, skipped } = route.params;  // add skipped
+  const incorrect = total - score - skipped;  // count incorrect
   const percentage = Math.round((score / total) * 100);
 
   // パフォーマンスメッセージ
@@ -49,12 +50,12 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
             <Text style={styles.statLabel}>Correct</Text>
           </View>
           <View style={styles.statBox}>
-            <Text style={styles.statValue}>{total - score}</Text>
+            <Text style={styles.statValue}>{incorrect}</Text>
             <Text style={styles.statLabel}>Incorrect</Text>
           </View>
           <View style={styles.statBox}>
-            <Text style={styles.statValue}>{total}</Text>
-            <Text style={styles.statLabel}>Total</Text>
+            <Text style={styles.statValue}>{skipped}</Text>
+            <Text style={styles.statLabel}>Skipped</Text>
           </View>
         </View>
 

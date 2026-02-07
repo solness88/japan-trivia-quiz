@@ -7,31 +7,31 @@ export default function HomeScreen({ navigation }: any) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        {/* ヘッダー */}
+        {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.title}>日本トリビアクイズ</Text>
-          <Text style={styles.subtitle}>Japan Trivia Quiz</Text>
+          <Text style={styles.title}>Japan Trivia Quiz</Text>
+          <Text style={styles.subtitle}>Test Your Knowledge of Japan</Text>
         </View>
 
-        {/* メインボタン */}
+        {/* Main Buttons */}
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.primaryButton}
             onPress={() => navigation.navigate('Category')}
           >
-            <Text style={styles.primaryButtonText}>クイズを始める</Text>
+            <Text style={styles.primaryButtonText}>Start Quiz</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.secondaryButton}
             onPress={() => navigation.navigate('About')}
           >
-            <Text style={styles.secondaryButtonText}>このアプリについて</Text>
+            <Text style={styles.secondaryButtonText}>About</Text>
           </TouchableOpacity>
         </View>
 
-        {/* フッター */}
-        <Text style={styles.footer}>日本の文化を楽しく学ぼう</Text>
+        {/* Footer */}
+        <Text style={styles.footer}>Learn about Japanese culture the fun way</Text>
       </View>
     </SafeAreaView>
   );
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.md,
     fontWeight: FontWeight.medium,
     color: Colors.text.secondary,
-    letterSpacing: 1,
+    letterSpacing: 0.5,
   },
   buttonContainer: {
     width: '100%',

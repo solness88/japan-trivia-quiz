@@ -4,45 +4,48 @@ import { Colors } from '../constants/colors';
 import { Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants/styles';
 
 const categories = [
-  { id: 'culture', name: '文化', emoji: '🎎', color: Colors.category.culture },
-  { id: 'food', name: '食べ物', emoji: '🍣', color: Colors.category.food },
-  { id: 'history', name: '歴史', emoji: '🏯', color: Colors.category.history },
-  { id: 'geography', name: '地理', emoji: '🗾', color: Colors.category.geography },
-  { id: 'language', name: '言語', emoji: '🈷️', color: Colors.category.language },
-  { id: 'tradition', name: '伝統', emoji: '⛩️', color: Colors.category.tradition },
+  { 
+    id: 'random', 
+    name: 'Random Quiz', 
+    emoji: '🎲', 
+    color: Colors.accent.main,
+    description: 'Mix of all categories'
+  },
+  { id: 'culture', name: 'Culture', emoji: '🎎', color: Colors.category.culture, description: 'Traditional and modern culture' },
+  { id: 'food', name: 'Food', emoji: '🍣', color: Colors.category.food, description: 'Japanese cuisine' },
+  { id: 'history', name: 'History', emoji: '🏯', color: Colors.category.history, description: 'Historical events and figures' },
+  { id: 'geography', name: 'Geography', emoji: '🗾', color: Colors.category.geography, description: 'Places and landmarks' },
+  { id: 'language', name: 'Language', emoji: '🈷️', color: Colors.category.language, description: 'Japanese language basics' },
+  { id: 'tradition', name: 'Tradition', emoji: '⛩️', color: Colors.category.tradition, description: 'Customs and traditions' },
 ];
 
 export default function CategorySelectionScreen({ navigation }: any) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>カテゴリを選択</Text>
-        <Text style={styles.subtitle}>興味のある分野を選んでください</Text>
+        <Text style={styles.title}>Select Category</Text>
+        <Text style={styles.subtitle}>Choose a topic to get started</Text>
       </View>
 
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
-        <View style={styles.grid}>
+        <View style={styles.categoriesContainer}>
           {categories.map((category) => (
             <TouchableOpacity
               key={category.id}
-              style={[styles.categoryCard, { borderLeftColor: category.color, borderLeftWidth: 4 }]}
+              style={[
+                styles.categoryCard, 
+                { borderLeftColor: category.color, borderLeftWidth: 4 }
+              ]}
               onPress={() => navigation.navigate('QuizCount', { category: category.id })}
             >
               <Text style={styles.emoji}>{category.emoji}</Text>
-              <Text style={styles.categoryName}>{category.name}</Text>
+              <View style={styles.categoryInfo}>
+                <Text style={styles.categoryName}>{category.name}</Text>
+                <Text style={styles.categoryDescription}>{category.description}</Text>
+              </View>
             </TouchableOpacity>
           ))}
         </View>
-
-        {/* ランダムオプション */}
-        <TouchableOpacity
-          style={styles.randomButton}
-          onPress={() => navigation.navigate('QuizCount', { category: 'random' })}
-        >
-          <Text style={styles.randomEmoji}>🎲</Text>
-          <Text style={styles.randomButtonText}>ランダム</Text>
-          <Text style={styles.randomButtonSubtext}>すべてのカテゴリから出題</Text>
-        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -77,51 +80,32 @@ const styles = StyleSheet.create({
   scrollContent: {
     padding: Spacing.lg,
   },
-  grid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+  categoriesContainer: {
     gap: Spacing.md,
-    marginBottom: Spacing.lg,
   },
   categoryCard: {
     backgroundColor: Colors.background.card,
-    width: '47%',
-    aspectRatio: 1.2,
     borderRadius: BorderRadius.md,
-    padding: Spacing.md,
+    padding: Spacing.lg,
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
     ...Shadow.sm,
   },
   emoji: {
-    fontSize: 48,
-    marginBottom: Spacing.sm,
+    fontSize: 40,
+    marginRight: Spacing.md,
+  },
+  categoryInfo: {
+    flex: 1,
   },
   categoryName: {
-    fontSize: FontSize.md,
-    fontWeight: FontWeight.semibold,
-    color: Colors.text.primary,
-  },
-  randomButton: {
-    backgroundColor: Colors.accent.main,
-    borderRadius: BorderRadius.lg,
-    padding: Spacing.lg,
-    alignItems: 'center',
-    ...Shadow.md,
-  },
-  randomEmoji: {
-    fontSize: 40,
-    marginBottom: Spacing.sm,
-  },
-  randomButtonText: {
-    fontSize: FontSize.xl,
+    fontSize: FontSize.lg,
     fontWeight: FontWeight.bold,
-    color: Colors.accent.contrast,
+    color: Colors.text.primary,
     marginBottom: Spacing.xs,
   },
-  randomButtonSubtext: {
+  categoryDescription: {
     fontSize: FontSize.sm,
-    color: Colors.accent.contrast,
-    opacity: 0.9,
+    color: Colors.text.secondary,
   },
 });

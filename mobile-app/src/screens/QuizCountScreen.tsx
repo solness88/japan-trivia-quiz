@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-nati
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../../App';
-import { getQuizzesByCategory } from '../data/quizData';
+import { getQuizzesByCategory, getRandomQuizzes } from '../data/quizData';  // getRandomQuizzes を追加
 
 type QuizCountScreenProps = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'QuizCount'>;
@@ -36,7 +36,11 @@ const quizOptions = [
 
 export default function QuizCountScreen({ navigation, route }: QuizCountScreenProps) {
   const { category } = route.params;
-  const availableQuizzes = getQuizzesByCategory(category);
+  
+  // ランダムの場合とカテゴリの場合で処理を分ける
+  const availableQuizzes = category === 'random' 
+    ? getRandomQuizzes(100)  // ランダムは全問題から取得（数は調整可能）
+    : getQuizzesByCategory(category);
 
   const handleSelectCount = (count: number) => {
     if (count > availableQuizzes.length) {
@@ -44,8 +48,11 @@ export default function QuizCountScreen({ navigation, route }: QuizCountScreenPr
       return;
     }
   
-    // 修正: 実際のクイズデータを渡す
-    const selectedQuizzes = availableQuizzes.slice(0, count);
+    // ランダムの場合は毎回シャッフル、カテゴリの場合は順番通り
+    const selectedQuizzes = category === 'random'
+      ? getRandomQuizzes(count)
+      : availableQuizzes.slice(0, count);
+    
     navigation.navigate('Quiz', { quizzes: selectedQuizzes });
   };
 
@@ -56,7 +63,10 @@ export default function QuizCountScreen({ navigation, route }: QuizCountScreenPr
           How many questions would you like to answer?
         </Text>
         <Text style={styles.subHeaderText}>
-          {availableQuizzes.length} questions available in this category
+          {category === 'random' 
+            ? 'Random questions from all categories'
+            : `${availableQuizzes.length} questions available in this category`
+          }
         </Text>
 
         <View style={styles.optionsContainer}>
@@ -93,18 +103,19 @@ export default function QuizCountScreen({ navigation, route }: QuizCountScreenPr
           })}
         </View>
 
-        {/* Custom オプション */}
+        {/* Custom Option */}
         <View style={styles.customSection}>
           <Text style={styles.customTitle}>Want a different number?</Text>
-
-
 
           <TouchableOpacity
             style={styles.customButton}
             onPress={() => {
-              // 修正: 実際のクイズデータを渡す
+              const selectedQuizzes = category === 'random'
+                ? getRandomQuizzes(availableQuizzes.length)
+                : availableQuizzes;
+              
               navigation.navigate('Quiz', { 
-                quizzes: availableQuizzes
+                quizzes: selectedQuizzes
               });
             }}
           >
@@ -112,10 +123,6 @@ export default function QuizCountScreen({ navigation, route }: QuizCountScreenPr
               All {availableQuizzes.length} Questions
             </Text>
           </TouchableOpacity>
-
-
-
-
         </View>
       </View>
     </ScrollView>

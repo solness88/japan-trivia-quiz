@@ -4,7 +4,6 @@ import HomeScreen from './src/screens/HomeScreen';
 import CategoryScreen from './src/screens/CategoryScreen';
 import QuizScreen from './src/screens/QuizScreen';
 import ResultScreen from './src/screens/ResultScreen';
-import RandomQuizScreen from './src/screens/RandomQuizScreen';
 import AboutScreen from './src/screens/AboutScreen';
 import QuizCountScreen from './src/screens/QuizCountScreen';
 import { Quiz, QuizCategory } from './src/types/quiz'; 
@@ -15,9 +14,8 @@ export type RootStackParamList = {
   Category: undefined;
   QuizCount: { category: QuizCategory }; // 追加
   Quiz: { quizzes: Quiz[] };
-  RandomQuiz: undefined;
   About: undefined;
-  Result: { score: number; total: number };
+  Result: { score: number; total: number; skipped:number };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -59,11 +57,6 @@ export default function App() {
             title: 'Quiz Results',
             headerLeft: () => null, // 戻るボタンを非表示
           }}
-        />
-        <Stack.Screen
-          name="RandomQuiz"
-          component={RandomQuizScreen}
-          options={{ title: 'Random Quiz' }}
         />
 
         <Stack.Screen
