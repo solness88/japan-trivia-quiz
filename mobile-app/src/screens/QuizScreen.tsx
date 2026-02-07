@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, ViewStyle, TextStyle } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants';
@@ -10,6 +10,7 @@ export default function QuizScreen({ route, navigation }: any) {
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
   const [skipped, setSkipped] = useState(0);
+  const scrollViewRef = useRef<ScrollView>(null);
 
   const category = quizzes && quizzes.length > 0 ? quizzes[0].category : 'random';
 
@@ -36,12 +37,23 @@ export default function QuizScreen({ route, navigation }: any) {
 
   const handleAnswer = (index: number) => {
     if (isAnswered) return;
-
+  
     setSelectedAnswer(index);
     setIsAnswered(true);
-
-    if (index === currentQuiz.correctAnswer) {
+  
+    const isCorrect = index === currentQuiz.correctAnswer;
+    
+    if (isCorrect) {
       setScore(score + 1);
+    } else {
+      // 不正解時のみ解説まで自動スクロール
+      // 0.5秒増やして0.8秒後に開始
+      setTimeout(() => {
+        scrollViewRef.current?.scrollToEnd({ 
+          animated: true,
+          // Androidではdurationが効かないので、scrollTo を使う方法もあり
+        });
+      }, 800);  // 300 → 800 に変更
     }
   };
 
@@ -80,6 +92,7 @@ export default function QuizScreen({ route, navigation }: any) {
       </View>
 
       <ScrollView 
+        ref={scrollViewRef}
         style={styles.content} 
         contentContainerStyle={styles.contentContainer}
       >

@@ -166,26 +166,6 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
               </View>
             </View>
 
-            {/* By Category */}
-            {Object.keys(statistics.byCategory).length > 0 && (
-              <View style={styles.section}>
-                <Text style={styles.sectionTitle}>By Category</Text>
-                <View style={styles.card}>
-                  {Object.entries(statistics.byCategory).map(([category, stats]) => (
-                    <View key={category} style={styles.categoryRow}>
-                      <Text style={styles.categoryEmoji}>{getCategoryEmoji(category)}</Text>
-                      <View style={styles.categoryInfo}>
-                        <Text style={styles.categoryName}>{getCategoryName(category)}</Text>
-                        <Text style={styles.categoryStats}>
-                          {stats.percentage}% • {stats.quizzes} {stats.quizzes === 1 ? 'quiz' : 'quizzes'}
-                        </Text>
-                      </View>
-                    </View>
-                  ))}
-                </View>
-              </View>
-            )}
-
             {/* Recent Games */}
             {recentGames.length > 0 && (
               <View style={styles.section}>
@@ -390,30 +370,6 @@ const styles = StyleSheet.create({
     fontSize: FontSize.md,
     fontWeight: FontWeight.bold,
     color: Colors.text.primary,
-  },
-  categoryRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: Spacing.sm,
-    borderBottomWidth: 1,
-    borderBottomColor: Colors.border,
-  },
-  categoryEmoji: {
-    fontSize: 32,
-    marginRight: Spacing.md,
-  },
-  categoryInfo: {
-    flex: 1,
-  },
-  categoryName: {
-    fontSize: FontSize.md,
-    fontWeight: FontWeight.semibold,
-    color: Colors.text.primary,
-  },
-  categoryStats: {
-    fontSize: FontSize.sm,
-    color: Colors.text.secondary,
-    marginTop: 2,
   },
   historyRow: {
     flexDirection: 'row',
