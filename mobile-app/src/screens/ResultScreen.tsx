@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../../App';
+import { saveQuizResult, calculateStatistics, getRecentGames, QuizStatistics, QuizHistory } from '../utils/statistics';
+import { Colors } from '../constants/colors';
+import { Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants/styles';
+import { clearStatistics } from '../utils/statistics';
 
 type ResultScreenProps = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Result'>;
@@ -10,11 +14,32 @@ type ResultScreenProps = {
 };
 
 export default function ResultScreen({ navigation, route }: ResultScreenProps) {
-  const { score, total, skipped } = route.params;  // add skipped
-  const incorrect = total - score - skipped;  // count incorrect
+  const { score, total, skipped, category } = route.params;
+  const incorrect = total - score - skipped;
   const percentage = Math.round((score / total) * 100);
+  
+  const [statistics, setStatistics] = useState<QuizStatistics | null>(null);
+  const [recentGames, setRecentGames] = useState<QuizHistory[]>([]);
+  const [hasStats, setHasStats] = useState(false);
 
-  // パフォーマンスメッセージ
+  useEffect(() => {
+    clearStatistics();
+    saveAndLoadStatistics();
+  }, []);
+
+  const saveAndLoadStatistics = async () => {
+    // 現在の結果を保存
+    await saveQuizResult(category, score, total, skipped);
+    
+    // 統計を読み込み
+    const stats = await calculateStatistics();
+    const recent = await getRecentGames(5);
+    
+    setStatistics(stats);
+    setRecentGames(recent);
+    setHasStats(stats.totalQuizzes > 0);
+  };
+
   const getPerformanceMessage = () => {
     if (percentage === 100) return { emoji: '🏆', title: 'Perfect!', message: 'Amazing! You got all questions correct!' };
     if (percentage >= 80) return { emoji: '🌟', title: 'Excellent!', message: 'Great job! You really know Japan well!' };
@@ -25,10 +50,48 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
 
   const performance = getPerformanceMessage();
 
+  const getCategoryEmoji = (category: string) => {
+    const emojiMap: { [key: string]: string } = {
+      random: '🎲',
+      culture: '🎎',
+      food: '🍣',
+      history: '🏯',
+      geography: '🗾',
+      language: '🈷️',
+      tradition: '⛩️',
+    };
+    return emojiMap[category] || '📚';
+  };
+
+  const getCategoryName = (category: string) => {
+    const nameMap: { [key: string]: string } = {
+      random: 'Random',
+      culture: 'Culture',
+      food: 'Food',
+      history: 'History',
+      geography: 'Geography',
+      language: 'Language',
+      tradition: 'Tradition',
+    };
+    return nameMap[category] || category;
+  };
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffTime = Math.abs(now.getTime() - date.getTime());
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    
+    if (diffDays === 0) return 'Today';
+    if (diffDays === 1) return 'Yesterday';
+    if (diffDays < 7) return `${diffDays}d ago`;
+    return date.toLocaleDateString();
+  };
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.content}>
-        {/* スコア表示 */}
+        {/* Current Score */}
         <View style={styles.scoreContainer}>
           <Text style={styles.emoji}>{performance.emoji}</Text>
           <Text style={styles.title}>{performance.title}</Text>
@@ -43,7 +106,7 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
           <Text style={styles.percentage}>{percentage}% Correct</Text>
         </View>
 
-        {/* 統計情報 */}
+        {/* Stats */}
         <View style={styles.statsContainer}>
           <View style={styles.statBox}>
             <Text style={styles.statValue}>{score}</Text>
@@ -59,7 +122,7 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
           </View>
         </View>
 
-        {/* アクションボタン */}
+        {/* Buttons */}
         <View style={styles.buttonsContainer}>
           <TouchableOpacity
             style={styles.primaryButton}
@@ -76,7 +139,85 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
           </TouchableOpacity>
         </View>
 
-        {/* 励ましのメッセージ */}
+        {/* Statistics Section - Only show if there's data */}
+        {hasStats && statistics && (
+          <>
+            <View style={styles.divider} />
+            
+            {/* Statistics Header */}
+            <View style={styles.statisticsHeader}>
+              <Text style={styles.statisticsTitle}>📊 Your Statistics</Text>
+            </View>
+
+            {/* Overall Performance */}
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Overall Performance</Text>
+              <View style={styles.card}>
+                <View style={styles.overallRow}>
+                  <Text style={styles.overallLabel}>Total Quizzes</Text>
+                  <Text style={styles.overallValue}>{statistics.totalQuizzes}</Text>
+                </View>
+                <View style={styles.overallRow}>
+                  <Text style={styles.overallLabel}>Average Score</Text>
+                  <Text style={styles.overallValue}>{statistics.averagePercentage}%</Text>
+                </View>
+                <View style={styles.overallRow}>
+                  <Text style={styles.overallLabel}>Total Questions</Text>
+                  <Text style={styles.overallValue}>{statistics.totalQuestions}</Text>
+                </View>
+              </View>
+            </View>
+
+            {/* By Category */}
+            {Object.keys(statistics.byCategory).length > 0 && (
+              <View style={styles.section}>
+                <Text style={styles.sectionTitle}>By Category</Text>
+                <View style={styles.card}>
+                  {Object.entries(statistics.byCategory).map(([category, stats]) => (
+                    <View key={category} style={styles.categoryRow}>
+                      <Text style={styles.categoryEmoji}>{getCategoryEmoji(category)}</Text>
+                      <View style={styles.categoryInfo}>
+                        <Text style={styles.categoryName}>{getCategoryName(category)}</Text>
+                        <Text style={styles.categoryStats}>
+                          {stats.percentage}% • {stats.quizzes} {stats.quizzes === 1 ? 'quiz' : 'quizzes'}
+                        </Text>
+                      </View>
+                    </View>
+                  ))}
+                </View>
+              </View>
+            )}
+
+            {/* Recent Games */}
+            {recentGames.length > 0 && (
+              <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Recent Games</Text>
+                <View style={styles.card}>
+                  {recentGames.map((game, index) => (
+                    <View key={game.id} style={styles.historyRow}>
+                      <Text style={styles.historyEmoji}>{getCategoryEmoji(game.category)}</Text>
+                      <View style={styles.historyInfo}>
+                        <Text style={styles.historyCategory}>{getCategoryName(game.category)}</Text>
+                        <Text style={styles.historyDate}>{formatDate(game.date)}</Text>
+                      </View>
+                      <Text style={styles.historyScore}>{game.score}/{game.total}</Text>
+                      <Text style={[
+                        styles.historyPercentage,
+                        game.percentage >= 80 ? styles.historyPercentageGood : 
+                        game.percentage >= 60 ? styles.historyPercentageMedium : 
+                        styles.historyPercentageLow
+                      ]}>
+                        {game.percentage}%
+                      </Text>
+                    </View>
+                  ))}
+                </View>
+              </View>
+            )}
+          </>
+        )}
+
+        {/* Tip */}
         <View style={styles.tipContainer}>
           <Text style={styles.tipTitle}>💡 Tip</Text>
           <Text style={styles.tipText}>
@@ -93,148 +234,249 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f3f4f6',
+    backgroundColor: Colors.background.main,
   },
   content: {
-    padding: 20,
+    padding: Spacing.lg,
   },
   scoreContainer: {
-    backgroundColor: '#fff',
-    padding: 32,
-    borderRadius: 16,
+    backgroundColor: Colors.background.card,
+    padding: Spacing.xl,
+    borderRadius: BorderRadius.lg,
     alignItems: 'center',
-    marginBottom: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    marginBottom: Spacing.lg,
+    ...Shadow.md,
   },
   emoji: {
     fontSize: 64,
-    marginBottom: 16,
+    marginBottom: Spacing.md,
   },
   title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#1f2937',
-    marginBottom: 8,
+    fontSize: FontSize.xxl,
+    fontWeight: FontWeight.bold,
+    color: Colors.text.primary,
+    marginBottom: Spacing.xs,
   },
   message: {
-    fontSize: 16,
-    color: '#6b7280',
+    fontSize: FontSize.md,
+    color: Colors.text.secondary,
     textAlign: 'center',
-    marginBottom: 24,
+    marginBottom: Spacing.lg,
   },
   scoreCircle: {
     width: 160,
     height: 160,
     borderRadius: 80,
-    backgroundColor: '#dbeafe',
+    backgroundColor: Colors.primary.light,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: Spacing.md,
     borderWidth: 4,
-    borderColor: '#2563eb',
-    paddingVertical: 20,
+    borderColor: Colors.primary.main,
+    paddingVertical: Spacing.lg,
   },
   scoreText: {
     fontSize: 48,
-    fontWeight: 'bold',
-    color: '#2563eb',
+    fontWeight: FontWeight.bold,
+    color: Colors.primary.main,
   },
   scoreDivider: {
     width: 80,
     height: 4,
-    backgroundColor: '#2563eb',
-    marginVertical: 4,
+    backgroundColor: Colors.primary.main,
+    marginVertical: Spacing.xs,
   },
   totalText: {
     fontSize: 48,
-    fontWeight: 'bold',
-    color: '#2563eb',
+    fontWeight: FontWeight.bold,
+    color: Colors.primary.main,
   },
   percentage: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: '#2563eb',
+    fontSize: FontSize.xl,
+    fontWeight: FontWeight.semibold,
+    color: Colors.primary.main,
   },
   statsContainer: {
     flexDirection: 'row',
-    gap: 12,
-    marginBottom: 20,
+    gap: Spacing.md,
+    marginBottom: Spacing.lg,
   },
   statBox: {
     flex: 1,
-    backgroundColor: '#fff',
-    padding: 16,
-    borderRadius: 12,
+    backgroundColor: Colors.background.card,
+    padding: Spacing.md,
+    borderRadius: BorderRadius.md,
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 2,
+    ...Shadow.sm,
   },
   statValue: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#1f2937',
+    fontSize: FontSize.xl,
+    fontWeight: FontWeight.bold,
+    color: Colors.text.primary,
   },
   statLabel: {
-    fontSize: 12,
-    color: '#6b7280',
-    marginTop: 4,
+    fontSize: FontSize.xs,
+    color: Colors.text.secondary,
+    marginTop: Spacing.xs,
   },
   buttonsContainer: {
-    gap: 12,
-    marginBottom: 20,
+    gap: Spacing.md,
+    marginBottom: Spacing.lg,
   },
   primaryButton: {
-    backgroundColor: '#2563eb',
-    padding: 18,
-    borderRadius: 12,
+    backgroundColor: Colors.primary.main,
+    padding: Spacing.lg,
+    borderRadius: BorderRadius.md,
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    ...Shadow.md,
   },
   primaryButtonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+    color: Colors.primary.contrast,
+    fontSize: FontSize.md,
+    fontWeight: FontWeight.bold,
   },
   secondaryButton: {
-    backgroundColor: '#fff',
-    padding: 18,
-    borderRadius: 12,
+    backgroundColor: Colors.background.card,
+    padding: Spacing.lg,
+    borderRadius: BorderRadius.md,
     alignItems: 'center',
     borderWidth: 2,
-    borderColor: '#2563eb',
+    borderColor: Colors.primary.main,
   },
   secondaryButtonText: {
-    color: '#2563eb',
-    fontSize: 18,
-    fontWeight: 'bold',
+    color: Colors.primary.main,
+    fontSize: FontSize.md,
+    fontWeight: FontWeight.bold,
+  },
+  divider: {
+    height: 1,
+    backgroundColor: Colors.border,
+    marginVertical: Spacing.lg,
+  },
+  statisticsHeader: {
+    marginBottom: Spacing.lg,
+  },
+  statisticsTitle: {
+    fontSize: FontSize.xl,
+    fontWeight: FontWeight.bold,
+    color: Colors.text.primary,
+    textAlign: 'center',
+  },
+  section: {
+    marginBottom: Spacing.lg,
+  },
+  sectionTitle: {
+    fontSize: FontSize.lg,
+    fontWeight: FontWeight.bold,
+    color: Colors.text.primary,
+    marginBottom: Spacing.sm,
+  },
+  card: {
+    backgroundColor: Colors.background.card,
+    borderRadius: BorderRadius.md,
+    padding: Spacing.md,
+    ...Shadow.sm,
+  },
+  overallRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: Spacing.sm,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.border,
+  },
+  overallLabel: {
+    fontSize: FontSize.md,
+    color: Colors.text.secondary,
+  },
+  overallValue: {
+    fontSize: FontSize.md,
+    fontWeight: FontWeight.bold,
+    color: Colors.text.primary,
+  },
+  categoryRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: Spacing.sm,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.border,
+  },
+  categoryEmoji: {
+    fontSize: 32,
+    marginRight: Spacing.md,
+  },
+  categoryInfo: {
+    flex: 1,
+  },
+  categoryName: {
+    fontSize: FontSize.md,
+    fontWeight: FontWeight.semibold,
+    color: Colors.text.primary,
+  },
+  categoryStats: {
+    fontSize: FontSize.sm,
+    color: Colors.text.secondary,
+    marginTop: 2,
+  },
+  historyRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: Spacing.sm,
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.border,
+  },
+  historyEmoji: {
+    fontSize: 24,
+    marginRight: Spacing.sm,
+  },
+  historyInfo: {
+    flex: 1,
+  },
+  historyCategory: {
+    fontSize: FontSize.sm,
+    fontWeight: FontWeight.semibold,
+    color: Colors.text.primary,
+  },
+  historyDate: {
+    fontSize: FontSize.xs,
+    color: Colors.text.secondary,
+  },
+  historyScore: {
+    fontSize: FontSize.sm,
+    fontWeight: FontWeight.semibold,
+    color: Colors.text.primary,
+    marginRight: Spacing.sm,
+  },
+  historyPercentage: {
+    fontSize: FontSize.sm,
+    fontWeight: FontWeight.bold,
+    minWidth: 45,
+    textAlign: 'right',
+  },
+  historyPercentageGood: {
+    color: Colors.success,
+  },
+  historyPercentageMedium: {
+    color: Colors.warning,
+  },
+  historyPercentageLow: {
+    color: Colors.error,
   },
   tipContainer: {
     backgroundColor: '#fef3c7',
-    padding: 20,
-    borderRadius: 12,
+    padding: Spacing.lg,
+    borderRadius: BorderRadius.md,
     borderLeftWidth: 4,
     borderLeftColor: '#f59e0b',
   },
   tipTitle: {
-    fontSize: 16,
-    fontWeight: '600',
+    fontSize: FontSize.md,
+    fontWeight: FontWeight.semibold,
     color: '#92400e',
-    marginBottom: 8,
+    marginBottom: Spacing.xs,
   },
   tipText: {
-    fontSize: 14,
+    fontSize: FontSize.sm,
     color: '#78350f',
-    lineHeight: 20,
+    lineHeight: FontSize.sm * 1.5,
   },
 });

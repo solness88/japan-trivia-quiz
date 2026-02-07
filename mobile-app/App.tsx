@@ -16,7 +16,7 @@ export type RootStackParamList = {
   Quiz: { quizzes: Quiz[] };
   About: undefined;
   Settings: undefined;
-  Result: { score: number; total: number; skipped: number };
+  Result: { score: number; total: number; skipped: number; category: QuizCategory; };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

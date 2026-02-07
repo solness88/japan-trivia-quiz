@@ -11,6 +11,8 @@ export default function QuizScreen({ route, navigation }: any) {
   const [score, setScore] = useState(0);
   const [skipped, setSkipped] = useState(0);
 
+  const category = quizzes && quizzes.length > 0 ? quizzes[0].category : 'random';
+
   if (!quizzes || quizzes.length === 0) {
     return (
       <SafeAreaView style={styles.container}>
@@ -55,7 +57,11 @@ export default function QuizScreen({ route, navigation }: any) {
       setSelectedAnswer(null);
       setIsAnswered(false);
     } else {
-      navigation.replace('Result', { score, total: quizzes.length, skipped });
+
+      // カテゴリを取得（最初のクイズのカテゴリを使用）
+      const category = quizzes[0]?.category || 'random';
+
+      navigation.replace('Result', { score, total: quizzes.length, skipped, category });
     }
   };
 
