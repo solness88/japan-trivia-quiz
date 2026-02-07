@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from '../constants/colors';
 import { Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants/styles';
+import { getQuizzesByCategory, getRandomQuizzes } from '../data/quizData';
+import { getDefaultQuestionCount, QuestionCountOption } from '../utils/settings';
+import { QuizCategory } from '../types/quiz';
 
-const categories = [
+type Category = {
+  id: QuizCategory;
+  name: string;
+  emoji: string;
+  color: string;
+  description: string;
+};
+
+const categories: Category[] = [
   { 
     id: 'random', 
     name: 'Random Quiz', 
@@ -21,11 +32,45 @@ const categories = [
 ];
 
 export default function CategorySelectionScreen({ navigation }: any) {
+  const [defaultCount, setDefaultCount] = useState<QuestionCountOption>(10);
+
+  useEffect(() => {
+    loadDefaultCount();
+  }, []);
+
+  const loadDefaultCount = async () => {
+    const count = await getDefaultQuestionCount();
+    setDefaultCount(count);
+  };
+
+  const handleCategoryPress = async (categoryId: QuizCategory) => {
+    const questionCount = await getDefaultQuestionCount();
+    
+    let availableQuizzes;
+    if (categoryId === 'random') {
+      availableQuizzes = getRandomQuizzes(100);
+    } else {
+      availableQuizzes = getQuizzesByCategory(categoryId);
+    }
+
+    const actualCount = questionCount === 'all' 
+      ? availableQuizzes.length 
+      : Math.min(questionCount, availableQuizzes.length);
+
+    const selectedQuizzes = categoryId === 'random'
+      ? getRandomQuizzes(actualCount)
+      : availableQuizzes.slice(0, actualCount);
+
+    navigation.navigate('Quiz', { quizzes: selectedQuizzes });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Select Category</Text>
-        <Text style={styles.subtitle}>Choose a topic to get started</Text>
+        <Text style={styles.subtitle}>
+          {defaultCount === 'all' ? 'All questions' : `${defaultCount} questions per quiz`}
+        </Text>
       </View>
 
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
@@ -37,7 +82,7 @@ export default function CategorySelectionScreen({ navigation }: any) {
                 styles.categoryCard, 
                 { borderLeftColor: category.color, borderLeftWidth: 4 }
               ]}
-              onPress={() => navigation.navigate('QuizCount', { category: category.id })}
+              onPress={() => handleCategoryPress(category.id)}
             >
               <Text style={styles.emoji}>{category.emoji}</Text>
               <View style={styles.categoryInfo}>
@@ -52,6 +97,7 @@ export default function CategorySelectionScreen({ navigation }: any) {
   );
 }
 
+// styles は変更なし
 const styles = StyleSheet.create({
   container: {
     flex: 1,

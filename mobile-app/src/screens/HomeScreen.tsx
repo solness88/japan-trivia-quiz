@@ -25,6 +25,13 @@ export default function HomeScreen({ navigation }: any) {
 
           <TouchableOpacity
             style={styles.secondaryButton}
+            onPress={() => navigation.navigate('Settings')}
+          >
+            <Text style={styles.secondaryButtonText}>⚙️ Settings</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.secondaryButton}
             onPress={() => navigation.navigate('About')}
           >
             <Text style={styles.secondaryButtonText}>About</Text>

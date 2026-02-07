@@ -8,6 +8,7 @@ import AboutScreen from './src/screens/AboutScreen';
 import QuizCountScreen from './src/screens/QuizCountScreen';
 import { Quiz, QuizCategory } from './src/types/quiz';
 import { Colors } from './src/constants/colors';
+import SettingsScreen from './src/screens/SettingsScreen';
 
 // 型定義
 export type RootStackParamList = {
@@ -16,6 +17,7 @@ export type RootStackParamList = {
   QuizCount: { category: QuizCategory };
   Quiz: { quizzes: Quiz[] };
   About: undefined;
+  Settings: undefined;
   Result: { score: number; total: number; skipped: number };
 };
 
@@ -68,6 +70,11 @@ export default function App() {
           name="About"
           component={AboutScreen}
           options={{ title: 'About' }}
+        />
+        <Stack.Screen
+          name="Settings"
+          component={SettingsScreen}
+          options={{ title: 'Settings' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
