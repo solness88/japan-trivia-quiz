@@ -5,7 +5,6 @@ import CategoryScreen from './src/screens/CategoryScreen';
 import QuizScreen from './src/screens/QuizScreen';
 import ResultScreen from './src/screens/ResultScreen';
 import AboutScreen from './src/screens/AboutScreen';
-import QuizCountScreen from './src/screens/QuizCountScreen';
 import { Quiz, QuizCategory } from './src/types/quiz';
 import { Colors } from './src/constants/colors';
 import SettingsScreen from './src/screens/SettingsScreen';
@@ -14,7 +13,6 @@ import SettingsScreen from './src/screens/SettingsScreen';
 export type RootStackParamList = {
   Home: undefined;
   Category: undefined;
-  QuizCount: { category: QuizCategory };
   Quiz: { quizzes: Quiz[] };
   About: undefined;
   Settings: undefined;
@@ -60,11 +58,6 @@ export default function App() {
             title: 'Quiz Results',
             headerLeft: () => null,
           }}
-        />
-        <Stack.Screen
-          name="QuizCount"
-          component={QuizCountScreen}
-          options={{ title: 'Select Question Count' }}
         />
         <Stack.Screen
           name="About"
