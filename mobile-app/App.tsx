@@ -6,16 +6,17 @@ import QuizScreen from './src/screens/QuizScreen';
 import ResultScreen from './src/screens/ResultScreen';
 import AboutScreen from './src/screens/AboutScreen';
 import QuizCountScreen from './src/screens/QuizCountScreen';
-import { Quiz, QuizCategory } from './src/types/quiz'; 
+import { Quiz, QuizCategory } from './src/types/quiz';
+import { Colors } from './src/constants/colors';
 
-// 型定義を更新
+// 型定義
 export type RootStackParamList = {
   Home: undefined;
   Category: undefined;
-  QuizCount: { category: QuizCategory }; // 追加
+  QuizCount: { category: QuizCategory };
   Quiz: { quizzes: Quiz[] };
   About: undefined;
-  Result: { score: number; total: number; skipped:number };
+  Result: { score: number; total: number; skipped: number };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -27,9 +28,9 @@ export default function App() {
         initialRouteName="Home"
         screenOptions={{
           headerStyle: {
-            backgroundColor: '#2563eb',
+            backgroundColor: Colors.primary.main,
           },
-          headerTintColor: '#fff',
+          headerTintColor: Colors.primary.contrast,
           headerTitleStyle: {
             fontWeight: 'bold',
           },
@@ -55,16 +56,14 @@ export default function App() {
           component={ResultScreen}
           options={{ 
             title: 'Quiz Results',
-            headerLeft: () => null, // 戻るボタンを非表示
+            headerLeft: () => null,
           }}
         />
-
         <Stack.Screen
           name="QuizCount"
           component={QuizCountScreen}
           options={{ title: 'Select Question Count' }}
         />
-        
         <Stack.Screen
           name="About"
           component={AboutScreen}
