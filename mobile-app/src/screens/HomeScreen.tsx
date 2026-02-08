@@ -22,7 +22,12 @@ export default function HomeScreen({ navigation }: any) {
           >
             <Text style={styles.primaryButtonText}>Start Quiz</Text>
           </TouchableOpacity>
-
+          <TouchableOpacity
+            style={styles.secondaryButton}
+            onPress={() => navigation.navigate('History')}
+          >
+            <Text style={styles.secondaryButtonText}>📚 History</Text>
+          </TouchableOpacity>
           <TouchableOpacity
             style={styles.secondaryButton}
             onPress={() => navigation.navigate('Settings')}

@@ -10,6 +10,7 @@ import { Colors } from './src/constants/colors';
 import SettingsScreen from './src/screens/SettingsScreen';
 import { QuizQuestion } from './src/utils/quizReview'; 
 import ReviewScreen from './src/screens/ReviewScreen'; 
+import HistoryScreen from './src/screens/HistoryScreen';
 
 // 型定義
 export type RootStackParamList = {
@@ -73,6 +74,11 @@ export default function App() {
           name="Review"
           component={ReviewScreen}
           options={{ title: 'Review Quiz' }}
+        />
+        <Stack.Screen
+          name="History"
+          component={HistoryScreen}
+          options={{ title: 'Quiz History' }}
         />
         <Stack.Screen
           name="About"
