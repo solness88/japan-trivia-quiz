@@ -13,6 +13,7 @@ export default function QuizScreen({ route, navigation }: any) {
   const [skipped, setSkipped] = useState(0);
   const scrollViewRef = useRef<ScrollView>(null);
   const [questionRecords, setQuestionRecords] = useState<QuizQuestion[]>([]);
+  const scrollTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const category = quizzes && quizzes.length > 0 ? quizzes[0].category : 'random';
 
@@ -39,16 +40,16 @@ export default function QuizScreen({ route, navigation }: any) {
 
   const handleAnswer = (index: number) => {
     if (isAnswered) return;
-  
+
     setSelectedAnswer(index);
     setIsAnswered(true);
-  
+
     const isCorrect = index === currentQuiz.correctAnswer;
     
     if (isCorrect) {
       setScore(score + 1);
     }
-
+    
     // 回答を記録
     const questionRecord: QuizQuestion = {
       questionId: currentQuiz.id,
@@ -59,27 +60,38 @@ export default function QuizScreen({ route, navigation }: any) {
       explanation: currentQuiz.explanation,
       isCorrect,
     };
-
+    
     setQuestionRecords([...questionRecords, questionRecord]);
-
-    // 正解・不正解に関係なく、解説まで自動スクロール
-    setTimeout(() => {
+    
+    // タイマーをキャンセル（前のタイマーがあれば）
+    if (scrollTimerRef.current) {
+      clearTimeout(scrollTimerRef.current);
+    }
+    
+    // 解説まで自動スクロール（タイマーIDを保存）
+    scrollTimerRef.current = setTimeout(() => {
       scrollViewRef.current?.scrollTo({ 
         y: 1000000,
         animated: true 
       });
+      scrollTimerRef.current = null;  // 実行後にクリア
     }, 800);
   };
 
   const handleNext = () => {
-
+    // スクロールタイマーをキャンセル
+    if (scrollTimerRef.current) {
+      clearTimeout(scrollTimerRef.current);
+      scrollTimerRef.current = null;
+    }
+    
     // スキップの場合も記録
     if (!isAnswered) {
       const questionRecord: QuizQuestion = {
         questionId: currentQuiz.id,
         question: currentQuiz.question,
         options: [...currentQuiz.options],
-        userAnswer: null,  // スキップ
+        userAnswer: null,
         correctAnswer: currentQuiz.correctAnswer,
         explanation: currentQuiz.explanation,
         isCorrect: false,
@@ -88,27 +100,27 @@ export default function QuizScreen({ route, navigation }: any) {
       setQuestionRecords([...questionRecords, questionRecord]);
       setSkipped(skipped + 1);
     }
-
+  
     if (currentIndex + 1 < quizzes.length) {
       setCurrentIndex(currentIndex + 1);
       setSelectedAnswer(null);
       setIsAnswered(false);
-
-      // 次の問題に進む時、画面トップにスクロール
+      
       scrollViewRef.current?.scrollTo({ 
         y: 0, 
-        animated: false  // 瞬時に移動（アニメーションなし）
+        animated: false
       });
-
     } else {
-
-      // カテゴリを取得（最初のクイズのカテゴリを使用）
-      const category = quizzes[0]?.category || 'random';
-
-      navigation.replace('Result', { score, total: quizzes.length, skipped, category: selectedCategory, questionRecords });
+      navigation.replace('Result', { 
+        score, 
+        total: quizzes.length, 
+        skipped,
+        category: selectedCategory,
+        questionRecords
+      });
     }
   };
-
+  
   const isCorrectAnswer = selectedAnswer === currentQuiz.correctAnswer;
 
   return (
