@@ -195,15 +195,6 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
           </>
         )}
 
-        {/* Tip */}
-        <View style={styles.tipContainer}>
-          <Text style={styles.tipTitle}>💡 Tip</Text>
-          <Text style={styles.tipText}>
-            {percentage >= 80
-              ? 'You\'re ready for your Japan trip! Keep exploring more categories.'
-              : 'Try reviewing the explanations and take the quiz again to improve your score!'}
-          </Text>
-        </View>
       </View>
     </ScrollView>
   );
@@ -414,23 +405,5 @@ const styles = StyleSheet.create({
   },
   historyPercentageLow: {
     color: Colors.error,
-  },
-  tipContainer: {
-    backgroundColor: '#fef3c7',
-    padding: Spacing.lg,
-    borderRadius: BorderRadius.md,
-    borderLeftWidth: 4,
-    borderLeftColor: '#f59e0b',
-  },
-  tipTitle: {
-    fontSize: FontSize.md,
-    fontWeight: FontWeight.semibold,
-    color: '#92400e',
-    marginBottom: Spacing.xs,
-  },
-  tipText: {
-    fontSize: FontSize.sm,
-    color: '#78350f',
-    lineHeight: FontSize.sm * 1.5,
   },
 });

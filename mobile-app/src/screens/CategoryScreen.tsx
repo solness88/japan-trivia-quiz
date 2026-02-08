@@ -61,7 +61,7 @@ export default function CategorySelectionScreen({ navigation }: any) {
       ? getRandomQuizzes(actualCount)
       : availableQuizzes.slice(0, actualCount);
 
-    navigation.navigate('Quiz', { quizzes: selectedQuizzes });
+    navigation.navigate('Quiz', { quizzes: selectedQuizzes, selectedCategory: categoryId });
   };
 
   return (

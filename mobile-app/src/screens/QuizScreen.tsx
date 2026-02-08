@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants';
 
 export default function QuizScreen({ route, navigation }: any) {
-  const { quizzes } = route.params || {};
+  const { quizzes, selectedCategory } = route.params || {};
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -45,16 +45,15 @@ export default function QuizScreen({ route, navigation }: any) {
     
     if (isCorrect) {
       setScore(score + 1);
-    } else {
-      // 不正解時のみ解説まで自動スクロール
-      // 0.5秒増やして0.8秒後に開始
-      setTimeout(() => {
-        scrollViewRef.current?.scrollToEnd({ 
-          animated: true,
-          // Androidではdurationが効かないので、scrollTo を使う方法もあり
-        });
-      }, 800);  // 300 → 800 に変更
     }
+    
+    // 正解・不正解に関係なく、解説まで自動スクロール
+    setTimeout(() => {
+      scrollViewRef.current?.scrollTo({ 
+        y: 1000000,
+        animated: true 
+      });
+    }, 800);
   };
 
   const handleNext = () => {
@@ -68,12 +67,19 @@ export default function QuizScreen({ route, navigation }: any) {
       setCurrentIndex(currentIndex + 1);
       setSelectedAnswer(null);
       setIsAnswered(false);
+
+      // 次の問題に進む時、画面トップにスクロール
+      scrollViewRef.current?.scrollTo({ 
+        y: 0, 
+        animated: false  // 瞬時に移動（アニメーションなし）
+      });
+
     } else {
 
       // カテゴリを取得（最初のクイズのカテゴリを使用）
       const category = quizzes[0]?.category || 'random';
 
-      navigation.replace('Result', { score, total: quizzes.length, skipped, category });
+      navigation.replace('Result', { score, total: quizzes.length, skipped, category: selectedCategory });
     }
   };
 
@@ -316,9 +322,9 @@ const styles = StyleSheet.create({
     marginBottom: Spacing.sm,
   },
   explanationText: {
-    fontSize: FontSize.sm,
+    fontSize: FontSize.md,
     color: Colors.text.primary,
-    lineHeight: FontSize.sm * 1.6,
+    lineHeight: FontSize.md * 1.6,
   },
   fixedButtonContainer: {
     position: 'absolute',
