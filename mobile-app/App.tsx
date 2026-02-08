@@ -8,6 +8,8 @@ import AboutScreen from './src/screens/AboutScreen';
 import { Quiz, QuizCategory } from './src/types/quiz';
 import { Colors } from './src/constants/colors';
 import SettingsScreen from './src/screens/SettingsScreen';
+import { QuizQuestion } from './src/utils/quizReview'; 
+import ReviewScreen from './src/screens/ReviewScreen'; 
 
 // 型定義
 export type RootStackParamList = {
@@ -16,7 +18,15 @@ export type RootStackParamList = {
   Quiz: { quizzes: Quiz[] };
   About: undefined;
   Settings: undefined;
-  Result: { score: number; total: number; skipped: number; category: QuizCategory; };
+  Result: { 
+    score: number; 
+    total: number; 
+    skipped: number; 
+    category: QuizCategory;
+    questionRecords: QuizQuestion[];
+  };
+  Review: { reviewId: string };
+  History: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -58,6 +68,11 @@ export default function App() {
             title: 'Quiz Results',
             headerLeft: () => null,
           }}
+        />
+        <Stack.Screen
+          name="Review"
+          component={ReviewScreen}
+          options={{ title: 'Review Quiz' }}
         />
         <Stack.Screen
           name="About"

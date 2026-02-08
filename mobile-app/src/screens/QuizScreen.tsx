@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, ViewStyle, TextStyle } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants';
+import { QuizQuestion } from '../utils/quizReview';
 
 export default function QuizScreen({ route, navigation }: any) {
   const { quizzes, selectedCategory } = route.params || {};
@@ -11,6 +12,7 @@ export default function QuizScreen({ route, navigation }: any) {
   const [score, setScore] = useState(0);
   const [skipped, setSkipped] = useState(0);
   const scrollViewRef = useRef<ScrollView>(null);
+  const [questionRecords, setQuestionRecords] = useState<QuizQuestion[]>([]);
 
   const category = quizzes && quizzes.length > 0 ? quizzes[0].category : 'random';
 
@@ -46,7 +48,20 @@ export default function QuizScreen({ route, navigation }: any) {
     if (isCorrect) {
       setScore(score + 1);
     }
-    
+
+    // 回答を記録
+    const questionRecord: QuizQuestion = {
+      questionId: currentQuiz.id,
+      question: currentQuiz.question,
+      options: [...currentQuiz.options],
+      userAnswer: index,
+      correctAnswer: currentQuiz.correctAnswer,
+      explanation: currentQuiz.explanation,
+      isCorrect,
+    };
+
+    setQuestionRecords([...questionRecords, questionRecord]);
+
     // 正解・不正解に関係なく、解説まで自動スクロール
     setTimeout(() => {
       scrollViewRef.current?.scrollTo({ 
@@ -58,8 +73,19 @@ export default function QuizScreen({ route, navigation }: any) {
 
   const handleNext = () => {
 
-    // Count as skipped if unanswered
+    // スキップの場合も記録
     if (!isAnswered) {
+      const questionRecord: QuizQuestion = {
+        questionId: currentQuiz.id,
+        question: currentQuiz.question,
+        options: [...currentQuiz.options],
+        userAnswer: null,  // スキップ
+        correctAnswer: currentQuiz.correctAnswer,
+        explanation: currentQuiz.explanation,
+        isCorrect: false,
+      };
+      
+      setQuestionRecords([...questionRecords, questionRecord]);
       setSkipped(skipped + 1);
     }
 
@@ -79,7 +105,7 @@ export default function QuizScreen({ route, navigation }: any) {
       // カテゴリを取得（最初のクイズのカテゴリを使用）
       const category = quizzes[0]?.category || 'random';
 
-      navigation.replace('Result', { score, total: quizzes.length, skipped, category: selectedCategory });
+      navigation.replace('Result', { score, total: quizzes.length, skipped, category: selectedCategory, questionRecords });
     }
   };
 

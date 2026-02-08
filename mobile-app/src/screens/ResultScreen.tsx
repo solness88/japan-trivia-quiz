@@ -6,6 +6,7 @@ import { RootStackParamList } from '../../App';
 import { saveQuizResult, calculateStatistics, getRecentGames, QuizStatistics, QuizHistory } from '../utils/statistics';
 import { Colors } from '../constants/colors';
 import { Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants/styles';
+import { saveQuizReview, getQuizReviews } from '../utils/quizReview';
 
 type ResultScreenProps = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Result'>;
@@ -13,7 +14,7 @@ type ResultScreenProps = {
 };
 
 export default function ResultScreen({ navigation, route }: ResultScreenProps) {
-  const { score, total, skipped, category } = route.params;
+  const { score, total, skipped, category, questionRecords } = route.params;
   const incorrect = total - score - skipped;
   const percentage = Math.round((score / total) * 100);
   
@@ -26,8 +27,11 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
   }, []);
 
   const saveAndLoadStatistics = async () => {
-    // 現在の結果を保存
+    // 統計を保存
     await saveQuizResult(category, score, total, skipped);
+    
+    // レビューを保存
+    await saveQuizReview(category, score, total, skipped, questionRecords);
     
     // 統計を読み込み
     const stats = await calculateStatistics();
@@ -127,6 +131,20 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
             onPress={() => navigation.navigate('Category')}
           >
             <Text style={styles.primaryButtonText}>Try Another Category</Text>
+          </TouchableOpacity>
+
+          {/* Review ボタンを追加 */}
+          <TouchableOpacity
+            style={styles.reviewButton}
+            onPress={async () => {
+              // 最新のレビューIDを取得
+              const reviews = await getQuizReviews();
+              if (reviews.length > 0) {
+                navigation.navigate('Review', { reviewId: reviews[0].id });
+              }
+            }}
+          >
+            <Text style={styles.reviewButtonText}>📖 Review This Quiz</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -405,5 +423,17 @@ const styles = StyleSheet.create({
   },
   historyPercentageLow: {
     color: Colors.error,
+  },
+  reviewButton: {
+    backgroundColor: Colors.info,
+    padding: Spacing.lg,
+    borderRadius: BorderRadius.md,
+    alignItems: 'center',
+    ...Shadow.md,
+  },
+  reviewButtonText: {
+    color: '#fff',
+    fontSize: FontSize.md,
+    fontWeight: FontWeight.bold,
   },
 });
