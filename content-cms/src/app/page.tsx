@@ -128,6 +128,9 @@ export default async function HomePage() {
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                     ステータス
                   </th>
+                  <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">
+                    類似
+                  </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                     操作
                   </th>
@@ -153,6 +156,9 @@ export default async function HomePage() {
                       </td>
                       <td className={`px-6 py-4 text-sm ${status.color}`}>
                         {status.emoji} {status.label}
+                      </td>
+                      <td className="px-6 py-4 text-center text-xl">
+                        {quiz.hasSimilar ? '❗' : '✅'}
                       </td>
                       <td className="px-6 py-4 text-sm">
                         <Link

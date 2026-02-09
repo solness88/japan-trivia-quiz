@@ -133,6 +133,13 @@ export default function QuizEditForm({ quiz }: { quiz: Quiz }) {
             <span className={`px-3 py-1 rounded-full text-sm font-medium ${currentStatus.color}`}>
               {currentStatus.emoji} {currentStatus.label}
             </span>
+            <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+              quiz.hasSimilar 
+                ? 'bg-red-100 text-red-800' 
+                : 'bg-green-100 text-green-800'
+            }`}>
+              {quiz.hasSimilar ? '❗ 類似クイズあり' : '✅ ユニーク'}
+            </span>
             <span className="text-sm text-gray-500">
               作成: {new Date(quiz.createdAt).toLocaleDateString('ja-JP')}
             </span>

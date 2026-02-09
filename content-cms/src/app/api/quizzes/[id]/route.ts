@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getQuizById, updateQuiz, deleteQuiz } from '@/lib/quiz-storage';
+import { getQuizById, updateQuiz, deleteQuiz, loadQuizzes } from '@/lib/quiz-storage';
+import { checkSimilarity } from '@/lib/similarity-checker';
 
 interface RouteContext {
   params: Promise<{ id: string }>;
@@ -14,7 +15,7 @@ export async function GET(
   context: RouteContext
 ) {
   try {
-    const { id } = await context.params;  // ← await を追加
+    const { id } = await context.params;
     console.log('GET quiz:', id);
     
     const quiz = await getQuizById(id);
@@ -45,11 +46,17 @@ export async function PUT(
   context: RouteContext
 ) {
   try {
-    const { id } = await context.params;  // ← await を追加
+    const { id } = await context.params;
     const body = await request.json();
     
     console.log('PUT quiz:', id);
     console.log('Update data:', body);
+    
+    // 質問文が更新される場合、類似度を再チェック
+    if (body.question) {
+      const existingQuizzes = await loadQuizzes();
+      body.hasSimilar = checkSimilarity(body.question, existingQuizzes, id);
+    }
     
     const updatedQuiz = await updateQuiz(id, body);
     
@@ -82,7 +89,7 @@ export async function DELETE(
   context: RouteContext
 ) {
   try {
-    const { id } = await context.params;  // ← await を追加
+    const { id } = await context.params;
     console.log('DELETE quiz:', id);
     
     const success = await deleteQuiz(id);

@@ -1,14 +1,46 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import type { QuizInput, QuizCategory, QuizDifficulty } from '@japan-trivia/shared';
+import type { QuizInput, QuizCategory, QuizDifficulty, Quiz } from '@japan-trivia/shared';
+
+// 類似度チェック関数
+function calculateSimilarity(text1: string, text2: string): number {
+  const normalize = (s: string) => s.toLowerCase().replace(/[^\w\s]/g, '');
+  const words1 = normalize(text1).split(/\s+/).filter(w => w.length > 3); // 3文字以下は除外
+  const words2 = normalize(text2).split(/\s+/).filter(w => w.length > 3);
+  
+  if (words1.length === 0 || words2.length === 0) return 0;
+  
+  const commonWords = words1.filter(w => words2.includes(w)).length;
+  const similarity = commonWords / Math.max(words1.length, words2.length);
+  
+  return similarity;
+}
+
+function findSimilarQuiz(newQuestion: string, existingQuizzes: Quiz[]): Quiz | null {
+  const SIMILARITY_THRESHOLD = 0.6; // 60%以上の類似度で警告
+  
+  for (const existing of existingQuizzes) {
+    const similarity = calculateSimilarity(newQuestion, existing.question);
+    if (similarity >= SIMILARITY_THRESHOLD) {
+      return existing;
+    }
+  }
+  return null;
+}
+
+interface QuizWithWarning extends QuizInput {
+  similarTo?: string;
+  similarity?: number;
+}
 
 export default function GeneratePage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [generatedQuizzes, setGeneratedQuizzes] = useState<QuizInput[]>([]);
+  const [generatedQuizzes, setGeneratedQuizzes] = useState<QuizWithWarning[]>([]);
+  const [existingQuizzes, setExistingQuizzes] = useState<Quiz[]>([]);
 
   const [params, setParams] = useState({
     category: 'culture' as QuizCategory,
@@ -16,7 +48,19 @@ export default function GeneratePage() {
     count: 10,
   });
 
+  // 既存クイズを取得
+  useEffect(() => {
+    fetch('/api/quizzes')
+      .then(res => res.json())
+      .then(data => setExistingQuizzes(data))
+      .catch(err => console.error('Failed to load existing quizzes:', err));
+  }, []);
+
   const handleGenerate = async () => {
+
+    console.log('Existing quizzes count:', existingQuizzes.length); // ← これを追加
+    console.log('Existing quizzes:', existingQuizzes); // ← これも追加
+
     setLoading(true);
     setError(null);
     setGeneratedQuizzes([]);
@@ -32,8 +76,24 @@ export default function GeneratePage() {
         throw new Error('Failed to generate quizzes');
       }
 
-      const quizzes = await response.json();
-      setGeneratedQuizzes(quizzes);
+      const quizzes: QuizInput[] = await response.json();
+      
+      // 類似度チェックを実行
+      const quizzesWithWarnings: QuizWithWarning[] = quizzes.map(quiz => {
+        const similar = findSimilarQuiz(quiz.question, existingQuizzes);
+        if (similar) {
+          const similarity = calculateSimilarity(quiz.question, similar.question);
+          return {
+            ...quiz,
+            similarTo: similar.question,
+            similarity: Math.round(similarity * 100),
+          };
+        }
+        return quiz;
+      });
+      console.log('Final quizzes with warnings:', quizzesWithWarnings);
+      
+      setGeneratedQuizzes(quizzesWithWarnings);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Unknown error');
     } finally {
@@ -46,10 +106,17 @@ export default function GeneratePage() {
     try {
       // 各クイズを順番に保存
       for (const quiz of generatedQuizzes) {
+        // 類似度情報を hasSimilar に変換
+        const { similarTo, similarity, ...quizData } = quiz;
+        const quizToSave = {
+          ...quizData,
+          hasSimilar: !!similarTo, // similarTo が存在すれば true
+        };
+        
         await fetch('/api/quizzes', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(quiz),
+          body: JSON.stringify(quizToSave),
         });
       }
       
@@ -61,6 +128,8 @@ export default function GeneratePage() {
       setLoading(false);
     }
   };
+
+  const warningCount = generatedQuizzes.filter(q => q.similarTo).length;
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
@@ -78,7 +147,7 @@ export default function GeneratePage() {
 
         {/* 設定フォーム */}
         <div className="bg-white rounded-lg shadow p-6 mb-6">
-          <h2 className="text-xl font-semibold mb-4 text-gray-900 bg-white">生成設定</h2>
+          <h2 className="text-xl font-semibold mb-4 text-gray-900">生成設定</h2>
           
           <div className="grid grid-cols-3 gap-4">
             <div>
@@ -143,11 +212,18 @@ export default function GeneratePage() {
           </button>
         </div>
 
+        {/* 類似度警告 */}
+        {warningCount > 0 && (
+          <div className="bg-yellow-50 border border-yellow-200 text-yellow-800 px-4 py-3 rounded mb-4">
+            ⚠️ {warningCount}件のクイズが既存のクイズと類似しています。保存前に確認してください。
+          </div>
+        )}
+
         {/* 生成結果 */}
         {generatedQuizzes.length > 0 && (
           <div className="bg-white rounded-lg shadow p-6">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-semibold">
+              <h2 className="text-xl font-semibold text-gray-900">
                 生成完了！{generatedQuizzes.length}問
               </h2>
               <button
@@ -161,8 +237,32 @@ export default function GeneratePage() {
 
             <div className="space-y-4">
               {generatedQuizzes.map((quiz, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg p-4">
-                  <h3 className="font-semibold mb-2">Q{index + 1}: {quiz.question}</h3>
+                <div 
+                  key={index} 
+                  className={`border rounded-lg p-4 ${
+                    quiz.similarTo 
+                      ? 'border-yellow-400 bg-yellow-50' 
+                      : 'border-gray-200'
+                  }`}
+                >
+
+                {/* 類似度チェック結果 */}
+                {quiz.similarTo ? (
+                  <div className="mb-3 p-3 bg-yellow-100 border border-yellow-300 rounded text-sm">
+                    <p className="font-semibold text-yellow-800 mb-1">
+                      ⚠️ 類似度: {quiz.similarity}%
+                    </p>
+                    <p className="text-yellow-700">
+                      既存のクイズと似ています: <span className="italic">`{quiz.similarTo}`</span>
+                    </p>
+                  </div>
+                ) : (
+                  <div className="mb-3 p-2 bg-green-50 border border-green-200 rounded text-sm">
+                    <p className="text-green-700">✓ ユニーク（類似クイズなし）</p>
+                  </div>
+                )}
+                  
+                  <h3 className="font-semibold mb-2 text-gray-900">Q{index + 1}: {quiz.question}</h3>
                   <ul className="space-y-1 mb-2">
                     {quiz.options.map((option, optIndex) => (
                       <li

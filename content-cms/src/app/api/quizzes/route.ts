@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { loadQuizzes, addQuiz } from '@/lib/quiz-storage';
 import { validateQuizInput } from '@japan-trivia/shared';
+import { checkSimilarity } from '@/lib/similarity-checker';
 import type { QuizInput } from '@japan-trivia/shared';
 
 /**
@@ -26,7 +27,7 @@ export async function GET() {
  */
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json() as QuizInput;
+    const body = await request.json() as QuizInput & { hasSimilar?: boolean };
     
     // バリデーション
     const validation = validateQuizInput(body);
@@ -35,6 +36,12 @@ export async function POST(request: NextRequest) {
         { error: 'Validation failed', details: validation.errors },
         { status: 400 }
       );
+    }
+    
+    // 類似度チェック（hasSimilarが未設定の場合のみ実行）
+    if (body.hasSimilar === undefined) {
+      const existingQuizzes = await loadQuizzes();
+      body.hasSimilar = checkSimilarity(body.question, existingQuizzes);
     }
     
     // クイズを追加
