@@ -1,6 +1,8 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { loadQuizzes } from '@/lib/quiz-storage';
-import type { Quiz } from '@japan-trivia/shared';
+import type { Quiz, ReviewStatus } from '@japan-trivia/shared';
 
 // カテゴリ名を日本語に変換
 const categoryLabels: Record<string, string> = {
@@ -22,8 +24,40 @@ const statusConfig = {
   rejected: { label: '却下', emoji: '❌', color: 'text-red-600' },
 };
 
-export default async function HomePage() {
-  const quizzes = await loadQuizzes();
+type TabType = 'reviewing' | 'approved' | 'all';
+
+export default function HomePage() {
+  const [quizzes, setQuizzes] = useState<Quiz[]>([]);
+  const [activeTab, setActiveTab] = useState<TabType>('reviewing');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/quizzes')
+      .then(res => res.json())
+      .then(data => {
+        setQuizzes(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Failed to load quizzes:', err);
+        setLoading(false);
+      });
+  }, []);
+
+  // タブに応じてフィルタリング
+  const filteredQuizzes = quizzes.filter(quiz => {
+    if (activeTab === 'reviewing') return quiz.reviewStatus === 'reviewing';
+    if (activeTab === 'approved') return quiz.reviewStatus === 'approved';
+    return true; // 'all'
+  });
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <p className="text-gray-600">読み込み中...</p>
+      </div>
+    );
+  }
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -52,13 +86,6 @@ export default async function HomePage() {
           >
             🤖 AI生成
           </Link>
-          {/* <button
-            className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
-            disabled
-          >
-            📥 JSONエクスポート
-          </button> */}
-
           <a
             href="/api/export"
             className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition inline-block text-center"
@@ -66,7 +93,6 @@ export default async function HomePage() {
           >
             📥 JSONエクスポート
           </a>
-
         </div>
         
         {/* 統計情報 */}
@@ -94,12 +120,52 @@ export default async function HomePage() {
             </p>
           </div>
         </div>
+
+        {/* タブ */}
+        <div className="mb-6">
+          <div className="border-b border-gray-200">
+            <nav className="-mb-px flex space-x-8">
+              <button
+                onClick={() => setActiveTab('reviewing')}
+                className={`py-4 px-1 border-b-2 font-medium text-sm transition ${
+                  activeTab === 'reviewing'
+                    ? 'border-yellow-500 text-yellow-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                🔍 レビュー中 ({quizzes.filter(q => q.reviewStatus === 'reviewing').length})
+              </button>
+              <button
+                onClick={() => setActiveTab('approved')}
+                className={`py-4 px-1 border-b-2 font-medium text-sm transition ${
+                  activeTab === 'approved'
+                    ? 'border-green-500 text-green-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                ✅ 承認済み ({quizzes.filter(q => q.reviewStatus === 'approved').length})
+              </button>
+              <button
+                onClick={() => setActiveTab('all')}
+                className={`py-4 px-1 border-b-2 font-medium text-sm transition ${
+                  activeTab === 'all'
+                    ? 'border-blue-500 text-blue-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                📋 全て ({quizzes.length})
+              </button>
+            </nav>
+          </div>
+        </div>
         
         {/* クイズ一覧 */}
-        {quizzes.length === 0 ? (
+        {filteredQuizzes.length === 0 ? (
           <div className="bg-white rounded-lg shadow p-12 text-center">
             <p className="text-gray-500 text-lg mb-4">
-              まだクイズがありません
+              {activeTab === 'reviewing' && 'レビュー中のクイズがありません'}
+              {activeTab === 'approved' && '承認済みのクイズがありません'}
+              {activeTab === 'all' && 'まだクイズがありません'}
             </p>
             <Link
               href="/quiz/new"
@@ -137,7 +203,7 @@ export default async function HomePage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {quizzes.map((quiz) => {
+                {filteredQuizzes.map((quiz) => {
                   const status = statusConfig[quiz.reviewStatus];
                   return (
                     <tr key={quiz.id} className="hover:bg-gray-50">
@@ -158,7 +224,7 @@ export default async function HomePage() {
                         {status.emoji} {status.label}
                       </td>
                       <td className="px-6 py-4 text-center text-xl">
-                        {quiz.hasSimilar ? '❗' : '✅'}
+                        {quiz.hasSimilar ? '❗' : '🟡'}
                       </td>
                       <td className="px-6 py-4 text-sm">
                         <Link

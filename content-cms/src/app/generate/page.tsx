@@ -111,6 +111,7 @@ export default function GeneratePage() {
         const quizToSave = {
           ...quizData,
           hasSimilar: !!similarTo, // similarTo が存在すれば true
+          reviewStatus: 'reviewing',
         };
         
         await fetch('/api/quizzes', {

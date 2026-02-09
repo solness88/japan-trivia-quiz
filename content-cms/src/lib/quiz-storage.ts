@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { Quiz, QuizInput } from '@japan-trivia/shared';
+import { Quiz, QuizInput,ReviewStatus } from '@japan-trivia/shared';
 import { v4 as uuidv4 } from 'uuid';
 
 const DATA_FILE = path.join(process.cwd(), 'data', 'quizzes.json');
@@ -33,14 +33,15 @@ export async function saveQuizzes(quizzes: Quiz[]): Promise<void> {
 /**
  * 新しいクイズを追加
  */
-export async function addQuiz(input: QuizInput): Promise<Quiz> {
+export async function addQuiz(input: QuizInput & { reviewStatus?: ReviewStatus; hasSimilar?: boolean }): Promise<Quiz> {
   const quizzes = await loadQuizzes();
   
   const now = new Date().toISOString();
   const newQuiz: Quiz = {
     id: uuidv4(),
     ...input,
-    reviewStatus: 'draft',
+    reviewStatus: input.reviewStatus || 'draft', // inputにあればそれを使用、なければdraft
+    hasSimilar: input.hasSimilar || false,
     createdAt: now,
     updatedAt: now,
   };
