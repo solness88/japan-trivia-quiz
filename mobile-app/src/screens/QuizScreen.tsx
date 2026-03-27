@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, ScrollView, ViewStyle, TextSt
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants';
 import { QuizQuestion } from '../utils/quizReview';
+import { recordQuizResult } from '../utils/userProgress';
 
 export default function QuizScreen({ route, navigation }: any) {
   const { quizzes, selectedCategory } = route.params || {};
@@ -38,19 +39,26 @@ export default function QuizScreen({ route, navigation }: any) {
   const currentQuiz = quizzes[currentIndex];
   const progress = ((currentIndex + 1) / quizzes.length) * 100;
 
-  const handleAnswer = (index: number) => {
+  const handleAnswer = async (index: number) => {
     if (isAnswered) return;
-
+  
     setSelectedAnswer(index);
     setIsAnswered(true);
-
+  
     const isCorrect = index === currentQuiz.correctAnswer;
     
     if (isCorrect) {
       setScore(score + 1);
     }
     
-    // 回答を記録
+    // UserProgress に記録
+    await recordQuizResult(
+      currentQuiz.category,
+      currentQuiz.id,
+      isCorrect
+    );
+    
+    // 回答を記録（既存のレビュー機能用）
     const questionRecord: QuizQuestion = {
       questionId: currentQuiz.id,
       question: currentQuiz.question,
