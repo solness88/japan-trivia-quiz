@@ -190,14 +190,14 @@ export default function QuizScreen({ route, navigation }: any) {
             <Text style={[styles.feedbackText, isCorrectAnswer ? styles.feedbackCorrect : styles.feedbackWrong]}>
               {isCorrectAnswer 
                 ? '✓ Correct!' 
-                : `✕ Incorrect. The correct answer is ${String.fromCharCode(65 + currentQuiz.correctAnswer)}. ${currentQuiz.options[currentQuiz.correctAnswer]}`
+                : '✕ Incorrect! Please try again later.'
               }
             </Text>
           </View>
         )}
 
         {/* Explanation */}
-        {isAnswered && currentQuiz.explanation && (
+        {isAnswered && isCorrectAnswer && currentQuiz.explanation && (
           <View style={styles.explanationCard}>
             <Text style={styles.explanationTitle}>💡 Explanation</Text>
             <Text style={styles.explanationText}>{currentQuiz.explanation}</Text>
