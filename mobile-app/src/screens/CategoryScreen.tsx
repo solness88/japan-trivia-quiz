@@ -16,19 +16,12 @@ type Category = {
 };
 
 const categories: Category[] = [
-  { 
-    id: 'random', 
-    name: 'Random Quiz', 
-    emoji: '🎲', 
-    color: Colors.accent.main,
-    description: 'Mix of all categories'
-  },
-  { id: 'culture', name: 'Culture', emoji: '🎎', color: Colors.category.culture, description: 'Traditional and modern culture' },
+  { id: 'culture', name: 'Culture', emoji: '🏯', color: Colors.category.culture, description: 'Traditional and modern culture' },
   { id: 'food', name: 'Food', emoji: '🍣', color: Colors.category.food, description: 'Japanese cuisine' },
-  { id: 'history', name: 'History', emoji: '🏯', color: Colors.category.history, description: 'Historical events and figures' },
   { id: 'geography', name: 'Geography', emoji: '🗾', color: Colors.category.geography, description: 'Places and landmarks' },
   { id: 'language', name: 'Language', emoji: '🈷️', color: Colors.category.language, description: 'Japanese language basics' },
-  { id: 'tradition', name: 'Tradition', emoji: '⛩️', color: Colors.category.tradition, description: 'Customs and traditions' },
+  { id: 'manner', name: 'Manner', emoji: '🙏', color: Colors.category.manner, description: 'Etiquette and manners' },
+  { id: 'anime-manga', name: 'Anime / Manga', emoji: '🎌', color: Colors.category.animeManga, description: 'Japanese pop culture' },
 ];
 
 export default function CategorySelectionScreen({ navigation }: any) {
@@ -46,21 +39,14 @@ export default function CategorySelectionScreen({ navigation }: any) {
   const handleCategoryPress = async (categoryId: QuizCategory) => {
     const questionCount = await getDefaultQuestionCount();
     
-    let availableQuizzes;
-    if (categoryId === 'random') {
-      availableQuizzes = getRandomQuizzes(100);
-    } else {
-      availableQuizzes = getQuizzesByCategory(categoryId);
-    }
-
+    const availableQuizzes = getQuizzesByCategory(categoryId);
+  
     const actualCount = questionCount === 'all' 
       ? availableQuizzes.length 
       : Math.min(questionCount, availableQuizzes.length);
-
-    const selectedQuizzes = categoryId === 'random'
-      ? getRandomQuizzes(actualCount)
-      : availableQuizzes.slice(0, actualCount);
-
+  
+    const selectedQuizzes = availableQuizzes.slice(0, actualCount);
+  
     navigation.navigate('Quiz', { quizzes: selectedQuizzes, selectedCategory: categoryId });
   };
 

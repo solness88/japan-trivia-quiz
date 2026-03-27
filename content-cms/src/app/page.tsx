@@ -6,14 +6,12 @@ import type { Quiz, ReviewStatus } from '@japan-trivia/shared';
 
 // カテゴリ名を日本語に変換
 const categoryLabels: Record<string, string> = {
-  culture: '文化',
-  food: '食べ物',
-  history: '歴史',
-  geography: '地理',
-  language: '言語',
-  tradition: '伝統',
-  'pop-culture': 'ポップカルチャー',
-  etiquette: 'マナー',
+  culture: 'Culture',
+  food: 'Food',
+  geography: 'Geography',
+  language: 'Language',
+  manner: 'Manner',
+  'anime-manga': 'Anime / Manga',
 };
 
 // ステータスのラベルとスタイル

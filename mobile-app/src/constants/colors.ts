@@ -52,10 +52,10 @@ export const Colors = {
   category: {
     culture: '#8b5cf6',   // 紫（文化）
     food: '#f59e0b',      // 橙（食べ物）
-    history: '#be185d',   // 紅（歴史）
     geography: '#059669', // 緑（地理）
     language: '#0891b2',  // 青（言語）
-    tradition: '#7c2d12', // 茶（伝統）
+    manner: '#ec4899',       // ← 追加（ピンク系）
+    animeManga: '#6366f1',   // ← 追加（インディゴ系）
   },
 
   // Border & Divider
