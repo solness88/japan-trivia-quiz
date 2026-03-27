@@ -9,12 +9,10 @@ export type ReviewStatus = 'draft' | 'reviewing' | 'approved' | 'rejected';
 export type QuizCategory = 
   | 'culture'      // 文化
   | 'food'         // 食べ物
-  | 'history'      // 歴史
   | 'geography'    // 地理
   | 'language'     // 言語
-  | 'tradition'    // 伝統
-  | 'pop-culture'  // ポップカルチャー
-  | 'etiquette';   // マナー・エチケット
+  | 'manner'       // マナー
+  | 'anime-manga'; // アニメ・漫画
 
 /**
  * クイズの難易度
@@ -60,6 +58,10 @@ export interface Quiz {
   
   /** レビュー担当者のメモ（オプション） */
   reviewNotes?: string;
+
+  /** 既存クイズとの類似有無（オプション） */
+  hasSimilar?: boolean;
+
 }
 
 /**

@@ -10,20 +10,18 @@ const statusConfig = {
 };
 
 const categoryLabels: Record<QuizCategory, string> = {
-  culture: '文化',
-  food: '食べ物',
-  history: '歴史',
-  geography: '地理',
-  language: '言語',
-  tradition: '伝統',
-  'pop-culture': 'ポップカルチャー',
-  etiquette: 'マナー',
+  culture: 'Culture',
+  food: 'Food',
+  geography: 'Geography',
+  language: 'Language',
+  manner: 'Manner',
+  'anime-manga': 'Anime / Manga',
 };
 
 const difficultyLabels: Record<QuizDifficulty, string> = {
-  easy: '簡単',
-  medium: '普通',
-  hard: '難しい',
+  easy: 'Easy',
+  medium: 'Medium',
+  hard: 'Hard',
 };
 
 export default function QuizEditForm({ quiz }: { quiz: Quiz }) {
