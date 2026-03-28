@@ -217,7 +217,7 @@ export default function QuizScreen({ route, navigation }: any) {
           <View style={[styles.progressBar, { width: `${progress}%` }]} />
         </View>
         <Text style={styles.progressText}>
-          Question {currentIndex + 1} of {quizzes.length} • Progress: {categoryCorrectCount}/50
+          Progress: {categoryCorrectCount}/50
         </Text>
       </View>
 

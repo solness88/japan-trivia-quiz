@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from '../constants/colors';
@@ -8,6 +8,7 @@ import { getDefaultQuestionCount, QuestionCountOption } from '../utils/settings'
 import { QuizCategory } from '../types/quiz';
 import { getUserProgress, getCategoryProgress } from '../utils/userProgress';
 import { UserProgress } from '../types/quiz';
+import { useFocusEffect } from '@react-navigation/native';
 
 type Category = {
   id: QuizCategory;
@@ -30,14 +31,13 @@ export default function CategorySelectionScreen({ navigation }: any) {
   const [defaultCount, setDefaultCount] = useState<QuestionCountOption>(10);
   const [userProgress, setUserProgress] = useState<UserProgress | null>(null); // ← 追加
 
-  useEffect(() => {
-    loadData();
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      loadData();
+    }, [])
+  );
   
   const loadData = async () => {
-    const count = await getDefaultQuestionCount();
-    setDefaultCount(count);
-    
     const progress = await getUserProgress();
     setUserProgress(progress);
   };
