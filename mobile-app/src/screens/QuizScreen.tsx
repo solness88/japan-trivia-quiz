@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, ViewStyle, TextStyle } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constants';
 import { QuizQuestion } from '../utils/quizReview';
-import { recordQuizResult } from '../utils/userProgress';
+import { recordQuizResult, getUserProgress } from '../utils/userProgress';
+import { QuizCategory } from '../types/quiz';
 
 export default function QuizScreen({ route, navigation }: any) {
   const { quizzes, selectedCategory } = route.params || {};
@@ -15,8 +16,19 @@ export default function QuizScreen({ route, navigation }: any) {
   const scrollViewRef = useRef<ScrollView>(null);
   const [questionRecords, setQuestionRecords] = useState<QuizQuestion[]>([]);
   const scrollTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const [categoryCorrectCount, setCategoryCorrectCount] = useState(0);
 
-  const category = quizzes && quizzes.length > 0 ? quizzes[0].category : 'random';
+  const category: QuizCategory = selectedCategory || 'culture';
+
+  useEffect(() => {
+    loadCategoryProgress();
+  }, []);
+  
+  const loadCategoryProgress = async () => {
+    const progress = await getUserProgress();
+    const categoryProgress = progress.categoryProgress[category];
+    setCategoryCorrectCount(categoryProgress.correctQuizIds.length);
+  };
 
   if (!quizzes || quizzes.length === 0) {
     return (
@@ -39,12 +51,72 @@ export default function QuizScreen({ route, navigation }: any) {
   const currentQuiz = quizzes[currentIndex];
   const progress = ((currentIndex + 1) / quizzes.length) * 100;
 
+  // const handleAnswer = async (index: number) => {
+  //   if (isAnswered) return;
+  
+  //   setSelectedAnswer(index);
+  //   setIsAnswered(true);
+  
+  //   const isCorrect = index === currentQuiz.correctAnswer;
+    
+  //   if (isCorrect) {
+  //     setScore(score + 1);
+  //   }
+
+  // // UserProgress に記録
+  // const updatedProgress = await recordQuizResult(
+  //   currentQuiz.category,
+  //   currentQuiz.id,
+  //   isCorrect
+  // );
+
+  // // 進捗カウントを更新
+  // if (isCorrect) {
+  //   const newCount = updatedProgress.categoryProgress[category].correctQuizIds.length;
+  //   setCategoryCorrectCount(newCount);
+  // }
+
+  //   // UserProgress に記録
+  //   await recordQuizResult(
+  //     currentQuiz.category,
+  //     currentQuiz.id,
+  //     isCorrect
+  //   );
+    
+  //   // 回答を記録（既存のレビュー機能用）
+  //   const questionRecord: QuizQuestion = {
+  //     questionId: currentQuiz.id,
+  //     question: currentQuiz.question,
+  //     options: [...currentQuiz.options],
+  //     userAnswer: index,
+  //     correctAnswer: currentQuiz.correctAnswer,
+  //     explanation: currentQuiz.explanation,
+  //     isCorrect,
+  //   };
+    
+  //   setQuestionRecords([...questionRecords, questionRecord]);
+    
+  //   // タイマーをキャンセル（前のタイマーがあれば）
+  //   if (scrollTimerRef.current) {
+  //     clearTimeout(scrollTimerRef.current);
+  //   }
+    
+  //   // 解説まで自動スクロール（タイマーIDを保存）
+  //   scrollTimerRef.current = setTimeout(() => {
+  //     scrollViewRef.current?.scrollTo({ 
+  //       y: 1000000,
+  //       animated: true 
+  //     });
+  //     scrollTimerRef.current = null;  // 実行後にクリア
+  //   }, 800);
+  // };
+
   const handleAnswer = async (index: number) => {
     if (isAnswered) return;
-  
+
     setSelectedAnswer(index);
     setIsAnswered(true);
-  
+
     const isCorrect = index === currentQuiz.correctAnswer;
     
     if (isCorrect) {
@@ -52,11 +124,17 @@ export default function QuizScreen({ route, navigation }: any) {
     }
     
     // UserProgress に記録
-    await recordQuizResult(
-      currentQuiz.category,
+    const updatedProgress = await recordQuizResult(
+      category,
       currentQuiz.id,
       isCorrect
     );
+    
+    // 進捗カウントを更新
+    if (isCorrect) {
+      const newCount = updatedProgress.categoryProgress[category].correctQuizIds.length;
+      setCategoryCorrectCount(newCount);
+    }
     
     // 回答を記録（既存のレビュー機能用）
     const questionRecord: QuizQuestion = {
@@ -139,7 +217,7 @@ export default function QuizScreen({ route, navigation }: any) {
           <View style={[styles.progressBar, { width: `${progress}%` }]} />
         </View>
         <Text style={styles.progressText}>
-          Question {currentIndex + 1} of {quizzes.length}
+          Question {currentIndex + 1} of {quizzes.length} • Progress: {categoryCorrectCount}/50
         </Text>
       </View>
 

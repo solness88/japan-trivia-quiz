@@ -6,6 +6,8 @@ import { Spacing, BorderRadius, FontSize, FontWeight, Shadow } from '../constant
 import { getQuizzesByCategory, getRandomQuizzes } from '../data/quizData';
 import { getDefaultQuestionCount, QuestionCountOption } from '../utils/settings';
 import { QuizCategory } from '../types/quiz';
+import { getUserProgress, getCategoryProgress } from '../utils/userProgress';
+import { UserProgress } from '../types/quiz';
 
 type Category = {
   id: QuizCategory;
@@ -26,28 +28,42 @@ const categories: Category[] = [
 
 export default function CategorySelectionScreen({ navigation }: any) {
   const [defaultCount, setDefaultCount] = useState<QuestionCountOption>(10);
+  const [userProgress, setUserProgress] = useState<UserProgress | null>(null); // ← 追加
 
   useEffect(() => {
-    loadDefaultCount();
+    loadData();
   }, []);
-
-  const loadDefaultCount = async () => {
+  
+  const loadData = async () => {
     const count = await getDefaultQuestionCount();
     setDefaultCount(count);
+    
+    const progress = await getUserProgress();
+    setUserProgress(progress);
   };
 
   const handleCategoryPress = async (categoryId: QuizCategory) => {
-    const questionCount = await getDefaultQuestionCount();
+    const progress = await getUserProgress();
+    const categoryProgress = progress.categoryProgress[categoryId];
     
-    const availableQuizzes = getQuizzesByCategory(categoryId);
-  
-    const actualCount = questionCount === 'all' 
-      ? availableQuizzes.length 
-      : Math.min(questionCount, availableQuizzes.length);
-  
-    const selectedQuizzes = availableQuizzes.slice(0, actualCount);
-  
-    navigation.navigate('Quiz', { quizzes: selectedQuizzes, selectedCategory: categoryId });
+    // すべての問題を取得
+    const allQuizzes = getQuizzesByCategory(categoryId);
+    
+    // 未回答の問題のみフィルター
+    const unansweredQuizzes = allQuizzes.filter(
+      quiz => !categoryProgress.correctQuizIds.includes(quiz.id)
+    );
+    
+    if (unansweredQuizzes.length === 0) {
+      // 全問正解済み
+      alert('🎉 Congratulations! You have completed all 50 questions in this category!');
+      return;
+    }
+    
+    navigation.navigate('Quiz', { 
+      quizzes: unansweredQuizzes, 
+      selectedCategory: categoryId 
+    });
   };
 
   return (
@@ -61,22 +77,31 @@ export default function CategorySelectionScreen({ navigation }: any) {
 
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollContent}>
         <View style={styles.categoriesContainer}>
-          {categories.map((category) => (
-            <TouchableOpacity
-              key={category.id}
-              style={[
-                styles.categoryCard, 
-                { borderLeftColor: category.color, borderLeftWidth: 4 }
-              ]}
-              onPress={() => handleCategoryPress(category.id)}
-            >
-              <Text style={styles.emoji}>{category.emoji}</Text>
-              <View style={styles.categoryInfo}>
-                <Text style={styles.categoryName}>{category.name}</Text>
-                <Text style={styles.categoryDescription}>{category.description}</Text>
-              </View>
-            </TouchableOpacity>
-          ))}
+        {categories.map((category) => {
+  const progress = userProgress 
+    ? getCategoryProgress(userProgress, category.id)
+    : { correct: 0, total: 50, percentage: 0, isCompleted: false };
+  
+  return (
+    <TouchableOpacity
+      key={category.id}
+      style={[
+        styles.categoryCard, 
+        { borderLeftColor: category.color, borderLeftWidth: 4 }
+      ]}
+      onPress={() => handleCategoryPress(category.id)}
+    >
+      <Text style={styles.emoji}>{category.emoji}</Text>
+      <View style={styles.categoryInfo}>
+        <Text style={styles.categoryName}>{category.name}</Text>
+        <Text style={styles.categoryDescription}>{category.description}</Text>
+        <Text style={styles.categoryProgress}>
+          {progress.correct}/50 {progress.isCompleted ? '✅' : '⭐'}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  );
+})}
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -140,5 +165,11 @@ const styles = StyleSheet.create({
   categoryDescription: {
     fontSize: FontSize.sm,
     color: Colors.text.secondary,
+  },
+  categoryProgress: {
+    fontSize: FontSize.sm,
+    fontWeight: FontWeight.bold,
+    color: Colors.primary.main,
+    marginTop: Spacing.xs,
   },
 });

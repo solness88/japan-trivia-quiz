@@ -16,7 +16,7 @@ import HistoryScreen from './src/screens/HistoryScreen';
 export type RootStackParamList = {
   Home: undefined;
   Category: undefined;
-  Quiz: { quizzes: Quiz[] };
+  Quiz: { quizzes: Quiz[], selectedCategory: QuizCategory;  };
   About: undefined;
   Settings: undefined;
   Result: { 
