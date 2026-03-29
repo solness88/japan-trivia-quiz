@@ -1,20 +1,5 @@
 [
   {
-    "id": "598d4370-7570-4371-a393-cdf8fb168b21",
-    "question": "Where is the capital of Japan?",
-    "options": [
-      "Tokyo",
-      "Osaka",
-      "Kyoto",
-      "Hiroshima"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Tokyo is the capital of Japan.\nKyoto is famous for its historic temples and shrines and served as the capital for a long time, but it is no longer the capital today.\nOsaka is another popular city to visit, famous for its street food such as takoyaki and okonomiyaki.\nHiroshima is known for its tragic history, and if you are interested in the history of the atomic bomb, it is a meaningful place to visit.",
-    "difficulty": "easy",
-    "category": "geography",
-    "tags": []
-  },
-  {
     "id": "1307d9b8-6676-4aab-a88b-c81ee8cf0a26",
     "question": "When visiting a Japanese home, it is customary to remove your shoes before entering. Where should you typically place your shoes?",
     "options": [
@@ -195,6 +180,677 @@
       "religion",
       "tradition",
       "shrines"
+    ]
+  },
+  {
+    "id": "9d05859b-3f86-4bc5-876b-24548d444a04",
+    "question": "What are the traditional Japanese inns called, often featuring tatami mats and futons?",
+    "options": [
+      "Capsule hotel",
+      "Ryokan",
+      "Business hotel",
+      "Hostel"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A Ryokan offers a traditional Japanese lodging experience, providing a glimpse into local hospitality and customs.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "accommodation",
+      "lodging"
+    ]
+  },
+  {
+    "id": "1a5fc8d1-fefb-466f-a4ad-fb3e5fd840db",
+    "question": "What is the name for the traditional Japanese wooden sandals worn with kimonos?",
+    "options": [
+      "Zori",
+      "Geta",
+      "Tabi",
+      "Surippa"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Geta are traditional wooden clogs, often worn with informal kimonos or yukatas.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "clothing",
+      "footwear"
+    ]
+  },
+  {
+    "id": "7b860808-2947-4d0f-aaf2-1a6a506996eb",
+    "question": "What is the traditional Japanese bathing experience, often in natural hot springs, called?",
+    "options": [
+      "Onsen",
+      "Sento",
+      "Ofuro",
+      "Yudofu"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Onsen are hot springs found throughout Japan, offering a relaxing and traditional bathing experience.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "leisure",
+      "wellness",
+      "nature"
+    ]
+  },
+  {
+    "id": "bf69ab44-6e26-4b50-81fa-f58b1299410c",
+    "question": "What is the traditional Japanese art of handwriting or drawing with ink?",
+    "options": [
+      "Origami",
+      "Ikebana",
+      "Shodō",
+      "Ukiyo-e"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Shodō, or Japanese calligraphy, is a traditional art that emphasizes the beauty and balance of characters written with brush and ink.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "art",
+      "writing"
+    ]
+  },
+  {
+    "id": "d66e53fd-eaab-4be8-8e6d-1999708edd8a",
+    "question": "Which Japanese video game company is famous for creating the 'Super Mario' and 'The Legend of Zelda' franchises?",
+    "options": [
+      "Sony",
+      "Microsoft",
+      "Nintendo",
+      "Sega"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Nintendo is the Japanese company responsible for beloved franchises like 'Super Mario' and 'The Legend of Zelda'.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "video games",
+      "Nintendo",
+      "franchises"
+    ]
+  },
+  {
+    "id": "aac3f982-b4e9-4bf5-b025-a779ed32b664",
+    "question": "The colorful, often sweet-smelling, and elaborately decorated pastries known as 'kawaii' desserts are a popular trend in Japan. What does 'kawaii' mean in English?",
+    "options": [
+      "Delicious",
+      "Modern",
+      "Cute",
+      "Spicy"
+    ],
+    "correctAnswer": 2,
+    "explanation": "'Kawaii' is a Japanese word that translates to 'cute' and is a significant aspect of Japanese pop culture, often seen in fashion, characters, and food.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "kawaii",
+      "food",
+      "culture"
+    ]
+  },
+  {
+    "id": "89519f41-5dab-4e4d-8401-4c27ab1b91da",
+    "question": "Which Japanese music duo achieved international fame with the hit song \"Idol\"?",
+    "options": [
+      "AKB48",
+      "Perfume",
+      "YOASOBI",
+      "K-Pop"
+    ],
+    "correctAnswer": 2,
+    "explanation": "YOASOBI is a popular Japanese music duo whose song \"Idol\" from the anime Oshi no Ko became a global hit.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "music",
+      "J-Pop",
+      "idols"
+    ]
+  },
+  {
+    "id": "8f5c5cf5-48be-4b10-b828-e2846258c528",
+    "question": "What is the primary purpose of a 'maid cafe' in Japan, a popular theme cafe experience?",
+    "options": [
+      "To serve traditional Japanese tea",
+      "To offer a unique dining experience with waitresses dressed as maids",
+      "To sell anime merchandise",
+      "To provide live music performances"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Maid cafes are known for their themed service where waitresses dressed as maids interact with customers in a charming and playful manner.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "themed cafes",
+      "culture",
+      "Tokyo"
+    ]
+  },
+  {
+    "id": "68b1bb66-783b-477d-9d1d-c0250e35b4a3",
+    "question": "What is the popular Japanese musical genre characterized by upbeat tempos, catchy melodies, and often featuring young artists known as 'idols'?",
+    "options": [
+      "Enka",
+      "J-Rock",
+      "J-Pop",
+      "Noise music"
+    ],
+    "correctAnswer": 2,
+    "explanation": "J-Pop (Japanese Pop) is a broad category that includes idol music, characterized by its accessible and energetic sound.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "J-Pop",
+      "music",
+      "idols"
+    ]
+  },
+  {
+    "id": "a81bdb3d-4759-46ff-8184-c220fe3fe184",
+    "question": "What are 'Gachapon' machines commonly found in Japan, offering small toys and trinkets?",
+    "options": [
+      "Vending machines dispensing capsule toys",
+      "Automated ramen dispensers",
+      "Digital advertising screens",
+      "Interactive art installations"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Gachapon are coin-operated vending machines that dispense toys and collectibles inside plastic capsules.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "capsule toys",
+      "vending machines",
+      "culture"
+    ]
+  },
+  {
+    "id": "23adf1c1-a763-43c1-8a30-34be90285677",
+    "question": "Which genre of Japanese fashion, popular in districts like Harajuku, emphasizes bright colors, playful accessories, and a generally cute aesthetic?",
+    "options": [
+      "Lolita Fashion",
+      "Decora Fashion",
+      "Visual Kei",
+      "Gyaru Fashion"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Decora fashion is known for its maximalist style, layering numerous colorful accessories, stickers, and bright clothing, embodying a 'cute' aesthetic.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "fashion",
+      "Harajuku",
+      "kawaii"
+    ]
+  },
+  {
+    "id": "514aa718-1497-4101-a12f-dca84756058a",
+    "question": "When greeting someone in Japan, a common practice is bowing. What does a deeper, longer bow generally signify?",
+    "options": [
+      "A casual greeting among friends.",
+      "A sign of apology or deep respect.",
+      "An invitation to a tea ceremony.",
+      "A request for silence."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Bowing is a fundamental part of Japanese etiquette. A deeper and longer bow conveys greater respect, gratitude, or a sincere apology, contrasting with lighter bows used for casual greetings.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "etiquette",
+      "bowing",
+      "respect"
+    ]
+  },
+  {
+    "id": "54a2d91b-a7f1-4dba-8311-6368acf68ed6",
+    "question": "Before entering the communal hot spring bath (onsen) in Japan, what is an essential step visitors must take?",
+    "options": [
+      "Apply a special mud mask.",
+      "Rinse their body thoroughly at the washing area or \"Kakeyu\" station.",
+      "Wear a swimsuit in the bath.",
+      "Bring their own small towel into the main bath water."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Before stepping into the bath water, it is crucial to rinse or wash your body. This practice, known as \"Kakeyu,\" helps keep the communal water clean for everyone and allows your body to adjust to the water temperature. Remember, the tub is for soaking, not for washing yourself.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "onsen",
+      "etiquette",
+      "hygiene"
+    ]
+  },
+  {
+    "id": "7429ba72-736a-4b5d-99a3-d76a43fe60db",
+    "question": "Origami, the art of paper folding, is a cherished Japanese tradition. What is the most well-known and culturally significant origami creation, often associated with peace and good fortune?",
+    "options": [
+      "The origami boat.",
+      "The origami ninja star.",
+      "The origami crane (Senbazuru).",
+      "The origami samurai helmet."
+    ],
+    "correctAnswer": 2,
+    "explanation": "The origami crane is highly symbolic in Japan, representing longevity, good luck, and peace. Folding 1,000 cranes ('Senbazuru') is a traditional wish for recovery from illness or a symbol of hope and healing.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "origami",
+      "traditional art",
+      "peace",
+      "symbolism"
+    ]
+  },
+  {
+    "id": "3f8f83cb-fad1-4aa1-ade2-3d403d0e2952",
+    "question": "Japan hosts numerous 'Matsuri' (festivals) throughout the year, celebrating seasons, deities, and historical events. What is a common feature you might see at many of these vibrant events?",
+    "options": [
+      "Strict silence and meditation.",
+      "Elaborate parades with portable shrines (mikoshi) and traditional music.",
+      "Competitive eating contests as the main attraction.",
+      "Exclusive, invite-only gatherings."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Matsuri are lively, colorful events. A common and exciting sight is the procession of 'mikoshi' (portable shrines), carried energetically through the streets, accompanied by traditional music, dancing, and cheering.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "matsuri",
+      "festival",
+      "tradition",
+      "celebration"
+    ]
+  },
+  {
+    "id": "9bbb1b3d-1609-4a07-8bdf-cef89e1c8eba",
+    "question": "The Daruma doll is a traditional Japanese doll that symbolizes good luck and perseverance. How is it typically used to achieve a goal?",
+    "options": [
+      "You write your wish on its back and burn it.",
+      "You paint one eye when setting a goal and the other eye once the goal is achieved.",
+      "You place it facing north in your home.",
+      "You throw it into a body of water for good luck."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Daruma dolls are used as a visual reminder of goals. When you set a goal, you paint one eye. Once the goal is achieved, you paint the second eye, symbolizing your commitment and perseverance.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "Daruma",
+      "good luck",
+      "tradition",
+      "goal setting"
+    ]
+  },
+  {
+    "id": "5231db7b-3c19-4e21-a073-96bf8414842f",
+    "question": "In Japanese culture, bowing is a fundamental form of communication and respect. What is one key aspect tourists should understand about Japanese bowing etiquette?",
+    "options": [
+      "It is only used for greetings, never for apologies or thanks.",
+      "Holding direct eye contact throughout a bow is a sign of sincerity.",
+      "The depth and duration of a bow often convey different levels of respect or formality.",
+      "A quick nod of the head is always sufficient for any situation."
+    ],
+    "correctAnswer": 2,
+    "explanation": "The depth and duration of a bow are crucial in Japanese etiquette, signaling varying levels of respect, apology, or gratitude. For instance, a slight nod is casual, while a deep, prolonged bow is reserved for expressing profound respect or a serious apology.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "etiquette",
+      "communication",
+      "social norms",
+      "respect"
+    ]
+  },
+  {
+    "id": "8330d336-bacd-45fb-8858-4999cb2f93a0",
+    "question": "What common cultural custom should tourists be mindful of when entering a Japanese home, temple, or traditional restaurant?",
+    "options": [
+      "Bowing deeply to everyone",
+      "Removing their shoes",
+      "Tipping generously",
+      "Bringing a small gift"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Removing shoes before entering homes, temples, and many traditional establishments is a fundamental part of Japanese etiquette. This custom is practiced to maintain cleanliness and show respect for the space. You'll often find shoe racks at entrances and even slippers provided for indoor use.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "etiquette",
+      "customs",
+      "daily life",
+      "practical"
+    ]
+  },
+  {
+    "id": "5dde79a2-70d4-4e1e-80b6-baeb188681f2",
+    "question": "In traditional Japanese aesthetics, the choice of patterns and colors for a kimono often reflects what?",
+    "options": [
+      "The wearer's social status",
+      "The current season",
+      "Their preferred type of tea",
+      "Their favorite mythical creature"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The intricate patterns and colors on a kimono are often carefully chosen to harmonize with and reflect the current season. For instance, cherry blossoms or butterflies symbolize spring, while maple leaves or chrysanthemums are common for autumn. This demonstrates the deep connection between Japanese aesthetics and nature.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "kimono",
+      "tradition",
+      "aesthetics",
+      "seasons"
+    ]
+  },
+  {
+    "id": "c76d1afa-7499-4576-ba8a-31aab7687b4d",
+    "question": "Before becoming a popular convenience store snack, what was the original primary purpose of onigiri (rice balls) in Japan?",
+    "options": [
+      "Offerings for Shinto deities",
+      "Portable food for samurai and travelers",
+      "Currency for trading goods",
+      "Desserts served after formal meals"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Onigiri were originally created as a practical, portable meal for people on the go, such as samurai, farmers, and travelers. Their compact shape and ability to be eaten without utensils made them ideal for sustenance during work or journeys. The earliest forms of rice balls date back over a thousand years.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "food",
+      "history",
+      "onigiri",
+      "origins"
+    ]
+  },
+  {
+    "id": "48bb418b-e83c-4714-a7fb-e9b3400a4abf",
+    "question": "Which ancient city is famously home to the Gion Matsuri, one of Japan's most celebrated and largest traditional festivals, featuring massive parade floats?",
+    "options": [
+      "Tokyo",
+      "Osaka",
+      "Kyoto",
+      "Sapporo"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Gion Matsuri is an iconic annual festival originating from Kyoto, known for its breathtaking procession of elaborate Yamaboko floats. Dating back over a thousand years, it began as a purification ritual to appease deities during a plague. Today, it transforms the city into a vibrant spectacle every July.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "festivals",
+      "Kyoto",
+      "traditions",
+      "regional"
+    ]
+  },
+  {
+    "id": "2ae47757-454e-4e8b-ab64-6ec303a5effe",
+    "question": "The Maneki-neko, or 'beckoning cat,' is a common Japanese figurine. What does a raised *left* paw on a Maneki-neko traditionally symbolize?",
+    "options": [
+      "Bringing good health",
+      "Attracting customers and good fortune",
+      "Warding off evil spirits",
+      "Ensuring academic success"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A Maneki-neko with a raised left paw is traditionally believed to attract customers and good fortune, especially for businesses. This is why you frequently see them displayed in shops and restaurants. Conversely, a raised right paw is generally thought to invite money and good luck to the owner.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "symbolism",
+      "folklore",
+      "traditions",
+      "trivia"
+    ]
+  },
+  {
+    "id": "00fd1dc4-4229-4fcb-9dee-090c408c8b8f",
+    "question": "What does a \"Torii\" gate typically signify?",
+    "options": [
+      "The entrance to a restaurant",
+      "The entrance to a sacred space such as a shrine",
+      "A historical landmark.",
+      "A traditional garden entrance."
+    ],
+    "correctAnswer": 1,
+    "explanation": "A Torii gate stands at the entrance to shrines and similar sacred sites, marking the boundary between the everyday world and a sacred space. Passing through a Torii is considered a purifying step before entering the grounds. The characteristic vermilion color is traditionally believed to ward off evil spirits.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "Spirituality",
+      "Shinto",
+      "Symbols"
+    ]
+  },
+  {
+    "id": "66dc2e4c-c5f1-4d75-b268-1339349bffe0",
+    "question": "What is the common term for Japan's famous high-speed rail network?",
+    "options": [
+      "Bullet Express",
+      "Speedliner",
+      "Shinkansen",
+      "Hyperloop"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Shinkansen is Japan's network of high-speed railway lines, renowned for its punctuality, safety, and comfort. It's often referred to as the 'bullet train' in English due to its sleek design and speed. The first Shinkansen line, the Tokaido Shinkansen, opened in 1964 for the Tokyo Olympics.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "Practical Info",
+      "Transportation",
+      "Modern Technology"
+    ]
+  },
+  {
+    "id": "6bc60eb7-5230-498a-b8cf-1eb2ea0f69ab",
+    "question": "What does the Japanese word 'Kawaii' typically mean?",
+    "options": [
+      "Brave",
+      "Cute",
+      "Strong",
+      "Beautiful"
+    ],
+    "correctAnswer": 1,
+    "explanation": "'Kawaii' literally translates to 'cute' or 'adorable' and refers to a prominent cultural aesthetic in Japan. This concept influences fashion, entertainment, toys, food, and even government campaigns. Hello Kitty is one of the most famous examples of kawaii culture.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "Modern Culture",
+      "Language",
+      "Pop Culture"
+    ]
+  },
+  {
+    "id": "2e7d8073-357d-429e-bf7b-13802cd5a193",
+    "question": "Which of these iconic figures from feudal Japan were warriors known for carrying a sword and following a strict code of honor?",
+    "options": [
+      "Haiku poet",
+      "Ukiyo-e painter",
+      "Samurai",
+      "Kabuki actor"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Samurai were the military nobility of feudal Japan, known for their martial skills, strict adherence to the Bushido code of honor, and their iconic weapon — the katana. Samurai typically carried two swords — a long sword (katana) and a short sword (wakizashi).",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "History",
+      "Samurai",
+      "Warrior"
+    ]
+  },
+  {
+    "id": "64196db1-64fb-489a-b52e-679505986da8",
+    "question": "What is a 'ryokan' in Japan?",
+    "options": [
+      "A traditional Japanese tea house.",
+      "A type of convenience store.",
+      "A Japanese-style inn.",
+      "A high-speed train station."
+    ],
+    "correctAnswer": 2,
+    "explanation": "A ryokan is a Japanese-style inn that offers a distinctive lodging experience. Rooms are typically furnished with tatami flooring and futon beds. Many ryokan also feature hot spring baths (onsen) and Japanese cuisine, though the style and scale vary widely — from simple guesthouses to more upscale establishments. Staying in a ryokan is a great way to experience a side of Japanese culture that differs from a standard hotel stay.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "Practical Info",
+      "Accommodation",
+      "Traditional"
+    ]
+  },
+  {
+    "id": "29a3134b-c9ff-4ded-ae2d-d15882c8d374",
+    "question": "What is 'Hanami' a celebration of?",
+    "options": [
+      "The autumn leaves.",
+      "The cherry blossoms.",
+      "The first snowfall of winter.",
+      "The summer fireworks festivals."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Hanami literally means 'flower viewing' and is the centuries-old practice of picnicking under blooming cherry blossom trees. It is a time for friends, family, and colleagues to gather, enjoy food and drinks, and appreciate the beauty of the sakura. The cherry blossom season typically lasts only one to two weeks, making it a much-anticipated event across Japan each spring.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "Festivals",
+      "Seasons",
+      "Cherry Blossoms"
+    ]
+  },
+  {
+    "id": "8dde223a-29e1-4be3-b259-8f9a7ce66dc8",
+    "question": "What is the small cat figurine, often seen in shops with one paw raised as if beckoning, called?",
+    "options": [
+      "Neko-chan",
+      "Lucky Cat",
+      "Maneki-neko",
+      "Kitten Mascot"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Maneki-neko figurines are typically displayed near the entrance of shops and restaurants. The right paw raised is said to invite good fortune and money, while the left paw raised is believed to welcome customers and people — though interpretations vary by region and tradition.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "Folklore",
+      "Symbols",
+      "Business"
+    ]
+  },
+  {
+    "id": "f53c5262-568d-414a-bfde-91814dde6fb0",
+    "question": "Which of these is a traditional Japanese theatrical art form known for its elaborate costumes and the bold, graphic face paint called kumadori?",
+    "options": [
+      "Noh",
+      "Bunraku",
+      "Kabuki",
+      "Kyogen"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Kabuki is a classical Japanese theatrical art known for its highly stylized performances, elaborate costumes, and the distinctive kumadori makeup worn by its actors. The word Kabuki is thought to derive from the verb 'kabuku', meaning 'to lean', 'to be out of the ordinary', or 'to be eccentric.'",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "Traditional Arts",
+      "Theatre",
+      "Kabuki"
+    ]
+  },
+  {
+    "id": "7856939f-0f08-4983-8c33-2ccd6d48f884",
+    "question": "What is 'Karaoke' primarily known for in Japan?",
+    "options": [
+      "A traditional form of storytelling.",
+      "A type of martial art.",
+      "Singing along to recorded music.",
+      "A traditional board game."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Karaoke is a portmanteau of the Japanese words 'kara' (empty) and 'oke' (a shorthand for orchestra), meaning 'empty orchestra.' It is a popular form of entertainment where people sing along to instrumental versions of songs. Originating in Japan, it is enjoyed in dedicated karaoke boxes or bars, and is a very common pastime for friends and colleagues.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "Modern Culture",
+      "Entertainment",
+      "Music"
+    ]
+  },
+  {
+    "id": "d44434b8-4a04-4af3-822b-89c1d25ec608",
+    "question": "What is the primary ingredient in 'sake'?",
+    "options": [
+      "Barley",
+      "Grapes",
+      "Rice",
+      "Potatoes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Sake is a Japanese alcoholic beverage made by fermenting polished rice. It can be enjoyed cold, at room temperature, or warm, making it a uniquely versatile drink. Rice-growing regions such as Niigata and Akita are particularly renowned for producing high-quality sake.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "Food",
+      "Drink",
+      "Sake"
+    ]
+  },
+  {
+    "id": "49237bf7-c8ee-4bc4-b967-efe8d6fef2a2",
+    "question": "Which traditional Japanese garment is a formal full-length robe with wide sleeves, tied with an obi (sash), worn on special occasions such as ceremonies and festivals?",
+    "options": [
+      "Yukata",
+      "Happi",
+      "Haori",
+      "Kimono"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The Kimono is a traditional Japanese garment, a T-shaped, straight-lined robe worn by men and women, often for special occasions. It is wrapped around the body, always with the left side over the right, and secured by a wide sash called an obi. The yukata is a lighter, more casual summer version of the kimono.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "Traditional Garment",
+      "Fashion",
+      "Kimono"
+    ]
+  },
+  {
+    "id": "261e9520-2036-44a7-bb52-fc6a08757bdd",
+    "question": "What is the most common reason Japanese people wear face masks in public, even before the pandemic?",
+    "options": [
+      "It's a common fashion trend.",
+      "To prevent spreading illness to others, or to avoid catching one.",
+      "To hide their identity.",
+      "As a form of cultural expression."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Wearing a face mask in public is a common practice in Japan, often done out of consideration for others, especially if one has a cold or allergies. It's a sign of civic responsibility to prevent the spread of germs. It's also worn to protect oneself from pollen during allergy season or from air pollution.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "Daily Life",
+      "Health",
+      "Etiquette"
+    ]
+  },
+  {
+    "id": "25601ae8-de37-492a-920e-bcc9dc2e40ab",
+    "question": "What is the name of the traditional Japanese performing art that uses elaborate puppets, often operated by three puppeteers?",
+    "options": [
+      "Noh",
+      "Kabuki",
+      "Bunraku",
+      "Rakugo"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Bunraku is a traditional Japanese puppet theatre where large, intricate puppets are each manipulated by three puppeteers. The stories are narrated by a single chanter accompanied by a player of the shamisen, a traditional Japanese three-stringed instrument. Along with Noh and Kabuki, Bunraku is considered one of the three great classical performing arts of Japan. It is recognized as a UNESCO Intangible Cultural Heritage.",
+    "difficulty": "easy",
+    "category": "culture",
+    "tags": [
+      "Traditional Arts",
+      "Theatre",
+      "Bunraku"
     ]
   },
   {
@@ -391,6 +1047,81 @@
     ]
   },
   {
+    "id": "598d4370-7570-4371-a393-cdf8fb168b21",
+    "question": "Where is the capital of Japan?",
+    "options": [
+      "Tokyo",
+      "Osaka",
+      "Kyoto",
+      "Hiroshima"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Tokyo is the capital of Japan.\nKyoto is famous for its historic temples and shrines and served as the capital for a long time, but it is no longer the capital today.\nOsaka is another popular city to visit, famous for its street food such as takoyaki and okonomiyaki.\nHiroshima is known for its tragic history, and if you are interested in the history of the atomic bomb, it is a meaningful place to visit.",
+    "difficulty": "easy",
+    "category": "geography",
+    "tags": []
+  },
+  {
+    "id": "22a97e33-ef37-41ec-80dc-ccb7b3cacadf",
+    "question": "Which city is famous for its vibrant youth culture, fashion districts like Harajuku and Shibuya, and a plethora of themed cafes?",
+    "options": [
+      "Osaka",
+      "Kyoto",
+      "Sapporo",
+      "Tokyo"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Tokyo, particularly areas like Harajuku and Shibuya, is renowned for its cutting-edge fashion, youth culture, and unique themed cafes.",
+    "difficulty": "medium",
+    "category": "geography",
+    "tags": [
+      "Tokyo",
+      "fashion",
+      "culture"
+    ]
+  },
+  {
+    "id": "6a72e116-9860-4c75-be33-c1db4872b554",
+    "question": "Japan is a very mountainous country. Approximately what percentage of Japan's land area is covered by mountains and hills?",
+    "options": [
+      "25%",
+      "50%",
+      "75%",
+      "90%"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Around 75% of Japan is mountainous and hills, which explains why major cities and population centers are concentrated in coastal plains and valleys. This rugged terrain also contributes to Japan's stunning natural beauty and diverse ecosystems.",
+    "difficulty": "medium",
+    "category": "geography",
+    "tags": [
+      "physical geography",
+      "mountains",
+      "terrain",
+      "landscape"
+    ]
+  },
+  {
+    "id": "08eb0516-0f79-4c1f-83f4-2cd8edef1a14",
+    "question": "Which prefecture is famous as one of Japan's leading rice-production-areas renowned for its vast plains and the production of high-quality rice, particularly the famous Koshihikari?",
+    "options": [
+      "Tokyo",
+      "Okinawa",
+      "Niigata",
+      "Kyoto"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Niigata Prefecture, located along the Sea of Japan coast, is one of Japan's most famous rice-producing regions. Its fertile plains, combined with abundant snowmelt water and an ideal climate, make it perfect for growing premium rice like Koshihikari. This high-quality rice also serves as the foundation for the prefecture's renowned sake (rice wine) industry.",
+    "difficulty": "medium",
+    "category": "geography",
+    "tags": [
+      "agriculture",
+      "regions",
+      "food culture",
+      "rice",
+      "economy"
+    ]
+  },
+  {
     "id": "bf86c73f-bff1-4b8e-aab5-841df6c201ee",
     "question": "What is the most common way to greet someone in Japan, similar to saying 'Hello'?",
     "options": [
@@ -575,58 +1306,22 @@
     ]
   },
   {
-    "id": "71971d1e-9d1c-486e-8f51-8f82e0afefe9",
-    "question": "What is the traditional Japanese garment often worn for special occasions like weddings and tea ceremonies?",
+    "id": "8cc86fd4-eb7e-4543-8e91-bf3b0049fcfb",
+    "question": "What is a 'konbini' in Japan?",
     "options": [
-      "Yukata",
-      "Kimono",
-      "Samurai armor",
-      "Happi coat"
+      "A traditional festival.",
+      "A convenient store basically open 24/7.",
+      "A type of small, local restaurant.",
+      "A specific kind of vending machine."
     ],
     "correctAnswer": 1,
-    "explanation": "The Kimono is a formal traditional garment in Japan, rich in history and symbolism.",
+    "explanation": "'Konbini' is a Japanese abbreviation of the English word 'convenience store.' These stores are ubiquitous throughout Japan and are basically open 24/7. They offer a vast array of goods, including fresh food, drinks, snacks, and household items, as well as services such as bill payment and ticket purchasing. They are an essential part of daily life in Japan.",
     "difficulty": "easy",
-    "category": "tradition",
+    "category": "language",
     "tags": [
-      "clothing",
-      "formal wear"
-    ]
-  },
-  {
-    "id": "0845aec0-9e5c-42f9-80cd-e780d157c8a5",
-    "question": "In Japanese tea ceremony, what is the powdered green tea called?",
-    "options": [
-      "Sencha",
-      "Gyokuro",
-      "Matcha",
-      "Hojicha"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Matcha is the finely ground powder of specially grown and processed green tea leaves, central to the tea ceremony.",
-    "difficulty": "easy",
-    "category": "tradition",
-    "tags": [
-      "tea",
-      "ceremony",
-      "food"
-    ]
-  },
-  {
-    "id": "8766da97-b21a-41e6-a036-b9eaf66e6424",
-    "question": "What is the Japanese art of paper folding called?",
-    "options": [
-      "Ikebana",
-      "Origami",
-      "Calligraphy",
-      "Bonsai"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Origami is the traditional art of folding paper to create various decorative shapes and figures.",
-    "difficulty": "easy",
-    "category": "tradition",
-    "tags": [
-      "art",
-      "crafts"
+      "Practical Info",
+      "Daily Life",
+      "Convenience Stores"
     ]
   },
   {
@@ -641,561 +1336,10 @@
     "correctAnswer": 3,
     "explanation": "Ojigi is the act of bowing, a fundamental part of Japanese etiquette and showing respect.",
     "difficulty": "easy",
-    "category": "tradition",
+    "category": "manner",
     "tags": [
       "etiquette",
       "greeting"
-    ]
-  },
-  {
-    "id": "9d05859b-3f86-4bc5-876b-24548d444a04",
-    "question": "What are the traditional Japanese inns called, often featuring tatami mats and futons?",
-    "options": [
-      "Capsule hotel",
-      "Ryokan",
-      "Business hotel",
-      "Hostel"
-    ],
-    "correctAnswer": 1,
-    "explanation": "A Ryokan offers a traditional Japanese lodging experience, providing a glimpse into local hospitality and customs.",
-    "difficulty": "easy",
-    "category": "tradition",
-    "tags": [
-      "accommodation",
-      "lodging"
-    ]
-  },
-  {
-    "id": "1a5fc8d1-fefb-466f-a4ad-fb3e5fd840db",
-    "question": "What is the name for the traditional Japanese wooden sandals worn with kimonos?",
-    "options": [
-      "Zori",
-      "Geta",
-      "Tabi",
-      "Surippa"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Geta are traditional wooden clogs, often worn with informal kimonos or yukatas.",
-    "difficulty": "easy",
-    "category": "tradition",
-    "tags": [
-      "clothing",
-      "footwear"
-    ]
-  },
-  {
-    "id": "32ea4285-8da1-48a8-a426-815970b1104f",
-    "question": "What is the name of the traditional Japanese theater known for its elaborate costumes and makeup?",
-    "options": [
-      "Noh",
-      "Bunraku",
-      "Kabuki",
-      "Kyogen"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Kabuki is a highly stylized traditional Japanese drama known for its dramatic performances, elaborate costumes, and makeup.",
-    "difficulty": "easy",
-    "category": "tradition",
-    "tags": [
-      "theater",
-      "performance"
-    ]
-  },
-  {
-    "id": "7b860808-2947-4d0f-aaf2-1a6a506996eb",
-    "question": "What is the traditional Japanese bathing experience, often in natural hot springs, called?",
-    "options": [
-      "Onsen",
-      "Sento",
-      "Ofuro",
-      "Yudofu"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Onsen are hot springs found throughout Japan, offering a relaxing and traditional bathing experience.",
-    "difficulty": "easy",
-    "category": "tradition",
-    "tags": [
-      "leisure",
-      "wellness",
-      "nature"
-    ]
-  },
-  {
-    "id": "bf69ab44-6e26-4b50-81fa-f58b1299410c",
-    "question": "What is the traditional Japanese art of handwriting or drawing with ink?",
-    "options": [
-      "Origami",
-      "Ikebana",
-      "Shodō",
-      "Ukiyo-e"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Shodō, or Japanese calligraphy, is a traditional art that emphasizes the beauty and balance of characters written with brush and ink.",
-    "difficulty": "easy",
-    "category": "tradition",
-    "tags": [
-      "art",
-      "writing"
-    ]
-  },
-  {
-    "id": "d054a732-44e7-49d6-9e12-d4996684f6e2",
-    "question": "Which iconic character, known for their red bow and friendship with Monkey D. Luffy, is a key figure in the global phenomenon 'One Piece'?",
-    "options": [
-      "Naruto Uzumaki",
-      "Son Goku",
-      "Roronoa Zoro",
-      "Portgas D. Ace"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Portgas D. Ace is a central character in 'One Piece' and is known for his distinctive red bow and his close relationship with Luffy.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "anime",
-      "manga",
-      "One Piece"
-    ]
-  },
-  {
-    "id": "e6ffa4e1-fdf1-4b0d-b948-5b9126968647",
-    "question": "What is the name of the world's best-selling manga series, featuring a pirate crew searching for the ultimate treasure?",
-    "options": [
-      "Dragon Ball",
-      "Naruto",
-      "One Piece",
-      "Attack on Titan"
-    ],
-    "correctAnswer": 2,
-    "explanation": "'One Piece' is the best-selling manga series of all time, created by Eiichiro Oda.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "anime",
-      "manga",
-      "best-selling"
-    ]
-  },
-  {
-    "id": "d66e53fd-eaab-4be8-8e6d-1999708edd8a",
-    "question": "Which Japanese video game company is famous for creating the 'Super Mario' and 'The Legend of Zelda' franchises?",
-    "options": [
-      "Sony",
-      "Microsoft",
-      "Nintendo",
-      "Sega"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Nintendo is the Japanese company responsible for beloved franchises like 'Super Mario' and 'The Legend of Zelda'.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "video games",
-      "Nintendo",
-      "franchises"
-    ]
-  },
-  {
-    "id": "aac3f982-b4e9-4bf5-b025-a779ed32b664",
-    "question": "The colorful, often sweet-smelling, and elaborately decorated pastries known as 'kawaii' desserts are a popular trend in Japan. What does 'kawaii' mean in English?",
-    "options": [
-      "Delicious",
-      "Modern",
-      "Cute",
-      "Spicy"
-    ],
-    "correctAnswer": 2,
-    "explanation": "'Kawaii' is a Japanese word that translates to 'cute' and is a significant aspect of Japanese pop culture, often seen in fashion, characters, and food.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "kawaii",
-      "food",
-      "culture"
-    ]
-  },
-  {
-    "id": "b5bdabef-9efc-4e9e-86de-dbc1c7b71c40",
-    "question": "What genre of Japanese animation, often featuring vibrant visuals and diverse storytelling, has gained immense global popularity?",
-    "options": [
-      "J-Drama",
-      "J-Pop",
-      "Anime",
-      "Kabuki"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Anime is the term for Japanese animation, known for its distinct artistic style and wide range of genres, which has a massive international following.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "anime",
-      "animation",
-      "global"
-    ]
-  },
-  {
-    "id": "89519f41-5dab-4e4d-8401-4c27ab1b91da",
-    "question": "Which Japanese music duo achieved international fame with the hit song \"Idol\"?",
-    "options": [
-      "AKB48",
-      "Perfume",
-      "YOASOBI",
-      "K-Pop"
-    ],
-    "correctAnswer": 2,
-    "explanation": "YOASOBI is a popular Japanese music duo whose song \"Idol\" from the anime Oshi no Ko became a global hit.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "music",
-      "J-Pop",
-      "idols"
-    ]
-  },
-  {
-    "id": "8f5c5cf5-48be-4b10-b828-e2846258c528",
-    "question": "What is the primary purpose of a 'maid cafe' in Japan, a popular theme cafe experience?",
-    "options": [
-      "To serve traditional Japanese tea",
-      "To offer a unique dining experience with waitresses dressed as maids",
-      "To sell anime merchandise",
-      "To provide live music performances"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Maid cafes are known for their themed service where waitresses dressed as maids interact with customers in a charming and playful manner.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "themed cafes",
-      "culture",
-      "Tokyo"
-    ]
-  },
-  {
-    "id": "60bde45f-658c-4b25-ac1b-89703874c18f",
-    "question": "Which popular Japanese manga and anime series features a brilliant student named Light Yagami who finds a supernatural notebook that causes the death of anyone whose name is written in it?",
-    "options": [
-      "Fullmetal Alchemist",
-      "Death Note",
-      "My Hero Academia",
-      "Jujutsu Kaisen"
-    ],
-    "correctAnswer": 1,
-    "explanation": "'Death Note' is a critically acclaimed manga and anime series known for its intense psychological thriller plot involving the Death Note.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "anime",
-      "manga",
-      "thriller"
-    ]
-  },
-  {
-    "id": "8203eed8-f65d-407c-85c0-5641a1b598e7",
-    "question": "What is the name of the iconic, yellow, electric-type Pokémon that is often considered the mascot of the franchise?",
-    "options": [
-      "Pikachu",
-      "Charmander",
-      "Squirtle",
-      "Bulbasaur"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Pikachu is the most recognizable Pokémon and serves as the unofficial mascot for the entire Pokémon franchise.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "Pokémon",
-      "mascot",
-      "video games"
-    ]
-  },
-  {
-    "id": "22a97e33-ef37-41ec-80dc-ccb7b3cacadf",
-    "question": "Which city is famous for its vibrant youth culture, fashion districts like Harajuku and Shibuya, and a plethora of themed cafes?",
-    "options": [
-      "Osaka",
-      "Kyoto",
-      "Sapporo",
-      "Tokyo"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Tokyo, particularly areas like Harajuku and Shibuya, is renowned for its cutting-edge fashion, youth culture, and unique themed cafes.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "Tokyo",
-      "fashion",
-      "culture"
-    ]
-  },
-  {
-    "id": "68b1bb66-783b-477d-9d1d-c0250e35b4a3",
-    "question": "What is the popular Japanese musical genre characterized by upbeat tempos, catchy melodies, and often featuring young artists known as 'idols'?",
-    "options": [
-      "Enka",
-      "J-Rock",
-      "J-Pop",
-      "Noise music"
-    ],
-    "correctAnswer": 2,
-    "explanation": "J-Pop (Japanese Pop) is a broad category that includes idol music, characterized by its accessible and energetic sound.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "J-Pop",
-      "music",
-      "idols"
-    ]
-  },
-  {
-    "id": "960a2dd2-11fb-47ae-b97c-f53453888adf",
-    "question": "The 'Ghibli Museum' is a popular destination for fans of Studio Ghibli. In which city is it located?",
-    "options": [
-      "Osaka",
-      "Kyoto",
-      "Tokyo",
-      "Hiroshima"
-    ],
-    "correctAnswer": 2,
-    "explanation": "The Ghibli Museum, dedicated to the works of Studio Ghibli, is located in Mitaka, a city within the greater Tokyo metropolitan area.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "Studio Ghibli",
-      "museum",
-      "Tokyo"
-    ]
-  },
-  {
-    "id": "a81bdb3d-4759-46ff-8184-c220fe3fe184",
-    "question": "What are 'Gachapon' machines commonly found in Japan, offering small toys and trinkets?",
-    "options": [
-      "Vending machines dispensing capsule toys",
-      "Automated ramen dispensers",
-      "Digital advertising screens",
-      "Interactive art installations"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Gachapon are coin-operated vending machines that dispense toys and collectibles inside plastic capsules.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "capsule toys",
-      "vending machines",
-      "culture"
-    ]
-  },
-  {
-    "id": "505961a7-52a7-42ec-bc6c-f7b87bcb6126",
-    "question": "Which popular video game franchise, known for its survival horror gameplay, features iconic characters like Leon S. Kennedy and Jill Valentine?",
-    "options": [
-      "Final Fantasy",
-      "Street Fighter",
-      "Resident Evil",
-      "Metal Gear Solid"
-    ],
-    "correctAnswer": 2,
-    "explanation": "'Resident Evil' (known as 'Biohazard' in Japan) is a long-running survival horror video game series developed by Capcom.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "video games",
-      "survival horror",
-      "Capcom"
-    ]
-  },
-  {
-    "id": "2874ada3-3488-4d0b-9774-36a4a9282552",
-    "question": "Which anime series, set in a world where humans fight giant humanoid creatures called Titans, is known for its intense action and dramatic storyline?",
-    "options": [
-      "Sword Art Online",
-      "Attack on Titan",
-      "Demon Slayer: Kimetsu no Yaiba",
-      "Tokyo Ghoul"
-    ],
-    "correctAnswer": 1,
-    "explanation": "'Attack on Titan' features a gripping narrative where humanity battles monstrous Titans, known for its thrilling combat and complex plot.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "anime",
-      "manga",
-      "action"
-    ]
-  },
-  {
-    "id": "53725cb3-622d-4c3e-9dca-9783a4c06733",
-    "question": "The popular Japanese music duo 'YOASOBI' achieved global recognition with their song 'Idol', which is the opening theme for which popular anime series?",
-    "options": [
-      "Jujutsu Kaisen",
-      "Spy x Family",
-      "Oshi no Ko",
-      "Chainsaw Man"
-    ],
-    "correctAnswer": 2,
-    "explanation": "'Idol' by YOASOBI is the highly successful opening theme song for the anime series 'Oshi no Ko'.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "YOASOBI",
-      "anime",
-      "music"
-    ]
-  },
-  {
-    "id": "1a662969-68a9-46bd-8e32-7f5cd2490bee",
-    "question": "What is the name of the iconic, sentient yellow character from the Pokémon franchise, often depicted as Ash Ketchum's loyal companion?",
-    "options": [
-      "Eevee",
-      "Pikachu",
-      "Mewtwo",
-      "Charizard"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Pikachu is the most recognizable Pokémon character and the primary companion of the protagonist, Ash Ketchum.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "Pokémon",
-      "anime",
-      "mascot"
-    ]
-  },
-  {
-    "id": "23adf1c1-a763-43c1-8a30-34be90285677",
-    "question": "Which genre of Japanese fashion, popular in districts like Harajuku, emphasizes bright colors, playful accessories, and a generally cute aesthetic?",
-    "options": [
-      "Lolita Fashion",
-      "Decora Fashion",
-      "Visual Kei",
-      "Gyaru Fashion"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Decora fashion is known for its maximalist style, layering numerous colorful accessories, stickers, and bright clothing, embodying a 'cute' aesthetic.",
-    "difficulty": "medium",
-    "category": "pop-culture",
-    "tags": [
-      "fashion",
-      "Harajuku",
-      "kawaii"
-    ]
-  },
-  {
-    "id": "514aa718-1497-4101-a12f-dca84756058a",
-    "question": "When greeting someone in Japan, a common practice is bowing. What does a deeper, longer bow generally signify?",
-    "options": [
-      "A casual greeting among friends.",
-      "A sign of apology or deep respect.",
-      "An invitation to a tea ceremony.",
-      "A request for silence."
-    ],
-    "correctAnswer": 1,
-    "explanation": "Bowing is a fundamental part of Japanese etiquette. A deeper and longer bow conveys greater respect, gratitude, or a sincere apology, contrasting with lighter bows used for casual greetings.",
-    "difficulty": "medium",
-    "category": "culture",
-    "tags": [
-      "etiquette",
-      "bowing",
-      "respect"
-    ]
-  },
-  {
-    "id": "54a2d91b-a7f1-4dba-8311-6368acf68ed6",
-    "question": "Before entering the communal hot spring bath (onsen) in Japan, what is an essential step visitors must take?",
-    "options": [
-      "Apply a special mud mask.",
-      "Rinse their body thoroughly at the washing area or \"Kakeyu\" station.",
-      "Wear a swimsuit in the bath.",
-      "Bring their own small towel into the main bath water."
-    ],
-    "correctAnswer": 1,
-    "explanation": "Before stepping into the bath water, it is crucial to rinse or wash your body. This practice, known as \"Kakeyu,\" helps keep the communal water clean for everyone and allows your body to adjust to the water temperature. Remember, the tub is for soaking, not for washing yourself.",
-    "difficulty": "medium",
-    "category": "culture",
-    "tags": [
-      "onsen",
-      "etiquette",
-      "hygiene"
-    ]
-  },
-  {
-    "id": "7429ba72-736a-4b5d-99a3-d76a43fe60db",
-    "question": "Origami, the art of paper folding, is a cherished Japanese tradition. What is the most well-known and culturally significant origami creation, often associated with peace and good fortune?",
-    "options": [
-      "The origami boat.",
-      "The origami ninja star.",
-      "The origami crane (Senbazuru).",
-      "The origami samurai helmet."
-    ],
-    "correctAnswer": 2,
-    "explanation": "The origami crane is highly symbolic in Japan, representing longevity, good luck, and peace. Folding 1,000 cranes ('Senbazuru') is a traditional wish for recovery from illness or a symbol of hope and healing.",
-    "difficulty": "medium",
-    "category": "culture",
-    "tags": [
-      "origami",
-      "traditional art",
-      "peace",
-      "symbolism"
-    ]
-  },
-  {
-    "id": "3f8f83cb-fad1-4aa1-ade2-3d403d0e2952",
-    "question": "Japan hosts numerous 'Matsuri' (festivals) throughout the year, celebrating seasons, deities, and historical events. What is a common feature you might see at many of these vibrant events?",
-    "options": [
-      "Strict silence and meditation.",
-      "Elaborate parades with portable shrines (mikoshi) and traditional music.",
-      "Competitive eating contests as the main attraction.",
-      "Exclusive, invite-only gatherings."
-    ],
-    "correctAnswer": 1,
-    "explanation": "Matsuri are lively, colorful events. A common and exciting sight is the procession of 'mikoshi' (portable shrines), carried energetically through the streets, accompanied by traditional music, dancing, and cheering.",
-    "difficulty": "medium",
-    "category": "culture",
-    "tags": [
-      "matsuri",
-      "festival",
-      "tradition",
-      "celebration"
-    ]
-  },
-  {
-    "id": "9bbb1b3d-1609-4a07-8bdf-cef89e1c8eba",
-    "question": "The Daruma doll is a traditional Japanese doll that symbolizes good luck and perseverance. How is it typically used to achieve a goal?",
-    "options": [
-      "You write your wish on its back and burn it.",
-      "You paint one eye when setting a goal and the other eye once the goal is achieved.",
-      "You place it facing north in your home.",
-      "You throw it into a body of water for good luck."
-    ],
-    "correctAnswer": 1,
-    "explanation": "Daruma dolls are used as a visual reminder of goals. When you set a goal, you paint one eye. Once the goal is achieved, you paint the second eye, symbolizing your commitment and perseverance.",
-    "difficulty": "medium",
-    "category": "culture",
-    "tags": [
-      "Daruma",
-      "good luck",
-      "tradition",
-      "goal setting"
-    ]
-  },
-  {
-    "id": "5231db7b-3c19-4e21-a073-96bf8414842f",
-    "question": "In Japanese culture, bowing is a fundamental form of communication and respect. What is one key aspect tourists should understand about Japanese bowing etiquette?",
-    "options": [
-      "It is only used for greetings, never for apologies or thanks.",
-      "Holding direct eye contact throughout a bow is a sign of sincerity.",
-      "The depth and duration of a bow often convey different levels of respect or formality.",
-      "A quick nod of the head is always sufficient for any situation."
-    ],
-    "correctAnswer": 2,
-    "explanation": "The depth and duration of a bow are crucial in Japanese etiquette, signaling varying levels of respect, apology, or gratitude. For instance, a slight nod is casual, while a deep, prolonged bow is reserved for expressing profound respect or a serious apology.",
-    "difficulty": "medium",
-    "category": "culture",
-    "tags": [
-      "etiquette",
-      "communication",
-      "social norms",
-      "respect"
     ]
   },
   {
@@ -1210,7 +1354,7 @@
     "correctAnswer": 3,
     "explanation": "All three actions are considered bad etiquette when using chopsticks in Japan. Sticking chopsticks upright in rice and passing food directly are especially taboo as they are associated with funeral rituals.",
     "difficulty": "medium",
-    "category": "etiquette",
+    "category": "manner",
     "tags": [
       "dining",
       "chopsticks",
@@ -1229,7 +1373,7 @@
     "correctAnswer": 2,
     "explanation": "Tipping is generally not practiced in Japan. High-quality service is considered a standard expectation and is included in the price. Attempting to tip can often lead to confusion or polite refusal. While rare exceptions exist in high-end traditional inns (ryokan), the standard rule for travelers is that no tip is required or expected.",
     "difficulty": "medium",
-    "category": "etiquette",
+    "category": "manner",
     "tags": [
       "tipping",
       "service",
@@ -1248,7 +1392,7 @@
     "correctAnswer": 1,
     "explanation": "To maintain a comfortable environment for all passengers, it is standard etiquette to set mobile phones to silent mode (\"manner mode\") and refrain from making or receiving voice calls. While quiet conversation with companions is generally acceptable, keeping noise to a minimum is expected. This practice reflects the Japanese cultural value of \"kyosei\" (harmonious coexistence) in shared public spaces.",
     "difficulty": "medium",
-    "category": "etiquette",
+    "category": "manner",
     "tags": [
       "public transport",
       "noise",
@@ -1267,7 +1411,7 @@
     "correctAnswer": 2,
     "explanation": "In Japan, slurping noodles such as soba, udon, and ramen is culturally acceptable and very common. While making loud noises is often discouraged in other dining contexts, it is a standard part of the experience when enjoying a bowl of Japanese noodles. However, this generally does not apply to Western-style pasta.",
     "difficulty": "medium",
-    "category": "etiquette",
+    "category": "manner",
     "tags": [
       "dining",
       "noodles",
@@ -1280,159 +1424,18 @@
     "options": [
       "It is illegal to consume food or drinks on public sidewalks",
       "It is believed to cause bad luck according to traditional folklore.",
-      "It is generally viewed as \"gyogi-ga-warui\" (bad manners) and a sign of poor upbringing.",
+      "It is generally viewed as bad manners and a sign of poor upbringing.",
       "All of the above"
     ],
     "correctAnswer": 2,
     "explanation": "While not illegal, eating while walking is traditionally considered a sign of poor manners in Japan. This is based on the cultural value of showing respect to the food and the environment, as well as avoiding the risk of spilling and bothering others in crowded spaces. While \"tabe-aruki\" (sampling local foods) is popular in specific tourist districts, the general etiquette is to enjoy your food in a designated area or while standing still.",
     "difficulty": "medium",
-    "category": "etiquette",
+    "category": "manner",
     "tags": [
       "public spaces",
       "eating",
       "cleanliness",
       "consideration"
-    ]
-  },
-  {
-    "id": "6a72e116-9860-4c75-be33-c1db4872b554",
-    "question": "Japan is a very mountainous country. Approximately what percentage of Japan's land area is covered by mountains and hills?",
-    "options": [
-      "25%",
-      "50%",
-      "75%",
-      "90%"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Around 75% of Japan is mountainous and hills, which explains why major cities and population centers are concentrated in coastal plains and valleys. This rugged terrain also contributes to Japan's stunning natural beauty and diverse ecosystems.",
-    "difficulty": "medium",
-    "category": "geography",
-    "tags": [
-      "physical geography",
-      "mountains",
-      "terrain",
-      "landscape"
-    ]
-  },
-  {
-    "id": "08eb0516-0f79-4c1f-83f4-2cd8edef1a14",
-    "question": "Which prefecture is famous as one of Japan's leading rice-production-areas renowned for its vast plains and the production of high-quality rice, particularly the famous Koshihikari?",
-    "options": [
-      "Tokyo",
-      "Okinawa",
-      "Niigata",
-      "Kyoto"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Niigata Prefecture, located along the Sea of Japan coast, is one of Japan's most famous rice-producing regions. Its fertile plains, combined with abundant snowmelt water and an ideal climate, make it perfect for growing premium rice like Koshihikari. This high-quality rice also serves as the foundation for the prefecture's renowned sake (rice wine) industry.",
-    "difficulty": "medium",
-    "category": "geography",
-    "tags": [
-      "agriculture",
-      "regions",
-      "food culture",
-      "rice",
-      "economy"
-    ]
-  },
-  {
-    "id": "8330d336-bacd-45fb-8858-4999cb2f93a0",
-    "question": "What common cultural custom should tourists be mindful of when entering a Japanese home, temple, or traditional restaurant?",
-    "options": [
-      "Bowing deeply to everyone",
-      "Removing their shoes",
-      "Tipping generously",
-      "Bringing a small gift"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Removing shoes before entering homes, temples, and many traditional establishments is a fundamental part of Japanese etiquette. This custom is practiced to maintain cleanliness and show respect for the space. You'll often find shoe racks at entrances and even slippers provided for indoor use.",
-    "difficulty": "medium",
-    "category": "culture",
-    "tags": [
-      "etiquette",
-      "customs",
-      "daily life",
-      "practical"
-    ]
-  },
-  {
-    "id": "5dde79a2-70d4-4e1e-80b6-baeb188681f2",
-    "question": "In traditional Japanese aesthetics, the choice of patterns and colors for a kimono often reflects what?",
-    "options": [
-      "The wearer's social status",
-      "The current season",
-      "Their preferred type of tea",
-      "Their favorite mythical creature"
-    ],
-    "correctAnswer": 1,
-    "explanation": "The intricate patterns and colors on a kimono are often carefully chosen to harmonize with and reflect the current season. For instance, cherry blossoms or butterflies symbolize spring, while maple leaves or chrysanthemums are common for autumn. This demonstrates the deep connection between Japanese aesthetics and nature.",
-    "difficulty": "medium",
-    "category": "culture",
-    "tags": [
-      "kimono",
-      "tradition",
-      "aesthetics",
-      "seasons"
-    ]
-  },
-  {
-    "id": "c76d1afa-7499-4576-ba8a-31aab7687b4d",
-    "question": "Before becoming a popular convenience store snack, what was the original primary purpose of onigiri (rice balls) in Japan?",
-    "options": [
-      "Offerings for Shinto deities",
-      "Portable food for samurai and travelers",
-      "Currency for trading goods",
-      "Desserts served after formal meals"
-    ],
-    "correctAnswer": 1,
-    "explanation": "Onigiri were originally created as a practical, portable meal for people on the go, such as samurai, farmers, and travelers. Their compact shape and ability to be eaten without utensils made them ideal for sustenance during work or journeys. The earliest forms of rice balls date back over a thousand years.",
-    "difficulty": "medium",
-    "category": "culture",
-    "tags": [
-      "food",
-      "history",
-      "onigiri",
-      "origins"
-    ]
-  },
-  {
-    "id": "48bb418b-e83c-4714-a7fb-e9b3400a4abf",
-    "question": "Which ancient city is famously home to the Gion Matsuri, one of Japan's most celebrated and largest traditional festivals, featuring massive parade floats?",
-    "options": [
-      "Tokyo",
-      "Osaka",
-      "Kyoto",
-      "Sapporo"
-    ],
-    "correctAnswer": 2,
-    "explanation": "The Gion Matsuri is an iconic annual festival originating from Kyoto, known for its breathtaking procession of elaborate Yamaboko floats. Dating back over a thousand years, it began as a purification ritual to appease deities during a plague. Today, it transforms the city into a vibrant spectacle every July.",
-    "difficulty": "medium",
-    "category": "culture",
-    "tags": [
-      "festivals",
-      "Kyoto",
-      "traditions",
-      "regional"
-    ]
-  },
-  {
-    "id": "2ae47757-454e-4e8b-ab64-6ec303a5effe",
-    "question": "The Maneki-neko, or 'beckoning cat,' is a common Japanese figurine. What does a raised *left* paw on a Maneki-neko traditionally symbolize?",
-    "options": [
-      "Bringing good health",
-      "Attracting customers and good fortune",
-      "Warding off evil spirits",
-      "Ensuring academic success"
-    ],
-    "correctAnswer": 1,
-    "explanation": "A Maneki-neko with a raised left paw is traditionally believed to attract customers and good fortune, especially for businesses. This is why you frequently see them displayed in shops and restaurants. Conversely, a raised right paw is generally thought to invite money and good luck to the owner.",
-    "difficulty": "medium",
-    "category": "culture",
-    "tags": [
-      "symbolism",
-      "folklore",
-      "traditions",
-      "trivia"
     ]
   }
 ]

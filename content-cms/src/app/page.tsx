@@ -43,10 +43,25 @@ export default function HomePage() {
   }, []);
 
   // タブに応じてフィルタリング
-  const filteredQuizzes = quizzes.filter(quiz => {
+// タブに応じてフィルタリング
+const filteredQuizzes = quizzes
+  .filter(quiz => {
     if (activeTab === 'reviewing') return quiz.reviewStatus === 'reviewing';
     if (activeTab === 'approved') return quiz.reviewStatus === 'approved';
     return true; // 'all'
+  })
+  .sort((a, b) => {
+    // カテゴリー順にソート
+    const categoryOrder = ['culture', 'food', 'geography', 'language', 'manner', 'anime-manga'];
+    const categoryA = categoryOrder.indexOf(a.category);
+    const categoryB = categoryOrder.indexOf(b.category);
+    
+    if (categoryA !== categoryB) {
+      return categoryA - categoryB;
+    }
+    
+    // 同じカテゴリーなら作成日時順
+    return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
   });
 
   if (loading) {
@@ -225,12 +240,12 @@ export default function HomePage() {
                         {quiz.hasSimilar ? '❗' : '🟡'}
                       </td>
                       <td className="px-6 py-4 text-sm">
-                        <Link
-                          href={`/quiz/${quiz.id}`}
-                          className="text-blue-600 hover:underline mr-4"
-                        >
-                          編集
-                        </Link>
+                      <Link
+                        href={`/quiz/${quiz.id}?filter=${activeTab}`}
+                        className="text-blue-600 hover:underline mr-4"
+                      >
+                        編集
+                      </Link>
                       </td>
                     </tr>
                   );

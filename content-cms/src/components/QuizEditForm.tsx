@@ -24,10 +24,23 @@ const difficultyLabels: Record<QuizDifficulty, string> = {
   hard: 'Hard',
 };
 
-export default function QuizEditForm({ quiz }: { quiz: Quiz }) {
+export default function QuizEditForm({ 
+    quiz,
+    allQuizzes = [],
+    currentFilter = 'all'
+  }: { 
+    quiz: Quiz;
+    allQuizzes?: Quiz[];
+    currentFilter?: 'reviewing' | 'approved' | 'all';
+  }) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+
+  // ナビゲーションロジック
+  const currentIndex = allQuizzes.findIndex(q => q.id === quiz.id);
+  const previousQuiz = currentIndex > 0 ? allQuizzes[currentIndex - 1] : null;
+  const nextQuiz = currentIndex < allQuizzes.length - 1 ? allQuizzes[currentIndex + 1] : null;
 
   console.log('QuizEditForm rendered, isEditing:', isEditing);
 
@@ -363,6 +376,31 @@ export default function QuizEditForm({ quiz }: { quiz: Quiz }) {
                 >
                   🗑️ 削除
                 </button>
+              </div>
+            </>
+          )}
+
+
+          {/* ナビゲーションボタン */}
+          {!isEditing && allQuizzes.length > 1 && (
+            <>
+              <div className="border-t pt-4">
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => previousQuiz && router.push(`/quiz/${previousQuiz.id}?filter=${currentFilter}`)}
+                    disabled={!previousQuiz}
+                    className="flex-1 bg-blue-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-150 shadow-md hover:shadow-lg"
+                  >
+                    ← Previous Quiz
+                  </button>
+                  <button
+                    onClick={() => nextQuiz && router.push(`/quiz/${nextQuiz.id}?filter=${currentFilter}`)}
+                    disabled={!nextQuiz}
+                    className="flex-1 bg-green-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-150 shadow-md hover:shadow-lg"
+                  >
+                    Next Quiz →
+                  </button>
+                </div>
               </div>
             </>
           )}
