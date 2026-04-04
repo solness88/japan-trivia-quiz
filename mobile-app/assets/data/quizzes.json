@@ -778,25 +778,6 @@
     ]
   },
   {
-    "id": "d44434b8-4a04-4af3-822b-89c1d25ec608",
-    "question": "What is the primary ingredient in 'sake'?",
-    "options": [
-      "Barley",
-      "Grapes",
-      "Rice",
-      "Potatoes"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Sake is a Japanese alcoholic beverage made by fermenting polished rice. It can be enjoyed cold, at room temperature, or warm, making it a uniquely versatile drink. Rice-growing regions such as Niigata and Akita are particularly renowned for producing high-quality sake.",
-    "difficulty": "easy",
-    "category": "culture",
-    "tags": [
-      "Food",
-      "Drink",
-      "Sake"
-    ]
-  },
-  {
     "id": "49237bf7-c8ee-4bc4-b967-efe8d6fef2a2",
     "question": "Which traditional Japanese garment is a formal full-length robe with wide sleeves, tied with an obi (sash), worn on special occasions such as ceremonies and festivals?",
     "options": [
@@ -852,6 +833,116 @@
       "Theatre",
       "Bunraku"
     ]
+  },
+  {
+    "id": "70134e88-7b3a-4f8e-9527-642e9c9275bc",
+    "question": "What is the vehicle known as 'dekotora' in Japan, famous for its extraordinarily flamboyant and eye-catching decorations?\"",
+    "options": [
+      "A heavily decorated truck, adorned with elaborate lights, chrome, and artwork.",
+      "A traditional form of Japanese street dance performed at festivals.",
+      "A type of customized racing car used in mountain drift competitions.",
+      "A ornate portable shrine carried during religious processions."
+    ],
+    "correctAnswer": 0,
+    "explanation": "'Dekotora,' short for 'decoration truck,' is a uniquely Japanese phenomenon where truck drivers lavishly customize their vehicles with extravagant lights, chrome bodywork, and intricate artwork — often inspired by anime, manga, or traditional Japanese imagery.",
+    "difficulty": "hard",
+    "category": "culture",
+    "tags": [
+      "traditional culture",
+      "buddhism",
+      "symbolism",
+      "history"
+    ]
+  },
+  {
+    "id": "1897f2c6-903e-4573-8d38-cc3da134acec",
+    "question": "Beyond snacks and drinks, which of these surprising services can you commonly find at a Japanese convenience store (konbini)?",
+    "options": [
+      "Haircuts",
+      "Paying utility bills",
+      "Dental check-ups",
+      "Car washes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Japanese konbini are incredibly versatile, offering much more than just food and beverages. You can frequently pay bills such as electricity and water, send packages, buy concert tickets, and even withdraw cash from ATMs. These stores are an indispensable part of daily life in Japan, acting as mini-community hubs basically open 24/7.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "konbini",
+      "modern usage",
+      "daily life",
+      "practical information"
+    ]
+  },
+  {
+    "id": "1c126a57-0276-426b-96ae-f98ff61cc5d2",
+    "question": "During the O-bon festival in Japan, what is the traditional purpose of floating paper lanterns (toro nagashi) down rivers and out to sea?",
+    "options": [
+      "To guide sea vessels",
+      "To celebrate the summer solstice",
+      "To honor and guide ancestral spirits back to the afterlife",
+      "To signify the end of the rice harvest"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The floating of lanterns is a beautiful ritual during O-bon, symbolizing the safe return of ancestral spirits to the spiritual world after their visit to the living. O-bon is a significant Japanese festival held in mid-August to honor one's ancestors, often involving family reunions and grave visits.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "O-bon",
+      "festival",
+      "tradition",
+      "spiritual",
+      "seasonal"
+    ]
+  },
+  {
+    "id": "64c83d9c-20d1-4551-b165-5ee960d01f22",
+    "question": "What is a primary design philosophy often incorporated into traditional Japanese gardens?",
+    "options": [
+      "To perfectly replicate famous landscapes from other countries.",
+      "To represent nature in a miniature, idealized, and contemplative form.",
+      "To create vibrant, colorful displays using exotic flowers.",
+      "To serve primarily as a space for large public gatherings."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Japanese gardens are meticulously designed to represent natural landscapes in a miniature and idealized form, encouraging contemplation and meditation. Elements like rocks, water, and plants are carefully arranged to evoke scenes from nature and provide a sense of tranquility and harmony.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": [
+      "architecture",
+      "aesthetics",
+      "nature"
+    ]
+  },
+  {
+    "id": "528638b2-23c4-45bd-9587-744296d86d2c",
+    "question": "In Japan, particularly in formal or workplace settings, which of these is traditionally considered impolite at a group dinner?",
+    "options": [
+      "Ordering a non-alcoholic drink",
+      "Asking for a second serving of rice",
+      "Drinking before the group toast (kanpai)",
+      "Leaving food on your plate"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In Japan, it is traditional to wait for everyone to have a drink in hand before the group toast — known as 'kanpai' — before taking the first sip. While younger generations may be more relaxed about this custom, it is still considered good manners, especially in formal or workplace settings, to wait. When the moment arrives, raise your glass, make eye contact, and enjoy!",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": []
+  },
+  {
+    "id": "74874ff6-e7f8-4cf2-9627-e48d10376378",
+    "question": "In Japan, there is a unique type of jazz café where talking is strictly prohibited. What is the primary reason for this unusual rule?",
+    "options": [
+      "Customers were required to order at least three drinks per visit.",
+      "Only vinyl records were permitted — digital music was strictly banned.",
+      "Customers were expected to remove their shoes before entering.",
+      "Talking was discouraged or even strictly prohibited."
+    ],
+    "correctAnswer": 3,
+    "explanation": "Japan's jazz kissaten became iconic in the 1960s, with some establishments famously prohibiting conversation so that customers could focus entirely on the music. While strictly no-talking cafés are rare today, a sense of quiet and respectful listening is still generally expected. Uniquely Japanese, these intimate spaces reflect a deep cultural appreciation for music as something to be truly listened to, not merely heard.",
+    "difficulty": "medium",
+    "category": "culture",
+    "tags": []
   },
   {
     "id": "49b6b26c-dca3-4abd-8ce2-d73a20bfb1d9",
@@ -1047,18 +1138,644 @@
     ]
   },
   {
-    "id": "598d4370-7570-4371-a393-cdf8fb168b21",
-    "question": "Where is the capital of Japan?",
+    "id": "d44434b8-4a04-4af3-822b-89c1d25ec608",
+    "question": "What is the primary ingredient in 'sake'?",
+    "options": [
+      "Barley",
+      "Grapes",
+      "Rice",
+      "Potatoes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Sake is a Japanese alcoholic beverage made by fermenting polished rice. It can be enjoyed cold, at room temperature, or warm, making it a uniquely versatile drink. Rice-growing regions such as Niigata and Akita are particularly renowned for producing high-quality sake.",
+    "difficulty": "easy",
+    "category": "food",
+    "tags": [
+      "Food",
+      "Drink",
+      "Sake"
+    ]
+  },
+  {
+    "id": "a95dcbb9-5413-4b6e-81ea-d53186ee87b7",
+    "question": "Often called a 'Japanese savory pancake,' Okonomiyaki has distinct regional variations. Which two major cities are most famous for their unique styles of Okonomiyaki?",
+    "options": [
+      "Tokyo and Sapporo",
+      "Fukuoka and Nagoya",
+      "Hiroshima and Osaka",
+      "Kyoto and Yokohama"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Hiroshima and Osaka are the two most famous cities for their distinct Okonomiyaki styles. Osaka-style mixes all ingredients directly into the batter before cooking, while Hiroshima-style layers them one by one — including a portion of yakisoba noodles — resulting in a heartier, thicker dish.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": [
+      "food",
+      "regional",
+      "cuisine"
+    ]
+  },
+  {
+    "id": "5c393156-2ecf-4535-8ac2-8173e1413233",
+    "question": "What was the original primary purpose of sushi in Japan centuries ago?",
+    "options": [
+      "A dish for religious offerings",
+      "A method for preserving fish",
+      "A luxury food exclusively for the emperor",
+      "A portable snack for travelers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Centuries ago, sushi involved fermenting fish with rice to preserve it for longer periods without refrigeration. The rice was initially discarded after fermentation, as it was valued only as a preserving agent rather than as food. Unlike modern sushi, which relies on refrigeration to keep fish fresh, the original method used fermentation as a means of preservation. Today, of course, both the fish and the rice are very much meant to be enjoyed together!",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": [
+      "sushi",
+      "history",
+      "preservation"
+    ]
+  },
+  {
+    "id": "9ecf3f87-8d56-4417-b79c-d8616b9d5f21",
+    "question": "Japanese curry tastes very different from Indian curry. Why?",
+    "options": [
+      "Japanese people prefer sweeter flavors in all dishes",
+      "It came to Japan through Britain, not directly from India",
+      "Traditional Indian spices were too expensive to import to Japan",
+      "Japanese chefs added sugar to balance the saltiness of rice"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Japanese curry arrived from Britain during the Meiji era (1868-1912), not directly from India. The British had already transformed Indian curry into their own style – adding wheat flour to thicken it, and so on. This British-style curry became the foundation for Japanese curry. Japan has since created unique variations like curry bread, curry udon, and instant curry roux. Be sure to try these unique Japanese curry dishes during your visit!",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": [
+      "okonomiyaki",
+      "regional food",
+      "cooking style"
+    ]
+  },
+  {
+    "id": "005b1ac0-96db-4d05-aa90-2af23d5f3ecc",
+    "question": "When eating ramen or soba in Japan, why is it generally acceptable to slurp your noodles loudly?\"",
+    "options": [
+      "It's a traditional way to thank the person who prepared the meal.",
+      "It helps to cool down the hot noodles and enhance their flavor.",
+      "It signifies that you are finished eating and satisfied.",
+      "It's considered good manners to eat as quickly as possible."
+    ],
+    "correctAnswer": 1,
+    "explanation": "In many Western cultures, slurping is considered rude — but in Japan, it's perfectly normal and nothing to be embarrassed about. Practically speaking, slurping helps cool down hot noodles as they enter your mouth, and draws air in with them, which is believed to enhance their aroma and flavor — similar to how wine tasters aerate wine. Try slurping your noodles and you might be surprised by the difference it makes to the flavor!",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": [
+      "etiquette",
+      "noodles",
+      "dining culture"
+    ]
+  },
+  {
+    "id": "409c8fc5-da23-471d-99d7-e073c1669c02",
+    "question": "What are the two most common ingredients used to make \"dashi,\" the fundamental broth in Japanese cuisine?",
+    "options": [
+      "Soy sauce and mirin",
+      "Rice vinegar and sugar",
+      "Kombu (kelp) and katsuobushi (dried bonito flakes)",
+      "Sesame oil and chili paste"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Dashi is so essential to Japanese cuisine that it's often called \"the soul of Japanese cooking.\" The most popular type, called \"awase-dashi,\" is made by simmering kombu (dried kelp) and katsuobushi (shaved dried bonito flakes) together, creating a rich umami base for miso soup, udon, and countless other dishes. While dashi can also be made from niboshi (dried sardines), dried shiitake mushrooms, or other ingredients, the kombu-katsuobushi combination is the most versatile. When you dine at a Japanese restaurant, pay attention to the subtle depth of flavor that dashi brings to each dish!",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": [
+      "dashi",
+      "ingredients",
+      "umami"
+    ]
+  },
+  {
+    "id": "91e7e3a4-d025-4bb6-949c-1b589552109f",
+    "question": "What unique characteristic often defines traditional Japanese sweets known as \"Wagashi\"?",
+    "options": [
+      "They are always deep-fried.",
+      "They incorporate savory flavors like soy sauce.",
+      "Their designs and ingredients often reflect the current season.",
+      "They are exclusively made with chocolate."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Wagashi are meticulously crafted Japanese sweets that are renowned for their artistic beauty and delicate flavors. Their designs, colors, and even ingredients often change to reflect the current season, capturing the transient beauty of nature. Many wagashi are reasonably priced and can easily be found at department stores or specialty sweet shops throughout Japan — making them a perfect treat to enjoy during your visit.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": [
+      "wagashi",
+      "sweets",
+      "seasonal"
+    ]
+  },
+  {
+    "id": "2138f22e-9eec-41e2-90f4-2d67a9266c07",
+    "question": "Which type of Japanese green tea is traditionally used in the Japanese tea ceremony and is characterized by its vibrant green color and frothy texture?",
+    "options": [
+      "Sencha",
+      "Hojicha",
+      "Genmaicha",
+      "Matcha"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Matcha is a finely ground powder of specially grown and processed green tea leaves, known for its vibrant green color and robust flavor. It is central to the traditional Japanese tea ceremony, where it is whisked with hot water to create a frothy beverage. Beyond the tea ceremony, matcha has gained worldwide popularity as a flavoring in everything from lattes and ice cream to chocolate and pastries.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": [
+      "matcha",
+      "green tea",
+      "tea ceremony"
+    ]
+  },
+  {
+    "id": "9af7e08d-cec2-487e-b8c1-5b4e18b137e3",
+    "question": "What is an \"Izakaya\" primarily known for in Japanese dining culture?",
+    "options": [
+      "A formal, high-end restaurant specializing in multi-course kaiseki meals.",
+      "A fast-food chain serving traditional Japanese breakfast.",
+      "An informal Japanese bar that serves alcoholic drinks and a variety of small, shared dishes.",
+      "A shop exclusively selling Japanese confectionery and pastries."
+    ],
+    "correctAnswer": 2,
+    "explanation": "An izakaya is a casual Japanese bar and restaurant where people go to drink alcohol and enjoy a wide variety of small, shared dishes. It's a popular spot for after-work gatherings and socializing, offering everything from yakitori and sashimi to fried dishes. With countless izakayas found throughout Japan, they are one of the best ways to experience the local food, drink, and atmosphere of wherever you find yourself.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": [
+      "izakaya",
+      "dining culture",
+      "nightlife"
+    ]
+  },
+  {
+    "id": "f7445cd3-9f62-4ba6-a4bf-6a1ed263eafc",
+    "question": "Which of these Japanese cities is particularly famous for its unique miso ramen, often characterized by a rich, savory broth and a dollop of butter?",
     "options": [
       "Tokyo",
-      "Osaka",
-      "Kyoto",
-      "Hiroshima"
+      "Fukuoka",
+      "Sapporo",
+      "Kyoto"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Sapporo, the capital of Hokkaido, is renowned as the birthplace of miso ramen, known for its hearty and rich broth flavored deeply with miso. Butter and corn are popular toppings, making it a warming and satisfying dish well-suited to the cold northern climate. While Sapporo is the ideal place to enjoy miso ramen at its finest, excellent versions can now be found across Japan.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": [
+      "ramen",
+      "regional",
+      "Hokkaido",
+      "Sapporo"
+    ]
+  },
+  {
+    "id": "126c3fd4-d260-4f2d-ac53-d13acdf1e590",
+    "question": "Osechi Ryori refers to special foods eaten during which significant Japanese holiday, with each dish carrying symbolic meanings for good fortune in the coming year?",
+    "options": [
+      "Cherry Blossom Festival (Hanami)",
+      "Summer Obon Festival",
+      "New Year's (Shogatsu)",
+      "Children's Day"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Osechi Ryori is a traditional collection of colorful dishes specially prepared for the Japanese New Year, symbolizing wishes for health, prosperity, and happiness. These dishes are traditionally packed in multi-tiered lacquer boxes called jubako, meant to be prepared in advance and eaten over the New Year holidays, giving the cook a well-deserved rest from the kitchen.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": [
+      "tradition",
+      "holiday",
+      "New Year",
+      "osechi"
+    ]
+  },
+  {
+    "id": "ba334a41-979a-41e6-992c-d956753a0701",
+    "question": "What is a 'bento' primarily used for in modern Japan?",
+    "options": [
+      "A large family-style dinner",
+      "A multi-course formal meal",
+      "A single-portion, packed meal for lunch or travel",
+      "A traditional breakfast spread"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A bento is a single-portion takeout or home-packed meal common in Japan, typically consisting of rice, meat or fish, and one or more pickled or cooked vegetables. These convenient and often beautifully arranged meals are popular for school lunches, work, picnics, and train travel. From elaborate character-themed 'charaben' made by parents for their children, to regional 'ekiben' sold at train stations, bento culture in Japan is remarkably diverse and creative.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": [
+      "bento",
+      "modern",
+      "convenience",
+      "lunch"
+    ]
+  },
+  {
+    "id": "07f9aa46-e25f-419d-9961-25dc4b9a7c0b",
+    "question": "What ingredient is miso paste (味噌) primarily made from, and what gives different types of miso their varying colors and flavors?",
+    "options": [
+      "Fermented beans and chili peppers",
+      "Fermented rice and sweet potatoes",
+      "Fermented soybeans and koji",
+      "Fermented fish and seaweed"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Miso paste is a traditional Japanese seasoning produced by fermenting soybeans with salt and koji, a fermentation starter typically grown on rice, barley, or soybeans. The type of grain used for the koji, the proportion of ingredients, and the fermentation time all contribute to the wide variety of miso flavors and colors, from light and sweet white miso to dark and robust red miso. From soups to glazes and dressings, miso lends a surprisingly diverse range of flavors to Japanese cuisine.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": [
+      "miso",
+      "ingredients",
+      "fermentation",
+      "soybeans"
+    ]
+  },
+  {
+    "id": "940fff17-e49c-4aef-8cd4-41769d11f211",
+    "question": "What is the main difference between udon and soba, two of Japan's most popular noodles?",
+    "options": [
+      "Udon is served cold, while soba is always served hot.",
+      "Udon is made from buckwheat flour, while soba is made from wheat flour.",
+      "Udon is thick and made from wheat flour, while soba is thin and made from buckwheat flour.",
+      "Udon originated in Tokyo, while soba originated in Osaka."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Udon and soba are two of Japan's most beloved noodles, but they differ in both ingredient and texture. Udon is thick, chewy, and made from wheat flour, while soba is thin and made from buckwheat flour, giving it a slightly earthy, nutty flavor. Both can be served hot in a broth or cold with a dipping sauce, and are widely available throughout Japan.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "f5ea00d3-2982-4365-8c70-2e8cf7683a22",
+    "question": "Which of these ramen broth types is known for its rich, creamy white color, derived from long-simmered pork bones?",
+    "options": [
+      "Shoyu (soy sauce)",
+      "Shio (salt)",
+      "Miso",
+      "Tonkotsu (pork bone)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Tonkotsu ramen, originating from Fukuoka in Kyushu, is made by boiling pork bones for many hours, resulting in its characteristic rich, creamy, and milky white broth. If you ever find yourself in Fukuoka, enjoying a bowl at one of the city's legendary open-air food stalls (yatai) is an experience not to be missed.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "01a1f753-b53f-445b-ad88-53d71860032b",
+    "question": "What is 'yakisoba,' a popular dish commonly found at Japanese festivals?",
+    "options": [
+      "A cold noodle dish served with a soy-based dipping sauce.",
+      "A rice dish stir-fried with vegetables and meat.",
+      "Noodles stir-fried together with vegetables and meat in a savory sauce",
+      "A noodle soup dish similar to ramen, served with pork broth."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Unlike most Japanese noodle dishes, yakisoba is served without any broth — the noodles are stir-fried together with vegetables and meat in a savory sauce, and topped with mayonnaise and pickled ginger. A staple at festivals and street food stalls, it is one of Japan's most beloved casual dishes.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "40a38bc3-aabb-4f78-8070-5bb9881e3a3a",
+    "question": "In sukiyaki, a popular Japanese hot pot dish, what do diners traditionally dip the cooked meat into before eating?",
+    "options": [
+      "Soy sauce and wasabi",
+      "Sesame sauce",
+      "Raw beaten egg",
+      "Ponzu sauce"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In sukiyaki, thinly sliced beef and vegetables are simmered in a rich, sweet sauce made from soy sauce, sugar, and mirin. Before eating, the cooked ingredients are traditionally dipped in raw beaten egg, which adds a creamy, silky coating. While this may surprise some visitors, it is an essential part of the authentic sukiyaki experience.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "c4e73770-8107-4742-847d-b5af356cf9a9",
+    "question": "At the end of a Japanese hot pot (nabe) meal, what is commonly added to the remaining broth to create a final dish known as 'shime'?",
+    "options": [
+      "Fresh vegetables and tofu",
+      "A selection of seafood",
+      "Rice or noodles",
+      "Miso paste and seaweed"
+    ],
+    "correctAnswer": 2,
+    "explanation": "'Shime,' meaning 'finish,' refers to the final course of a Japanese hot pot meal, where rice or noodles are added to the remaining broth to make the most of its rich, accumulated flavors. Rice is typically used to make zosui, a savory rice porridge, while udon noodles are another popular choice — making shime one of the most anticipated parts of the hot pot experience.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "4bc26874-66bd-4ec7-b82e-b6e76afcdfc0",
+    "question": "Japan is particularly famous for its vending machines. What makes them stand out?",
+    "options": [
+      "They only accept cash payments.",
+      "They offer both hot and cold drinks from the same machine.",
+      "They are exclusively found inside convenience stores.",
+      "They only sell alcoholic beverages."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Japan is renowned for its extraordinary density of vending machines, with millions spread across the country — from city streets to mountain trails. Many machines offer both hot and cold drinks side by side, allowing you to grab a warm can of coffee or tea on a cold day. They are a convenient and much-loved part of everyday life in Japan.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "f3f2b9bf-7acc-492e-bff7-93a81525cf0b",
+    "question": "In Japan, people say 'itadakimasu' before a meal and 'gochisousama' after. What do these phrases primarily express?",
+    "options": [
+      "A request for more food and a complaint about the portion size.",
+      "A greeting to the chef and a farewell to other diners.",
+      "Gratitude before and after a meal, acknowledging the effort and ingredients that went into the food.",
+      "A prayer to the gods for good health and prosperity."
+    ],
+    "correctAnswer": 2,
+    "explanation": "\n'Itadakimasu,' meaning 'I humbly receive,' is said before eating to express gratitude for the food, the people who prepared it, and the ingredients themselves. 'Gochisousama,' said after the meal, expresses appreciation for the feast. These phrases reflect the deep respect Japanese culture holds for food and the efforts of those involved in preparing it.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "32ab2dbe-1a77-4938-9d73-bf721c1f7add",
+    "question": "What is the defining feature of a sushi restaurant known as 'kaiten-zushi' in Japan?",
+    "options": [
+      "Sushi is prepared tableside by a chef in front of the guests.",
+      "Customers must order a fixed set menu chosen by the chef.",
+      "Plates of sushi are placed on a conveyor belt, allowing diners to pick what they want as it passes by.",
+      "Sushi is only served in private rooms for groups of six or more."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Kaiten-zushi, or 'conveyor belt sushi,' is a fun and casual dining experience where plates of sushi circulate on a conveyor belt and diners pick whatever catches their eye. The bill is calculated by counting the number of plates at the end of the meal. Some modern restaurants have even introduced bullet train-style delivery systems for made-to-order sushi!",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "fe79c91f-f20a-4ec1-9040-fe03bc5b363b",
+    "question": "In Japan, which fast food chain has become a beloved Christmas tradition, with people often pre-ordering weeks in advance?",
+    "options": [
+      "McDonald's",
+      "Burger King",
+      "Kentucky Fried Chicken",
+      "Pizza Hut"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A KFC marketing campaign launched in 1974 sparked one of Japan's most unique Christmas traditions. The idea caught on so effectively that fried chicken became synonymous with Christmas celebrations across the country. Today, special Christmas meal sets are enormously popular, with many families pre-ordering weeks in advance to secure their festive feast.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "3f45f231-3649-43cc-a49e-d20814a3b73c",
+    "question": "In Japan, Valentine's Day has a unique twist. What is the traditional custom on Valentine's Day in Japan?",
+    "options": [
+      "Men give flowers to women they admire.",
+      "Couples exchange matching gifts with each other.",
+      "Women give chocolate to men, including colleagues and friends.",
+      "Children give handmade cards to their teachers and parents."
+    ],
+    "correctAnswer": 2,
+    "explanation": "In Japan, Valentine's Day is traditionally the day when women give chocolate to men. This includes not only romantic partners but also colleagues and friends — known as 'giri-choco,' chocolate given as a social courtesy rather than out of romantic feelings. One month later, on White Day (March 14th), men are expected to return the gesture with gifts, typically white chocolate or sweets.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "b48e050f-04d6-4cbc-ae62-7d6590cb2c22",
+    "question": "Japanese convenience store egg sandwiches, known as 'tamago sando,' are popular among visitors. What makes them so distinctive?",
+    "options": [
+      "Pillowy soft white bread with a creamy, fluffy egg filling made with Japanese mayonnaise.",
+      "Toasted sourdough bread filled with sliced hard-boiled eggs, wholegrain mustard, and black pepper.",
+      "Grilled flatbread filled with scrambled eggs, melted cheese, and hot sauce.",
+      "A crispy baguette topped with a fried egg, fresh lettuce, and a drizzle of soy sauce."
     ],
     "correctAnswer": 0,
-    "explanation": "Tokyo is the capital of Japan.\nKyoto is famous for its historic temples and shrines and served as the capital for a long time, but it is no longer the capital today.\nOsaka is another popular city to visit, famous for its street food such as takoyaki and okonomiyaki.\nHiroshima is known for its tragic history, and if you are interested in the history of the atomic bomb, it is a meaningful place to visit.",
-    "difficulty": "easy",
-    "category": "geography",
+    "explanation": "The Japanese egg sandwich, or 'tamago sando,' has become a global sensation. Its secret lies in the combination of pillowy soft white bread, a generous filling of lightly seasoned egg salad made with Japanese mayonnaise, and an almost cloud-like texture. Simple yet deeply satisfying, it is one of the most talked-about convenience store items among visitors to Japan.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "2c437501-ea1a-452d-aebc-01cd930f767a",
+    "question": "Dorayaki is a popular Japanese sweet treat consisting of two fluffy pancakes sandwiching a filling. What is the traditional filling?",
+    "options": [
+      "Whipped cream and fresh strawberries.",
+      "Sweet red bean paste (anko).",
+      "Custard cream and chocolate sauce.",
+      "Matcha cream and white chocolate."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Dorayaki is a beloved Japanese confection made of two small, fluffy pancakes filled with sweet red bean paste known as 'anko.' While modern variations now include custard, matcha, and chocolate fillings, the classic anko version remains the most iconic. Dorayaki is perhaps best known internationally as the favorite snack of Doraemon, the beloved Japanese anime character.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "86decac2-97a8-42e9-a78c-0277dabd760d",
+    "question": "What is a 'kissaten,' a type of café that has been a cornerstone of Japanese culture since the early 20th century?",
+    "options": [
+      "A traditional Japanese café known for its carefully brewed coffee, retro atmosphere, and soothing background music.",
+      "A modern café chain serving seasonal limited-edition drinks and desserts, often found in busy shopping districts and train stations throughout Japan.",
+      "A themed café where customers can enjoy traditional performing arts such as kabuki and rakugo while sipping green tea.",
+      "An outdoor café set in Japanese gardens, serving seasonal drinks and wagashi sweets in a tranquil natural setting."
+    ],
+    "correctAnswer": 0,
+    "explanation": "A kissaten is a traditional Japanese café that emerged in the early 20th century, offering a quiet retreat from the bustle of daily life. Unlike modern chain cafés, kissaten are known for their carefully hand-brewed coffee, retro interior design, and an atmosphere that encourages guests to slow down and savor their drink. Many have been run by the same family for generations, making each one a unique and personal experience.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "76ead473-1e36-4d7c-88ca-ed40768b59c1",
+    "question": "'Napolitan' is a popular Japanese pasta dish. What makes it different from traditional Italian pasta?",
+    "options": [
+      "It is typically made with ketchup, giving it a distinctly sweet and savory flavor unlike traditional Italian pasta.",
+      "It is served cold with a soy-based dressing and topped with seaweed and sesame seeds.",
+      "It is made with a rich miso-based sauce, topped with ground pork, green onions, and a soft-boiled egg, similar to a Japanese ramen topping.",
+      "It uses udon noodles instead of spaghetti, served in a light dashi-based broth."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Napolitan is a Japanese-style pasta dish that has nothing to do with Naples, Italy. Invented in Japan after World War II, it uses ketchup as the base sauce, giving it a distinctly sweet and savory flavor. Typically stir-fried with sausage, onions, and bell peppers, it remains a beloved comfort food in Japan, often served in retro kissaten cafés.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "1d773810-fbec-4b8e-b2d8-56fc83676e73",
+    "question": "Anpan is a beloved Japanese sweet bread. What is its unique filling?",
+    "options": [
+      "Sweet red bean paste called anko.",
+      "Whipped cream and fresh strawberries.",
+      "Custard cream and chocolate chips.",
+      "Creamy sesame paste with a hint of black sugar."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Anpan is a soft, round Japanese bread roll filled with sweet red bean paste called anko. Born in Tokyo over 150 years ago, it combines Western-style bread with a traditional Japanese filling — making it one of the typical examples of 'East meets West' in Japanese cuisine. It remains one of Japan's most beloved breads to this day.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "197b96b5-8b72-4b4d-8bff-8138e1fa0216",
+    "question": "The popular Japanese ramen chain Ichiran is famous for a unique dining concept. What makes eating there a distinctive experience?",
+    "options": [
+      "Diners sit in individual partitioned booths to focus entirely on the flavor of their ramen.",
+      "The restaurant is completely dark, forcing diners to rely solely on their sense of taste and smell.",
+      "Diners are required to wear a traditional Japanese robe before being seated.",
+      "Diners enjoy an open kitchen concept where they can watch their ramen being prepared in front of them."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Ichiran is renowned for its 'Flavor Concentration Booth' concept, where diners sit in individual partitioned stalls facing a bamboo curtain through which their ramen is served. The goal is to minimize distractions and allow full focus on the flavor of the tonkotsu ramen. Diners can also customize their bowl via a written order sheet, specifying everything from broth strength to noodle texture — without uttering a single word.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "94174295-10eb-47e8-a5d9-114ac49862a4",
+    "question": "Every New Year, the first auction at Tokyo's Toyosu Market attracts global attention. Which fish is famously known for fetching extraordinarily high prices at this event?",
+    "options": [
+      "Salmon (Shake)",
+      "Yellowtail (Buri)",
+      "Tuna (Maguro)",
+      "Swordfish (Mekajiki)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Every January, the first tuna auction of the New Year at Toyosu Market — known as 'hatsu-seri' — attracts enormous attention, with a single bluefin tuna often selling for tens or even hundreds of millions of yen. The winning bidder, often a high-end sushi restaurant, gains enormous publicity from the purchase. It has become one of Japan's most spectacular and talked-about food events of the year.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "85e005d2-b81a-4fe6-91df-74e95af4567f",
+    "question": "Japan's Kanazawa city is famous for producing over 99% of Japan's gold leaf. How is this gold leaf, known as 'kinpaku,' commonly used in Japanese food and drink?",
+    "options": [
+      "As a natural spice, valued for its subtle kick and unique flavor in traditional Japanese cooking.",
+      "As a natural sweetener added to wagashi and traditional Japanese confections.",
+      "As a key ingredient in dashi broth to enhance its umami flavor.",
+      "As an edible decoration on sweets, drinks, and dishes to add a sense of luxury."
+    ],
+    "correctAnswer": 3,
+    "explanation": "Kanazawa, known as 'little Kyoto,' produces the vast majority of Japan's gold leaf. Edible gold leaf, or 'kinpaku,' is used to decorate everything from ice cream and sake to sushi and wagashi, adding a touch of glamour and luxury. While it has no flavor of its own, it has become a popular and eye-catching feature of Japanese food culture, particularly as a souvenir and gift item.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "1875234d-af17-4dc4-9e45-f1cb994b85a3",
+    "question": "Fugu, the Japanese pufferfish, is considered a delicacy in Japan. What makes it particularly unique compared to other dishes?",
+    "options": [
+      "It is the most expensive fish in the world, costing over one million yen per serving.",
+      "It can only be eaten raw and is never cooked in any form.",
+      "It is exclusively served to members of the Japanese imperial family.",
+      "It contains a deadly poison, and only licensed chefs are permitted to prepare it."
+    ],
+    "correctAnswer": 3,
+    "explanation": "Fugu contains tetrodotoxin, a potent poison found in its organs that has no known antidote. In Japan, chefs must obtain a special license before being permitted to handle and prepare fugu, ensuring that this prized delicacy is handled with the utmost care and expertise. Despite — or perhaps because of — this danger, fugu has become one of Japan's most celebrated delicacies, prized for its delicate flavor and unique texture.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "49e3d0f3-4a29-4b37-b64e-90b33869c300",
+    "question": "Natto is a traditional Japanese food made from fermented soybeans. What makes it particularly notorious among first-time tasters?",
+    "options": [
+      "It is extremely spicy, often compared to the hottest chili peppers in the world.",
+      "It has a strong smell, sticky texture, and an acquired taste that divides opinions even among Japanese people.",
+      "It is dangerously high in caffeine, making it unsuitable for children and elderly people.",
+      "It is so bitter that it is traditionally eaten with large amounts of sugar, honey, or sweet miso paste to balance the overwhelming flavor."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Natto is made by fermenting soybeans, resulting in its characteristic sticky, stringy texture and pungent smell. While it is a beloved breakfast staple in many parts of Japan — often eaten over rice with mustard and soy sauce — opinions are sharply divided even among Japanese people. For adventurous visitors, trying natto is considered something of a rite of passage.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "3996d282-dcdf-4c05-ae6a-d430d686ad8f",
+    "question": "At Japanese izakayas, a custom called 'otoshi' sometimes surprises foreign visitors. What is it that catches them off guard?",
+    "options": [
+      "They are required to remove their shoes before entering the dining area, as is common in many Japanese establishments.",
+      "They must choose a set menu for the entire table before being seated.",
+      "A small dish is automatically served and charged without being ordered.",
+      "They are expected to pour drinks for others at the table before serving themselves."
+    ],
+    "correctAnswer": 2,
+    "explanation": "'Otoshi' is a small appetizer automatically served to customers upon sitting down at an izakaya, with a charge added to the bill regardless of whether it was ordered. While it can catch foreign visitors off guard, it is best understood as a Japanese custom similar to a cover charge. The dish often reflects the chef's daily selection, offering a small but pleasant introduction to the meal ahead.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "02604487-c57a-4abc-8686-d5f3f96fac0b",
+    "question": "Japanese school lunches, known as 'kyushoku,' are famous for their unique culture. Which of these is NOT a typical feature of Japanese school lunch?",
+    "options": [
+      "Students serve lunch to their classmates themselves, taking turns as part of their daily school routine.",
+      "Meals are carefully designed by a nutritionist to ensure students receive a well-balanced and healthy diet.",
+      "Students are free to choose from a variety of dishes at a self-service cafeteria.",
+      "A carton of milk is typically included with every meal, regardless of the day's menu."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Japanese school lunches are renowned worldwide for their quality and unique culture. Students all eat the same carefully planned meal, designed by a nutritionist. Students take turns serving lunch to their classmates, and a carton of milk is almost always included. It is widely regarded as one of the best school lunch systems in the world.",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "621fbd6b-faf1-4bb2-8144-839a0e330e04",
+    "question": "Fugu (pufferfish) ovaries contain deadly poison, yet in Japan's Ishikawa Prefecture, people eat them as a delicacy. How do they make it safe to eat?",
+    "options": [
+      "Boiling in hot water continuously for 24 hours to extract and dissolve all the deadly toxins",
+      "Freezing at ultra-low temperature (-80°C) for one full year to break down the poison molecules",
+      "Fermenting in rice bran for 2-3 years mysteriously neutralizes the toxin",
+      "Soaking in a special chemical solution developed by scientists"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Fugu ovaries are first salted, then fermented in rice bran (nuka) for several years. This traditional fermentation process completely neutralizes the deadly tetrodotoxin, though scientists still don't fully understand how. Only specially licensed producers in Ishikawa can legally make this—never try it yourself!",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "a2c551fc-d3b9-4b28-a78f-a47ea9eae995",
+    "question": "Why are highway service areas (SA) in Japan so popular that some people visit them specifically for the food?",
+    "options": [
+      "They serve international fast food chains like McDonald's and KFC at discounted prices",
+      "Each SA features local specialty dishes and regional delicacies from that area",
+      "All food is prepared by celebrity chefs who rotate between different locations",
+      "The government subsidizes SA food to make it cheaper than regular restaurants"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Japanese highway service areas are famous for offering regional specialty foods that represent each area's local cuisine. From fresh seafood rice bowls to local ramen varieties and famous regional sweets, each SA showcases the best dishes of its location. This has made \"SA gourmet hunting\" a popular travel activity in Japan!",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "57d557aa-ab89-400a-a6d7-fd18fb6d21f8",
+    "question": "Katsuobushi (dried bonito flakes) is known as one of the hardest foods in the world. How is it made so hard?",
+    "options": [
+      "Repeatedly applying mold and drying it out over several months",
+      "Pressure-cooking at extreme temperatures to compress the fish",
+      "Aging in saltwater barrels filled with special minerals for over 10 years",
+      "Freeze-drying in special vacuum chambers that remove 99% of all moisture"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Katsuobushi is made by smoking bonito fish, then repeatedly coating it with beneficial mold that draws out moisture while adding umami flavor and nutrients. This traditional process creates one of the world's hardest foods—and also one of the most delicious!",
+    "difficulty": "medium",
+    "category": "food",
+    "tags": []
+  },
+  {
+    "id": "cc41346c-636e-4dfa-91fa-7e31967fa472",
+    "question": "Shojin ryori is a traditional Buddhist cuisine served at temples in Japan. What is its defining characteristic?",
+    "options": [
+      "All dishes must be completely white in color to represent purity",
+      "No animal-based ingredients are used—it's entirely plant-based",
+      "Every meal must include exactly seven different dishes",
+      "Food is eaten in complete silence as a form of meditation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Shojin ryori follows Buddhist principles of not harming living beings, using only plant-based ingredients like tofu, vegetables, and mushrooms. Strong-smelling vegetables like garlic and onions are also avoided. Despite these restrictions, the meals are nutritionally balanced and delicious!",
+    "difficulty": "medium",
+    "category": "food",
     "tags": []
   },
   {
