@@ -1,5 +1,262 @@
 [
   {
+    "id": "22a97e33-ef37-41ec-80dc-ccb7b3cacadf",
+    "question": "Which city is famous for its vibrant youth culture, fashion districts like Harajuku and Shibuya, and a plethora of themed cafes?",
+    "options": [
+      "Osaka",
+      "Kyoto",
+      "Sapporo",
+      "Tokyo"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Tokyo, particularly areas like Harajuku and Shibuya, is renowned for its cutting-edge fashion, youth culture, and unique themed cafes.",
+    "difficulty": "medium",
+    "category": "region",
+    "tags": [
+      "Tokyo",
+      "fashion",
+      "culture"
+    ]
+  },
+  {
+    "id": "6a72e116-9860-4c75-be33-c1db4872b554",
+    "question": "Japan is a very mountainous country. Approximately what percentage of Japan's land area is covered by mountains and hills?",
+    "options": [
+      "25%",
+      "50%",
+      "75%",
+      "90%"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Around 75% of Japan is mountainous and hills, which explains why major cities and population centers are concentrated in coastal plains and valleys. This rugged terrain also contributes to Japan's stunning natural beauty and diverse ecosystems.",
+    "difficulty": "medium",
+    "category": "region",
+    "tags": [
+      "physical geography",
+      "mountains",
+      "terrain",
+      "landscape"
+    ]
+  },
+  {
+    "id": "08eb0516-0f79-4c1f-83f4-2cd8edef1a14",
+    "question": "Which prefecture is famous as one of Japan's leading rice-production-areas renowned for its vast plains and the production of high-quality rice, particularly the famous Koshihikari?",
+    "options": [
+      "Tokyo",
+      "Okinawa",
+      "Niigata",
+      "Kyoto"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Niigata Prefecture, located along the Sea of Japan coast, is one of Japan's most famous rice-producing regions. Its fertile plains, combined with abundant snowmelt water and an ideal climate, make it perfect for growing premium rice like Koshihikari. This high-quality rice also serves as the foundation for the prefecture's renowned sake (rice wine) industry.",
+    "difficulty": "medium",
+    "category": "region",
+    "tags": [
+      "agriculture",
+      "regions",
+      "food culture",
+      "rice",
+      "economy"
+    ]
+  },
+  {
+    "id": "b36591b3-791d-4713-afd2-488d2e8b2ae1",
+    "question": "Which prefecture is Japan's southernmost island paradise with unique culture, famous for crystal-clear waters and year-round warm weather?",
+    "options": [
+      "Okinawa",
+      "Kagoshima",
+      "Miyazaki",
+      "Wakayama"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Okinawa enjoys a subtropical climate with average temperatures of 23°C year-round. Its stunning beaches and unique Ryukyuan culture make it one of Japan's top destinations. Visit April-October for perfect diving weather, and discover traditional cuisine and architecture distinct from mainland Japan!",
+    "difficulty": "easy",
+    "category": "region",
+    "tags": [
+      "islands",
+      "archipelago",
+      "main islands"
+    ]
+  },
+  {
+    "id": "4d8d5234-a855-431c-b837-9417d8032d61",
+    "question": "What is Japan's tallest and most iconic mountain, often depicted in art and considered sacred?",
+    "options": [
+      "Mount Aso",
+      "Mount Fuji",
+      "Mount Kita",
+      "Mount Zao"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Mount Fuji (3,776m) is Japan's highest peak and has been sacred for centuries. This active volcano last erupted in 1707 and is now a UNESCO World Heritage site. It appears in countless artworks, including Hokusai's famous woodblock prints!",
+    "difficulty": "easy",
+    "category": "region",
+    "tags": [
+      "mountains",
+      "Mount Fuji",
+      "cultural significance"
+    ]
+  },
+  {
+    "id": "e4e5ce1e-ae9f-4239-8027-1d5836a180aa",
+    "question": "What winter event attracts millions of visitors to Hokkaido each year?",
+    "options": [
+      "The Sapporo Snow Festival",
+      "Winter cherry blossom illuminations",
+      "Ice fishing competitions on frozen lakes",
+      "Northern lights viewing tours"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Sapporo Snow Festival features massive ice and snow sculptures, attracting over 2 million visitors annually. Hokkaido's heavy snowfall and cold temperatures make it perfect for creating these intricate frozen artworks. The festival has been held every February since 1950!",
+    "difficulty": "easy",
+    "category": "region",
+    "tags": [
+      "climate",
+      "Hokkaido",
+      "regional differences"
+    ]
+  },
+  {
+    "id": "96467b95-0779-4317-aa5a-e2afddfb8baf",
+    "question": "What natural disasters occur frequently in Japan?",
+    "options": [
+      "Extreme droughts",
+      "Massive sandstorms",
+      "Earthquakes",
+      "Severe blizzards"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Japan experiences frequent earthquakes and volcanic eruptions, with over 100 active volcanoes and thousands of earthquakes annually. This geological activity has shaped Japanese culture, from hot spring bathing to world-leading earthquake-resistant architecture and comprehensive disaster preparedness systems!",
+    "difficulty": "easy",
+    "category": "region",
+    "tags": [
+      "Ring of Fire",
+      "volcanoes",
+      "earthquakes",
+      "natural phenomena"
+    ]
+  },
+  {
+    "id": "8affec44-1e6a-454e-b466-e7c70bb8cde2",
+    "question": "Where can you see wild monkeys relaxing in natural hot springs during winter?",
+    "options": [
+      "Nagano prefecture",
+      "Tokyo",
+      "Nara prefecture",
+      "Hiroshima prefecture"
+    ],
+    "correctAnswer": 0,
+    "explanation": "At Jigokudani Monkey Park in Nagano's mountains, wild monkey soak in natural hot springs to stay warm during freezing winters. It's the only place in the world where monkeys naturally bathe in hot springs! Best visited December through March when snow blankets the area.",
+    "difficulty": "medium",
+    "category": "region",
+    "tags": []
+  },
+  {
+    "id": "94744133-c23a-41c3-8989-3a1d1f9b36db",
+    "question": "Hokkaido has an incredibly blue pond caused by natural minerals. What is it called?",
+    "options": [
+      "Blue Pond (Aoiike)",
+      "Crystal Lake",
+      "Sapphire Pool",
+      "Azure Spring"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Blue Pond near Biei became world-famous as a MacOS wallpaper! Its striking blue color comes from natural aluminum compounds. The appearance changes with seasons—sometimes turquoise, sometimes deep blue. It's especially magical in winter surrounded by snow!",
+    "difficulty": "medium",
+    "category": "region",
+    "tags": []
+  },
+  {
+    "id": "20c13fa7-802f-4479-afa3-5939198380e7",
+    "question": "Which shrine is famous for its giant torii gate that appears to \"float\" in the sea at high tide?",
+    "options": [
+      "Itsukushima Shrine, Hiroshima",
+      "Yasaka Shrine, Kyoto",
+      "Anamori Inari Shrine, Tokyo",
+      "Takachiho Shrine, Miyazaki"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Itsukushima Shrine's iconic orange torii gate appears to float during high tide. At low tide, you can walk up to it! This UNESCO World Heritage site on Miyajima Island is one of Japan's three most scenic views.",
+    "difficulty": "medium",
+    "category": "region",
+    "tags": []
+  },
+  {
+    "id": "86277983-092b-47c6-8d67-ca78cb13f74c",
+    "question": "What does the world's oldest continuously operating company, founded in Japan in 578 AD, do?",
+    "options": [
+      "Constructs and maintains temples and shrines.",
+      "Produces traditional Japanese sake and fermented beverages since ancient times.",
+      "Crafts and sells handmade samurai swords and traditional weapons.",
+      "Manufactures and distributes silk and traditional Japanese textiles across the country."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Kongo Gumi, founded in 578 AD, is the world's oldest continuously operating company, specializing in building and maintaining temples and shrines. Its 1,400-year-plus history reflects Japan's extraordinary reverence for tradition and craftsmanship.",
+    "difficulty": "medium",
+    "category": "region",
+    "tags": []
+  },
+  {
+    "id": "1b65a119-d595-43e2-aed9-e2ea971c3e6c",
+    "question": "Why is Yutoku Inari Shrine in Saga particularly popular among foreign visitors?",
+    "options": [
+      "It is one of Japan's oldest and most sacred Shinto shrines.",
+      "It is famous for its stunning cherry blossom festival attracting visitors worldwide.",
+      "It was a filming location for a popular Thai movie, attracting fans especially from Thailand.",
+      "It is known for its unique architecture inspired by Thai Buddhist temples."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Yutoku Inari Shrine in Saga became a popular destination for Thai tourists after serving as a key filming location for the Thai movie 'Timeline,' which ranked 5th in Thailand's box office that year, inspiring many fans to visit.",
+    "difficulty": "medium",
+    "category": "region",
+    "tags": []
+  },
+  {
+    "id": "d8524740-15dd-43ea-908d-fafb5251d1e0",
+    "question": "Why is Doai Station in Gunma nicknamed the 'Mole Station'?",
+    "options": [
+      "A family of moles made their home in the station and became its beloved mascots.",
+      "The station is completely hidden underground and has no visible entrance from the street.",
+      "Passengers must descend 462 steps, 70 meters underground, to reach the platform.",
+      "A famous architect designed the station building in the shape of a mole."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Doai Station, known as Japan's 'mole station,' has its underground platform 70 meters below the surface, requiring 462 steps to reach the exit. A hidden gem among train enthusiasts — though very few trains stop here, so plan your visit carefully!",
+    "difficulty": "medium",
+    "category": "region",
+    "tags": []
+  },
+  {
+    "id": "e21e2a7c-b250-4f07-b7f0-64a5824cb070",
+    "question": "What is the unique feature of the traditional bridges found along the Shimanto River in Kochi?",
+    "options": [
+      "They are made entirely from woven bamboo, replaced every year by local villagers.",
+      "They can be raised and lowered to allow boats to pass underneath.",
+      "They have no guardrails and are designed to sink underwater when the river floods.",
+      "They are suspended from trees on both riverbanks using traditional rope techniques."
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Shimanto River's 'chinka-bashi' (submersible bridges) have no guardrails and are deliberately designed to sink when floodwaters rise, reducing water resistance and preventing the bridge from being swept away — a brilliant example of working with nature rather than against it.",
+    "difficulty": "medium",
+    "category": "region",
+    "tags": []
+  },
+  {
+    "id": "f7c4e516-87f6-49e4-a180-85cee9b218d9",
+    "question": "Why does Japan have one of the highest numbers of hot springs in the world?",
+    "options": [
+      "It sits on the Pacific Ring of Fire, with numerous active volcanoes heating underground water.",
+      "Ancient engineers built an elaborate underground heating system beneath the country.",
+      "A unique combination of heavy rainfall and limestone rock formations creates natural hot water.",
+      "Ocean currents around Japan naturally heat the groundwater to high temperatures over centuries."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Japan's abundance of hot springs is due to its location on the Pacific Ring of Fire, where intense volcanic activity heats underground water. With over 3,000 hot spring resorts nationwide, Japan has developed a rich onsen culture enjoyed by locals and visitors alike.",
+    "difficulty": "medium",
+    "category": "region",
+    "tags": []
+  },
+  {
     "id": "1307d9b8-6676-4aab-a88b-c81ee8cf0a26",
     "question": "When visiting a Japanese home, it is customary to remove your shoes before entering. Where should you typically place your shoes?",
     "options": [
@@ -1777,66 +2034,6 @@
     "difficulty": "medium",
     "category": "food",
     "tags": []
-  },
-  {
-    "id": "22a97e33-ef37-41ec-80dc-ccb7b3cacadf",
-    "question": "Which city is famous for its vibrant youth culture, fashion districts like Harajuku and Shibuya, and a plethora of themed cafes?",
-    "options": [
-      "Osaka",
-      "Kyoto",
-      "Sapporo",
-      "Tokyo"
-    ],
-    "correctAnswer": 3,
-    "explanation": "Tokyo, particularly areas like Harajuku and Shibuya, is renowned for its cutting-edge fashion, youth culture, and unique themed cafes.",
-    "difficulty": "medium",
-    "category": "geography",
-    "tags": [
-      "Tokyo",
-      "fashion",
-      "culture"
-    ]
-  },
-  {
-    "id": "6a72e116-9860-4c75-be33-c1db4872b554",
-    "question": "Japan is a very mountainous country. Approximately what percentage of Japan's land area is covered by mountains and hills?",
-    "options": [
-      "25%",
-      "50%",
-      "75%",
-      "90%"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Around 75% of Japan is mountainous and hills, which explains why major cities and population centers are concentrated in coastal plains and valleys. This rugged terrain also contributes to Japan's stunning natural beauty and diverse ecosystems.",
-    "difficulty": "medium",
-    "category": "geography",
-    "tags": [
-      "physical geography",
-      "mountains",
-      "terrain",
-      "landscape"
-    ]
-  },
-  {
-    "id": "08eb0516-0f79-4c1f-83f4-2cd8edef1a14",
-    "question": "Which prefecture is famous as one of Japan's leading rice-production-areas renowned for its vast plains and the production of high-quality rice, particularly the famous Koshihikari?",
-    "options": [
-      "Tokyo",
-      "Okinawa",
-      "Niigata",
-      "Kyoto"
-    ],
-    "correctAnswer": 2,
-    "explanation": "Niigata Prefecture, located along the Sea of Japan coast, is one of Japan's most famous rice-producing regions. Its fertile plains, combined with abundant snowmelt water and an ideal climate, make it perfect for growing premium rice like Koshihikari. This high-quality rice also serves as the foundation for the prefecture's renowned sake (rice wine) industry.",
-    "difficulty": "medium",
-    "category": "geography",
-    "tags": [
-      "agriculture",
-      "regions",
-      "food culture",
-      "rice",
-      "economy"
-    ]
   },
   {
     "id": "bf86c73f-bff1-4b8e-aab5-841df6c201ee",

@@ -9,7 +9,7 @@ export type ReviewStatus = 'draft' | 'reviewing' | 'approved' | 'rejected';
 export type QuizCategory = 
   | 'culture'      // 文化
   | 'food'         // 食べ物
-  | 'geography'    // 地理
+  | 'region'    // 地方都市
   | 'language'     // 言語
   | 'manner'       // マナー
   | 'anime-manga'; // アニメ・漫画

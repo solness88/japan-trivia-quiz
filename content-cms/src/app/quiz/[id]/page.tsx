@@ -29,7 +29,7 @@ export default async function QuizEditPage({ params, searchParams }: PageProps) 
     })
     .sort((a, b) => {
       // カテゴリー順にソート
-      const categoryOrder = ['culture', 'food', 'geography', 'language', 'manner', 'anime-manga'];
+      const categoryOrder = ['culture', 'food', 'region', 'language', 'manner', 'anime-manga'];
       const categoryA = categoryOrder.indexOf(a.category);
       const categoryB = categoryOrder.indexOf(b.category);
       

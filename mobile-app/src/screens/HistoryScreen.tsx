@@ -37,13 +37,12 @@ export default function HistoryScreen({ navigation }: HistoryScreenProps) {
 
   const getCategoryEmoji = (category: string) => {
     const emojiMap: { [key: string]: string } = {
-      random: '🎲',
       culture: '🎎',
       food: '🍣',
-      history: '🏯',
-      geography: '🗾',
+      region: '🗾',
       language: '🈷️',
-      tradition: '⛩️',
+      manner: '🖐',
+      anime_manga: '🤖'
     };
     return emojiMap[category] || '📚';
   };
@@ -54,7 +53,7 @@ export default function HistoryScreen({ navigation }: HistoryScreenProps) {
       culture: 'Culture',
       food: 'Food',
       history: 'History',
-      geography: 'Geography',
+      region: 'Region',
       language: 'Language',
       tradition: 'Tradition',
     };

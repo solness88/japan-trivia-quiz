@@ -54,11 +54,9 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
 
   const getCategoryEmoji = (category: string) => {
     const emojiMap: { [key: string]: string } = {
-      random: '🎲',
       culture: '🎎',
       food: '🍣',
-      history: '🏯',
-      geography: '🗾',
+      region: '🗾',
       language: '🈷️',
       tradition: '⛩️',
     };
@@ -71,7 +69,7 @@ export default function ResultScreen({ navigation, route }: ResultScreenProps) {
       culture: 'Culture',
       food: 'Food',
       history: 'History',
-      geography: 'Geography',
+      region: 'Region',
       language: 'Language',
       tradition: 'Tradition',
     };

@@ -29,7 +29,7 @@ ANIME / MANGA CATEGORY GUIDELINES:
 `,
     culture: '',
     food: '',
-    geography: '',
+    region: '',
     language: '',
     manner: '',
   };

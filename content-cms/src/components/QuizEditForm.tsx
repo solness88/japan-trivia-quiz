@@ -12,7 +12,7 @@ const statusConfig = {
 const categoryLabels: Record<QuizCategory, string> = {
   culture: 'Culture',
   food: 'Food',
-  geography: 'Geography',
+  region: 'Region',
   language: 'Language',
   manner: 'Manner',
   'anime-manga': 'Anime / Manga',

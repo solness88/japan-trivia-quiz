@@ -21,7 +21,7 @@ type Category = {
 const categories: Category[] = [
   { id: 'culture', name: 'Culture', emoji: '🏯', color: Colors.category.culture, description: 'Traditional and modern culture' },
   { id: 'food', name: 'Food', emoji: '🍣', color: Colors.category.food, description: 'Japanese cuisine' },
-  { id: 'geography', name: 'Geography', emoji: '🗾', color: Colors.category.geography, description: 'Places and landmarks' },
+  { id: 'region', name: 'Region', emoji: '🗾', color: Colors.category.region, description: 'Places and landmarks' },
   { id: 'language', name: 'Language', emoji: '🈷️', color: Colors.category.language, description: 'Japanese language basics' },
   { id: 'manner', name: 'Manner', emoji: '🙏', color: Colors.category.manner, description: 'Etiquette and manners' },
   { id: 'anime-manga', name: 'Anime / Manga', emoji: '🎌', color: Colors.category.animeManga, description: 'Japanese pop culture' },

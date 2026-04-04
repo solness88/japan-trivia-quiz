@@ -5,26 +5,11 @@ export async function GET() {
   try {
     const quizzes = await loadQuizzes();
     
-    // // 承認済みのクイズだけをフィルタリング
-    // const approvedQuizzes = quizzes.filter(q => q.reviewStatus === 'approved');
-    
-    // // クライアント用のフォーマットに変換（reviewStatusなど不要な情報を除外）
-    // const exportData = approvedQuizzes.map(quiz => ({
-    //   id: quiz.id,
-    //   question: quiz.question,
-    //   options: quiz.options,
-    //   correctAnswer: quiz.correctAnswer,
-    //   explanation: quiz.explanation,
-    //   difficulty: quiz.difficulty,
-    //   category: quiz.category,
-    //   tags: quiz.tags,
-    // }));
-
     // 承認済みのクイズだけをフィルタリング
     const approvedQuizzes = quizzes.filter(q => q.reviewStatus === 'approved');
 
     // カテゴリー順にソート
-    const categoryOrder = ['culture', 'food', 'geography', 'language', 'manner', 'anime-manga'];
+    const categoryOrder = ['culture', 'food', 'region', 'language', 'manner', 'anime-manga'];
 
     const sortedQuizzes = approvedQuizzes.sort((a, b) => {
       // カテゴリー順

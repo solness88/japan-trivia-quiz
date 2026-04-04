@@ -2,7 +2,7 @@
 export type QuizCategory = 
   | 'culture'
   | 'food'
-  | 'geography'
+  | 'region'
   | 'language'
   | 'manner'
   | 'anime-manga';

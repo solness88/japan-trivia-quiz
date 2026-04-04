@@ -137,12 +137,10 @@ export default function NewQuizPage() {
               >
                 <option value="culture">Culture (文化)</option>
                 <option value="food">Food (食べ物)</option>
-                <option value="history">History (歴史)</option>
-                <option value="geography">Geography (地理)</option>
+                <option value="region">Region (地理)</option>
                 <option value="language">Language (言語)</option>
-                <option value="tradition">Tradition (伝統)</option>
-                <option value="pop-culture">Pop Culture</option>
-                <option value="etiquette">Etiquette (マナー)</option>
+                <option value="manner">Manner</option>
+                <option value="anime-manga">Anime Manga (アニメ・漫画)</option>
               </select>
             </div>
 

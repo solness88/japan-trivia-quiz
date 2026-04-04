@@ -8,7 +8,7 @@ import type { Quiz, ReviewStatus } from '@japan-trivia/shared';
 const categoryLabels: Record<string, string> = {
   culture: 'Culture',
   food: 'Food',
-  geography: 'Geography',
+  region: 'Region',
   language: 'Language',
   manner: 'Manner',
   'anime-manga': 'Anime / Manga',
@@ -52,7 +52,7 @@ const filteredQuizzes = quizzes
   })
   .sort((a, b) => {
     // カテゴリー順にソート
-    const categoryOrder = ['culture', 'food', 'geography', 'language', 'manner', 'anime-manga'];
+    const categoryOrder = ['culture', 'food', 'region', 'language', 'manner', 'anime-manga'];
     const categoryA = categoryOrder.indexOf(a.category);
     const categoryB = categoryOrder.indexOf(b.category);
     

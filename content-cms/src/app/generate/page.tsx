@@ -163,7 +163,7 @@ export default function GeneratePage() {
               >
                 <option value="culture">Culture</option>
                 <option value="food">Food</option>
-                <option value="geography">Geography</option>
+                <option value="region">Regional</option>
                 <option value="language">Language</option>
                 <option value="manner">Manner</option>
                 <option value="anime-manga">Anime / Manga</option>
