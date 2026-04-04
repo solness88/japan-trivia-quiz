@@ -29,6 +29,28 @@ export default function HomePage() {
   const [activeTab, setActiveTab] = useState<TabType>('reviewing');
   const [loading, setLoading] = useState(true);
 
+  const moveQuiz = async (quizId: string, direction: 'up' | 'down') => {
+    try {
+      const response = await fetch('/api/quizzes/reorder', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quizId, direction }),
+      });
+      
+      if (response.ok) {
+        // 成功時のみリロード
+        const data = await fetch('/api/quizzes').then(res => res.json());
+        setQuizzes(data);
+      } else {
+        // エラーの詳細をログ出力
+        const error = await response.json();
+        console.log('Reorder failed:', error);
+      }
+    } catch (error) {
+      console.error('Reorder error:', error);
+    }
+  };
+
   useEffect(() => {
     fetch('/api/quizzes')
       .then(res => res.json())
@@ -59,6 +81,15 @@ const filteredQuizzes = quizzes
     if (categoryA !== categoryB) {
       return categoryA - categoryB;
     }
+
+    // ✅ sortOrder があれば優先
+    if (a.sortOrder !== undefined && b.sortOrder !== undefined) {
+      return a.sortOrder - b.sortOrder;
+    }
+    
+    // sortOrder が片方だけある場合
+    if (a.sortOrder !== undefined) return -1;
+    if (b.sortOrder !== undefined) return 1;
     
     // 同じカテゴリーなら作成日時順
     return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
@@ -210,14 +241,24 @@ const filteredQuizzes = quizzes
                   <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">
                     類似
                   </th>
+                  <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">
+                    順序
+                  </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
                     操作
                   </th>
                 </tr>
               </thead>
+
+
               <tbody className="divide-y divide-gray-200">
-                {filteredQuizzes.map((quiz) => {
+                {filteredQuizzes.map((quiz, index) => {
                   const status = statusConfig[quiz.reviewStatus];
+                  
+                  // 安全な判定
+                  const canMoveUp = index > 0 && filteredQuizzes[index - 1].category === quiz.category;
+                  const canMoveDown = index < filteredQuizzes.length - 1 && filteredQuizzes[index + 1].category === quiz.category;
+                  
                   return (
                     <tr key={quiz.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 text-sm text-gray-500">
@@ -239,13 +280,34 @@ const filteredQuizzes = quizzes
                       <td className="px-6 py-4 text-center text-xl">
                         {quiz.hasSimilar ? '❗' : '🟡'}
                       </td>
+                      
+                      {/* 上下ボタン列 */}
+                      <td className="px-6 py-4 text-center">
+                        <div className="flex gap-1 justify-center">
+                        <button
+                          onClick={() => moveQuiz(quiz.id, 'up')}
+                          // disabled を削除
+                          className="px-2 py-1 text-sm text-white rounded hover:bg-blue-700"
+                        >
+                          🔼
+                        </button>
+                        <button
+                          onClick={() => moveQuiz(quiz.id, 'down')}
+                          // disabled を削除
+                          className="px-2 py-1 text-sm text-white rounded hover:bg-blue-700"
+                        >
+                          🔽
+                        </button>
+                        </div>
+                      </td>
+                      
                       <td className="px-6 py-4 text-sm">
-                      <Link
-                        href={`/quiz/${quiz.id}?filter=${activeTab}`}
-                        className="text-blue-600 hover:underline mr-4"
-                      >
-                        編集
-                      </Link>
+                        <Link
+                          href={`/quiz/${quiz.id}?filter=${activeTab}`}
+                          className="text-blue-600 hover:underline mr-4"
+                        >
+                          編集
+                        </Link>
                       </td>
                     </tr>
                   );

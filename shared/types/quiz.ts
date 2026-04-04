@@ -62,6 +62,8 @@ export interface Quiz {
   /** 既存クイズとの類似有無（オプション） */
   hasSimilar?: boolean;
 
+  sortOrder?: number;
+
 }
 
 /**
