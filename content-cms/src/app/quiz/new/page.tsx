@@ -28,7 +28,10 @@ export default function NewQuizPage() {
       const response = await fetch('/api/quizzes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          reviewStatus: 'reviewing',
+        }),
       });
 
       if (!response.ok) {
